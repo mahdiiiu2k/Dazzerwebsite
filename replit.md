@@ -1,8 +1,8 @@
-# DS Design Portfolio Website
+# DS Design Business Website
 
 ## Overview
 
-This is a modern luxury portfolio website for DS Design, a web design agency that delivers websites in 24 hours. The application is built as a full-stack web application with a React frontend and Express backend, featuring glassmorphism design elements and a dark purple theme.
+This is a modern luxury business website for DS Design, a web design agency led by Mahdi that delivers complete websites for businesses in under 24 hours. The application is built as a full-stack web application with a React frontend and Express backend, featuring glassmorphism design elements and a dark purple theme.
 
 ## User Preferences
 
