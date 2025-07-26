@@ -10,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen relative px-6">
+    <section className="min-h-screen relative px-6 pt-24">
       {/* Main Content */}
       <div className="container mx-auto h-full flex items-center justify-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl w-full">
