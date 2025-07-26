@@ -57,7 +57,7 @@ export default function About() {
               "Roof renovation", "Shop", "Ecommerce"
             ].map((service, index) => (
               <div key={index} className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex-shrink-0"></div>
                 <div className="text-xl text-white font-medium">{service}</div>
               </div>
             ))}
