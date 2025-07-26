@@ -11,8 +11,6 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen relative px-6">
-
-
       {/* Main Content */}
       <div className="container mx-auto h-full flex items-center justify-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl w-full">
@@ -20,7 +18,7 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
               <span className="text-white text-4xl md:text-6xl block">take your digital apparence to </span>
-              <span className="gradient-text text-4xl md:text-6xl block">another level</span>
+              <span className="gradient-text text-4xl md:text-6xl block">Another Level</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
               From concept to launch, our expert team delivers <span className="text-yellow-400">modern, mobile-friendly websites</span> that drive results. Fast turnaround, premium quality, guaranteed satisfaction.
