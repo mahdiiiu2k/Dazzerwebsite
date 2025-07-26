@@ -11,13 +11,7 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen relative px-6">
-      {/* Luxury Logo in Top Left */}
-      <div className="absolute top-8 left-8 z-10 glass-morphism px-6 py-3 rounded-full">
-        <div className="flex items-center space-x-3">
-          <span className="text-3xl font-bold gradient-text font-serif">DSDS</span>
-          <span className="text-sm font-medium text-platinum-silver tracking-wider">DESIGN</span>
-        </div>
-      </div>
+
 
       {/* Main Content */}
       <div className="container mx-auto h-full flex items-center justify-center">
