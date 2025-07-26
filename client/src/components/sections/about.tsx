@@ -46,7 +46,7 @@ export default function About() {
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">Who We Are</h2>
           <p className="text-2xl md:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-light">
-            We're a <span className="text-yellow-400 font-medium">small, creative team</span> building powerful websites for <span className="gradient-text">local businesses in record time</span>. Using modern tools and design, we deliver high-quality websites — <span className="text-yellow-400 font-medium">fast, affordable, and ready to use within 24 hours</span>.
+            We're a <span className="text-yellow-400 font-medium">small team of designers</span> focused on building <span className="gradient-text">great websites fast</span> — without the agency overhead. Using modern tools and design, we deliver high-quality websites — <span className="text-yellow-400 font-medium">fast, affordable, and ready to use within 24 hours</span>.
           </p>
         </div>
         
@@ -71,15 +71,15 @@ export default function About() {
           <div className="relative overflow-hidden rounded-2xl mb-8">
             <img 
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600" 
-              alt="Elite professional team collaboration" 
+              alt="Small team collaboration" 
               className="rounded-xl w-full h-80 object-cover filter brightness-110 contrast-110 group-hover:scale-105 transition-transform duration-700" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
             <div className="absolute top-4 right-4 w-12 h-12 border-2 border-yellow-600 rotate-45 opacity-60 group-hover:rotate-90 transition-transform duration-700"></div>
           </div>
-          <h3 className="text-4xl font-bold gradient-text mb-6 font-serif">Our Elite Team</h3>
+          <h3 className="text-4xl font-bold gradient-text mb-6 font-serif">Our Small Team</h3>
           <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            A <span className="text-yellow-400 font-medium">handpicked team</span> of industry-leading designers and developers committed to delivering <span className="gradient-text">exceptional websites</span> with unprecedented speed and sophistication. Each project benefits from our collective expertise in premium digital craftsmanship.
+            A <span className="text-yellow-400 font-medium">focused team</span> of designers and developers committed to delivering <span className="gradient-text">great websites fast</span>. Each project gets personal attention without the overhead of a big agency.
           </p>
           <div className="mt-8 flex justify-center space-x-4">
             <div className="w-2 h-2 bg-yellow-600 rounded-full animate-pulse"></div>

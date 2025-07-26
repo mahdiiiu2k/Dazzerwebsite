@@ -15,19 +15,19 @@ const contactMethods = [
   {
     icon: "📩",
     title: "WhatsApp",
-    description: "Quick chat about your project (Fastest response)",
+    description: "Quick response",
     link: "https://wa.me/1234567890"
   },
   {
     icon: "📷",
     title: "Instagram",
-    description: "See our latest work and behind-the-scenes",
+    description: "View our work",
     link: "https://instagram.com/dsdesign"
   },
   {
     icon: "✉️",
     title: "Email",
-    description: "Detailed project discussions (hello@dsdesign.com)",
+    description: "For project discussions",
     link: "mailto:hello@dsdesign.com"
   }
 ];

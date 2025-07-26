@@ -169,6 +169,19 @@ export default function Referral() {
               </form>
             </Form>
           )}
+          
+          {/* WhatsApp Alternative */}
+          <div className="mt-8 text-center">
+            <p className="text-gray-300 mb-4">Or just send us a quick WhatsApp message if it's easier 👉</p>
+            <a 
+              href="https://wa.me/1234567890" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors"
+            >
+              📩 WhatsApp Us
+            </a>
+          </div>
         </GlassCard>
       </div>
     </section>

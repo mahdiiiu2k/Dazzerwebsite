@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-white border-opacity-10 pt-8 text-center">
-          <p className="text-gray-300">© 2025 DS Design. Built with ❤️ for small businesses.</p>
+          <p className="text-gray-400 text-center">© 2025 DS Design. Built with ❤️ for small businesses.</p>
         </div>
       </div>
     </footer>

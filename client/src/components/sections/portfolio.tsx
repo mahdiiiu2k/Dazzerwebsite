@@ -4,25 +4,29 @@ import { GlassCard } from "@/components/ui/glass-card";
 const projects = [
   {
     title: "Urban Café",
-    description: "Clean, mobile-ready site with menu integration and location details",
+    description: "Delivered in 24h",
+    price: "$199",
     image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     tags: ["Menu Display", "Mobile-Ready", "Location"]
   },
   {
     title: "FadePro Barbershop",
-    description: "Modern layout with booking form and portfolio gallery showcase",
+    description: "Includes booking",
+    price: "$219",
     image: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     tags: ["Booking Form", "Gallery", "Service List"]
   },
   {
     title: "KitchenPro Remodel",
-    description: "Professional design with quote forms and project showcase gallery",
+    description: "Quote form + gallery",
+    price: "$249",
     image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     tags: ["Quote Forms", "Project Gallery", "Services"]
   },
   {
     title: "Arizona Landscaping",
-    description: "Beautiful layout with scrollable services and Instagram feed integration",
+    description: "Instagram feed + scrollable services",
+    price: "$239",
     image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     tags: ["Instagram Feed", "Service Packages", "Gallery"]
   }
@@ -42,7 +46,7 @@ export default function Portfolio() {
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">Our Work</h2>
           <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
-            Real websites we've built for <span className="text-yellow-400 font-medium">local businesses</span> — delivered fast and <span className="gradient-text">ready to drive results</span>
+            Just a few websites we've delivered for <span className="text-yellow-400 font-medium">small businesses</span> — <span className="gradient-text">fast, clean, and mobile-ready</span>
           </p>
         </div>
         
@@ -65,7 +69,12 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-3xl font-bold gradient-text mb-4 font-serif">{project.title}</h3>
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold gradient-text font-serif">{project.title}</h3>
+                  <span className="text-2xl font-bold text-green-400 bg-green-400/10 px-3 py-1 rounded-full border border-green-400/20">
+                    {project.price}
+                  </span>
+                </div>
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-3">
                   {project.tags.map((tag, tagIndex) => (
@@ -88,7 +97,7 @@ export default function Portfolio() {
             className="crimson-gradient hover:scale-105 px-12 py-6 rounded-full text-white font-bold text-2xl shadow-2xl crimson-glow transition-all duration-300 transform"
             size="lg"
           >
-            Let's Create Excellence Together
+            Start Your Project Today
           </Button>
         </div>
       </div>

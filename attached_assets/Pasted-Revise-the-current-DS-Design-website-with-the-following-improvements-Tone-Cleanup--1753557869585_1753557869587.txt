@@ -1,0 +1,121 @@
+Revise the current DS Design website with the following improvements:
+
+
+---
+
+🧼 Tone Cleanup:
+
+Remove the overly corporate or developer-heavy language like:
+
+> “Elite professional team collaboration”
+“Premium digital craftsmanship”
+“Unprecedented speed and sophistication”
+
+
+
+
+✅ Replace with a friendly version:
+
+> “We’re a small team of designers focused on building great websites fast — without the agency overhead.”
+
+
+
+
+---
+
+🖼️ Portfolio Section Improvements:
+
+Under each portfolio item, add a small price tag to help visitors understand pricing:
+
+Urban Café – Delivered in 24h – $199
+
+FadePro Barbershop – Includes booking – $219
+
+KitchenPro Remodel – Quote form + gallery – $249
+
+Arizona Landscaping – Instagram feed + scrollable services – $239
+
+
+
+
+---
+
+📞 Referral Program Section:
+
+Keep the current referral steps but add this line below the form:
+
+> “Or just send us a quick WhatsApp message if it’s easier 👉 [Insert WhatsApp Link]”
+
+
+
+
+---
+
+✏️ Text Corrections:
+
+Replace the line “Take Your Digital Apparence ToAnother Level” with:
+
+> “Take Your Business Online – In Just 24 Hours”
+
+
+
+Change:
+
+> “Real websites we've built for local businesses — delivered fast and ready to drive results”
+✅ To: “Just a few websites we’ve delivered for small businesses — fast, clean, and mobile-ready.”
+
+
+
+
+
+---
+
+🟣 Visual Improvements:
+
+Use clean purple and white as the main color theme
+
+Apply soft shadows, rounded buttons, and mobile-first layout
+
+Use preview mockup images of websites for:
+
+Urban Café
+
+Barbershop
+
+Remodeling
+
+Landscaping
+
+
+
+(You can use placeholder images or insert generated mockups later)
+
+
+---
+
+📩 Contact Options:
+
+Make sure WhatsApp is shown first as fastest, then Instagram, then Email:
+
+📩 WhatsApp – Quick response  
+📷 Instagram – View our work  
+✉️ Email – For project discussions
+
+
+---
+
+🔻 Remove:
+
+GitHub, LinkedIn, Resume links
+
+Any mentions of TypeScript, Git, or Developer portfolios
+
+
+
+---
+
+✅ Footer:
+
+Update footer to:
+
+> “© 2025 DS Design. Built with ❤️ for small businesses.”
