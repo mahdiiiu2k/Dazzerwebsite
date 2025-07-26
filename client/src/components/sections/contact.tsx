@@ -13,19 +13,19 @@ import { insertContactSchema } from "@shared/schema";
 
 const contactMethods = [
   {
-    icon: "📱",
-    title: "WhatsApp",
-    description: "Quick response, usually within minutes"
-  },
-  {
-    icon: "📷",
-    title: "Instagram",
-    description: "See our latest work and message us (@dsdesign_official)"
-  },
-  {
-    icon: "✉️",
+    icon: "📧",
     title: "Email",
-    description: "For detailed project discussions (hello@dsdesign.com)"
+    description: "Best for detailed project discussions (hello@dsdesign.com)"
+  },
+  {
+    icon: "💼",
+    title: "LinkedIn",
+    description: "Connect with me professionally (@dsdesign)"
+  },
+  {
+    icon: "🐙",
+    title: "GitHub",
+    description: "Check out my code and open source projects"
   }
 ];
 
@@ -73,7 +73,7 @@ export default function Contact() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Let's Work Together</h2>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Ready to get your website built in 24 hours? Reach out to us through your preferred method
+            Ready to bring your digital vision to life? Let's discuss your next project and create something amazing together.
           </p>
         </div>
         
@@ -178,11 +178,11 @@ export default function Contact() {
             <div className="grid grid-cols-2 gap-4">
               <GlassCard className="text-center">
                 <div className="text-2xl font-bold gradient-text">24h</div>
-                <div className="text-sm text-gray-300">Average Response</div>
+                <div className="text-sm text-gray-300">Response Time</div>
               </GlassCard>
               <GlassCard className="text-center">
-                <div className="text-2xl font-bold gradient-text">100%</div>
-                <div className="text-sm text-gray-300">Satisfaction Rate</div>
+                <div className="text-2xl font-bold gradient-text">5+</div>
+                <div className="text-sm text-gray-300">Years Experience</div>
               </GlassCard>
             </div>
           </div>

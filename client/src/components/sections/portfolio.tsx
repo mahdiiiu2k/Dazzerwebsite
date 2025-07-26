@@ -3,22 +3,22 @@ import { GlassCard } from "@/components/ui/glass-card";
 
 const projects = [
   {
-    title: "Urban Café",
-    description: "Sleek, dark mode design with online menu and location info",
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-    tags: ["Menu Integration", "Location Map"]
+    title: "E-Commerce Dashboard",
+    description: "Modern analytics dashboard with real-time data visualization and user management",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
+    tags: ["React", "TypeScript", "Charts"]
   },
   {
-    title: "FadePro Barbers",
-    description: "Online booking system with service showcase and pricing",
-    image: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-    tags: ["Online Booking", "Service Pricing"]
+    title: "Mobile Banking App",
+    description: "Secure and intuitive mobile banking interface with dark mode support",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
+    tags: ["UI/UX", "Mobile Design", "Security"]
   },
   {
-    title: "Arizona Remodel",
-    description: "Quote form integration with services gallery and testimonials",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-    tags: ["Quote Forms", "Project Gallery"]
+    title: "Portfolio Website",
+    description: "Creative portfolio showcasing digital art and photography with smooth animations",
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
+    tags: ["Creative Design", "Animations", "Photography"]
   }
 ];
 
@@ -34,9 +34,9 @@ export default function Portfolio() {
     <section id="portfolio" className="py-20 px-6">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Work</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Featured Projects</h2>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            See how we've helped local businesses establish their online presence with beautiful, functional websites
+            A showcase of my recent work in web development, UI/UX design, and digital experiences
           </p>
         </div>
         
@@ -72,7 +72,7 @@ export default function Portfolio() {
             className="bg-gradient-to-r from-purple-500 to-purple-400 hover:from-purple-600 hover:to-purple-500 px-8 py-4 rounded-full text-white font-semibold text-lg hover:shadow-xl hover-glow transition-all transform hover:scale-105"
             size="lg"
           >
-            View All Our Work
+            Let's Work Together
           </Button>
         </div>
       </div>

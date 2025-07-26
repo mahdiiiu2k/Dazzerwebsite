@@ -1,19 +1,19 @@
 import { Facebook, Instagram, Mail } from "lucide-react";
 
 const services = [
-  "Website Design",
-  "24-Hour Delivery", 
-  "Mobile Optimization",
-  "SEO Setup",
-  "Referral Program"
+  "UI/UX Design",
+  "Frontend Development", 
+  "Web Applications",
+  "Mobile Design",
+  "Design Systems"
 ];
 
 const quickLinks = [
-  { title: "About Us", href: "#about" },
+  { title: "About", href: "#about" },
+  { title: "Skills", href: "#services" },
   { title: "Portfolio", href: "#portfolio" },
-  { title: "Referral Program", href: "#referral" },
   { title: "Contact", href: "#contact" },
-  { title: "Privacy Policy", href: "#" }
+  { title: "Resume", href: "#" }
 ];
 
 export default function Footer() {
@@ -34,7 +34,7 @@ export default function Footer() {
               <span className="text-3xl font-bold gradient-text">DS</span>
               <span className="text-lg font-medium text-white">DS Design</span>
             </div>
-            <p className="text-gray-200 mb-6">Building beautiful websites for small businesses in just 24 hours.</p>
+            <p className="text-gray-200 mb-6">Creating exceptional digital experiences through innovative design and development.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-2xl text-gray-300 hover:text-purple-400 transition-colors">
                 <Instagram className="w-6 h-6" />
@@ -48,9 +48,9 @@ export default function Footer() {
             </div>
           </div>
           
-          {/* Services */}
+          {/* Skills */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
+            <h4 className="text-white font-semibold mb-4">Skills</h4>
             <ul className="space-y-2 text-gray-300">
               {services.map((service, index) => (
                 <li key={index}>
