@@ -26,14 +26,16 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <div className="animate-float">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                <span className="text-white">My name is </span>
+                <span className="text-white">Hi, I'm </span>
                 <span className="gradient-text">Mahdi</span><br />
-                <span className="text-white">me and my team build full websites for businesses in less than </span>
-                <span className="gradient-text">24H</span>
+                <span className="text-white">We build </span>
+                <span className="gradient-text">professional websites</span>
+                <span className="text-white"> for your business in under </span>
+                <span className="gradient-text">24 hours</span>
               </h1>
             </div>
             <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-              We deliver fast, professional websites that help your business grow online. From design to deployment, we handle everything.
+              From concept to launch, our expert team delivers modern, mobile-friendly websites that drive results. Fast turnaround, premium quality, guaranteed satisfaction.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
