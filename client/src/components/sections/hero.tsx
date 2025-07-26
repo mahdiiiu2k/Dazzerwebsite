@@ -44,7 +44,7 @@ export default function Hero() {
               <div className="absolute -top-4 -right-4 w-8 h-8 border-2 border-yellow-600 rotate-45 opacity-60 group-hover:rotate-90 transition-transform duration-700"></div>
               <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-red-900 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-500"></div>
             </div>
-            <p className="text-gray-300 text-lg mt-4 font-medium">My name is Mahdi</p>
+            <p className="text-gray-300 text-lg mt-4 font-medium">My name is Mahdi, founder of DS Design</p>
           </div>
         </div>
       </div>
