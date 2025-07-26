@@ -29,7 +29,7 @@ export default function Hero() {
           </div>
 
           {/* Luxury Profile Picture */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex flex-col items-center lg:items-end">
             <div className="relative group">
               <div className="luxury-border glass-card rounded-3xl p-3 hover-glow transform hover:scale-105 transition-all duration-500">
                 <img 
@@ -44,6 +44,7 @@ export default function Hero() {
               <div className="absolute -top-4 -right-4 w-8 h-8 border-2 border-yellow-600 rotate-45 opacity-60 group-hover:rotate-90 transition-transform duration-700"></div>
               <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-red-900 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-500"></div>
             </div>
+            <p className="text-gray-300 text-lg mt-4 font-medium">My name is Mahdi</p>
           </div>
         </div>
       </div>
