@@ -23,15 +23,7 @@ export default function Hero() {
             <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
               We build beautiful, fast, and mobile-friendly websites for <span className="text-yellow-400">cafés, salons, renovation companies, and more</span> — all ready in just 24 hours.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-              <Button
-                onClick={() => scrollToSection('contact')}
-                className="crimson-gradient hover:scale-105 px-10 py-5 rounded-full text-white font-bold text-xl shadow-2xl crimson-glow transition-all duration-300 transform"
-                size="lg"
-              >
-                Get Started Today
-              </Button>
-            </div>
+
           </div>
 
           {/* Luxury Profile Picture */}
