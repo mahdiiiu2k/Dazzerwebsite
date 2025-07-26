@@ -1,70 +1,59 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-import { insertContactSchema } from "@shared/schema";
-import { Mail, Phone, MessageSquare, X } from "lucide-react";
-import { z } from "zod";
-
-const contactFormSchema = z.object({
-  name: z.string().min(2, "Name must contain at least 2 characters"),
-  phone: z.string().min(10, "Invalid phone number"),
-  email: z.string().email("Invalid email").optional().or(z.literal("")),
-  message: z.string().min(10, "Message must contain at least 10 characters")
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
+import { Mail, Phone, MessageSquare } from "lucide-react";
 
 export default function CTA() {
-  const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      phone: "",
-      email: "",
-      message: ""
-    }
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: ""
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      // Convert form data to match backend schema (remove phone field for now)
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.phone || !formData.message) {
+      alert("Please fill in all required fields");
+      return;
+    }
+
+    setIsLoading(true);
+    try {
       const backendData = {
-        name: data.name,
-        email: data.email || "",
-        message: `${data.message}\n\nPhone: ${data.phone}`
+        name: formData.name,
+        email: formData.email || "",
+        message: `${formData.message}\n\nPhone: ${formData.phone}`
       };
-      return await apiRequest('POST', '/api/contact', backendData);
-    },
-    onSuccess: () => {
-      setIsSubmitted(true);
-      form.reset();
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message! We'll contact you soon.",
-      });
-    },
-    onError: (error) => {
-      console.error('Contact form error:', error);
-      toast({
-        title: "Error",
-        description: "An error occurred. Please try again.",
-        variant: "destructive",
-      });
-    }
-  });
 
-  const onSubmit = (data: ContactFormData) => {
-    contactMutation.mutate(data);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(backendData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        alert("Error sending message. Please try again.");
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      alert("Error sending message. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -104,105 +93,79 @@ export default function CTA() {
                   <p className="text-gray-300">We'll get back to you within 24 hours!</p>
                 </div>
               ) : (
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-gray-300 font-medium mb-2">Full Name *</label>
+                      <input
+                        type="text"
                         name="name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-gray-300 font-medium">Full Name *</FormLabel>
-                            <FormControl>
-                              <Input
-                                {...field}
-                                placeholder="Your name..."
-                                className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors"
-                              />
-                            </FormControl>
-                            <FormMessage className="text-red-400" />
-                          </FormItem>
-                        )}
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Your name..."
+                        className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors rounded-md"
+                        required
                       />
-                      
-                      <FormField
-                        control={form.control}
+                    </div>
+                    
+                    <div>
+                      <label className="block text-gray-300 font-medium mb-2">Phone *</label>
+                      <input
+                        type="tel"
                         name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-gray-300 font-medium">Phone *</FormLabel>
-                            <FormControl>
-                              <Input
-                                {...field}
-                                type="tel"
-                                placeholder="+213 XXX XXX XXX"
-                                className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors"
-                              />
-                            </FormControl>
-                            <FormMessage className="text-red-400" />
-                          </FormItem>
-                        )}
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="+213 XXX XXX XXX"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors rounded-md"
+                        required
                       />
                     </div>
-                    
-                    <FormField
-                      control={form.control}
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-300 font-medium mb-2">Email</label>
+                    <input
+                      type="email"
                       name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-300 font-medium">Email</FormLabel>
-                          <FormControl>
-                            <Input
-                              {...field}
-                              type="email"
-                              placeholder="your.email@example.com"
-                              className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors"
-                            />
-                          </FormControl>
-                          <FormMessage className="text-red-400" />
-                        </FormItem>
-                      )}
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="your.email@example.com"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors rounded-md"
                     />
-                    
-                    <FormField
-                      control={form.control}
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-300 font-medium mb-2">Project Description *</label>
+                    <textarea
                       name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-300 font-medium">Project Description *</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              {...field}
-                              rows={4}
-                              placeholder="Type of business, features needed, budget range, timeline..."
-                              className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors resize-none"
-                            />
-                          </FormControl>
-                          <FormMessage className="text-red-400" />
-                        </FormItem>
-                      )}
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      rows={4}
+                      placeholder="Type of business, features needed, budget range, timeline..."
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors resize-none rounded-md"
+                      required
                     />
-                    
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button 
-                        type="submit" 
-                        disabled={contactMutation.isPending}
-                        className="flex-1 bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105"
-                      >
-                        <Mail className="mr-2 h-5 w-5" />
-                        {contactMutation.isPending ? 'Sending...' : 'Send Quote'}
-                      </Button>
-                      <Button 
-                        type="button"
-                        onClick={() => window.open('https://wa.me/213797496469', '_blank')}
-                        className="flex-1 bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105"
-                      >
-                        <Phone className="mr-2 h-5 w-5" />
-                        WhatsApp Us
-                      </Button>
-                    </div>
-                  </form>
-                </Form>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <button 
+                      type="submit" 
+                      disabled={isLoading}
+                      className="flex-1 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105 rounded-md flex items-center justify-center"
+                    >
+                      <Mail className="mr-2 h-5 w-5" />
+                      {isLoading ? 'Sending...' : 'Send Quote'}
+                    </button>
+                    <button 
+                      type="button"
+                      onClick={() => window.open('https://wa.me/213797496469', '_blank')}
+                      className="flex-1 bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105 rounded-md flex items-center justify-center"
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      WhatsApp Us
+                    </button>
+                  </div>
+                </form>
               )}
             </div>
             
