@@ -59,18 +59,7 @@ export default function Navigation() {
             >
               Portfolio
             </button>
-            <button 
-              onClick={() => scrollToSection('referral')}
-              className="text-white hover:text-accent-purple transition-colors"
-            >
-              Referral
-            </button>
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-purple-500 to-purple-400 hover:from-purple-600 hover:to-purple-500 px-6 py-2 rounded-full text-white font-medium hover:shadow-lg hover-glow transition-all"
-            >
-              Get Started
-            </Button>
+
           </div>
           
           {/* Mobile Menu Button */}
@@ -106,18 +95,7 @@ export default function Navigation() {
               >
                 Portfolio
               </button>
-              <button 
-                onClick={() => scrollToSection('referral')}
-                className="text-white hover:text-accent-purple transition-colors text-left"
-              >
-                Referral
-              </button>
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-purple-500 to-purple-400 hover:from-purple-600 hover:to-purple-500 px-6 py-2 rounded-full text-white font-medium hover:shadow-lg transition-all w-fit"
-              >
-                Get Started
-              </Button>
+
             </div>
           </div>
         )}

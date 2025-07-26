@@ -32,15 +32,7 @@ export default function Portfolio() {
           </div>
         </div>
         
-        <div className="text-center">
-          <Button
-            onClick={scrollToContact}
-            className="crimson-gradient hover:scale-105 px-12 py-6 rounded-full text-white font-bold text-2xl shadow-2xl crimson-glow transition-all duration-300 transform"
-            size="lg"
-          >
-            Start Your Project Today
-          </Button>
-        </div>
+
       </div>
     </section>
   );
