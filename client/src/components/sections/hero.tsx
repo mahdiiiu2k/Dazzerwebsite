@@ -25,19 +25,11 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <Button
-                onClick={() => scrollToSection('portfolio')}
+                onClick={() => scrollToSection('contact')}
                 className="crimson-gradient hover:scale-105 px-10 py-5 rounded-full text-white font-bold text-xl shadow-2xl crimson-glow transition-all duration-300 transform"
                 size="lg"
               >
-                View Our Work
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => scrollToSection('referral')}
-                className="glass-morphism px-10 py-5 rounded-full text-white font-bold text-xl hover:shadow-xl hover-glow transition-all duration-300 transform hover:scale-105 border-2"
-                size="lg"
-              >
-                Refer & Earn 40%
+                Get Started Today
               </Button>
             </div>
           </div>
