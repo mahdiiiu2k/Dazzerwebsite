@@ -67,7 +67,7 @@ export default function About() {
             ].map((service, index) => (
               <div key={index} className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
                 <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-yellow-500 text-lg font-bold">{service.icon}</span>
+                  <span className="text-yellow-400 text-lg font-bold drop-shadow-lg">{service.icon}</span>
                 </div>
                 <div className="text-lg text-white font-medium group-hover:text-yellow-400 transition-colors duration-300">
                   {service.name}
