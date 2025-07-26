@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern luxury business website for DS Design, a web design agency led by Mahdi that delivers complete websites for businesses in under 24 hours. The application is built as a full-stack web application with a React frontend and Express backend, featuring glassmorphism design elements and a dark purple theme.
+This is a modern luxury business website for DS Design, a web design agency specializing in building beautiful, fast, and mobile-friendly websites for small local businesses (cafés, salons, renovation companies, etc.) with guaranteed 24-hour delivery. The application features glassmorphism design elements, dark purple gradients, and comprehensive business sections including a referral program with 40% commission structure.
 
 ## User Preferences
 
@@ -92,3 +92,24 @@ The application is configured for deployment with the following structure:
 - **SEO ready**: Semantic HTML structure and meta tag support
 
 The application is designed to be easily deployable on platforms like Replit, with all necessary configuration files present for immediate deployment.
+
+## Recent Changes
+
+**Date**: January 26, 2025
+**Major Redesign**: Comprehensive restructuring to focus on small business website services with 24-hour delivery promise.
+
+### Content Updates:
+- **Hero Section**: Updated headline to "Websites for Small Businesses – Delivered in 24 Hours 🚀" with new subtext focusing on cafés, salons, renovation companies
+- **About Section**: Changed from "About Us" to "Who We Are" with emphasis on small, creative team building for local businesses  
+- **Features Section**: Transformed from "Our Expertise" to "Why Choose DS Design?" highlighting 24-hour delivery, mobile responsiveness, contact forms, social integration, SEO optimization, and affordable pricing
+- **Target Audience**: Updated "Who We Build For" to "Who We Work With" featuring 5 business types: Cafés & Restaurants, Barbershops & Salons, Renovation & Handyman, Landscaping & Gardening, Small Local Stores
+- **Portfolio Section**: Replaced technical projects with small business examples: Urban Café, FadePro Barbershop, KitchenPro Remodel, Arizona Landscaping
+- **Referral Program**: Updated messaging to match new guidelines - "no selling, just an introduction" with 40% commission structure
+- **Contact Section**: Changed title to "Let's Build Something Awesome" with updated contact methods (WhatsApp, Instagram, Email)
+- **Footer**: Updated services list and copyright to "Built with ❤️ for small businesses"
+
+### Technical Changes:
+- Added TargetAudience and Referral sections to home page structure
+- Updated all section navigation and references
+- Maintained existing form functionality and styling while updating content
+- Preserved glassmorphism design and luxury aesthetic while adapting messaging for small business focus

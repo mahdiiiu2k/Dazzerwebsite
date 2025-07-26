@@ -1,19 +1,19 @@
 import { Facebook, Instagram, Mail } from "lucide-react";
 
 const services = [
-  "UI/UX Design",
-  "Frontend Development", 
-  "Web Applications",
-  "Mobile Design",
-  "Design Systems"
+  "24-hour delivery",
+  "Mobile-responsive design",
+  "Contact forms included",
+  "SEO optimized",
+  "Social media integration"
 ];
 
 const quickLinks = [
-  { title: "About", href: "#about" },
-  { title: "Skills", href: "#services" },
-  { title: "Portfolio", href: "#portfolio" },
-  { title: "Contact", href: "#contact" },
-  { title: "Resume", href: "#" }
+  { title: "Who We Are", href: "#about" },
+  { title: "Why Choose Us", href: "#services" },
+  { title: "Our Work", href: "#portfolio" },
+  { title: "Referral Program", href: "#referral" },
+  { title: "Contact", href: "#contact" }
 ];
 
 export default function Footer() {
@@ -34,7 +34,7 @@ export default function Footer() {
               <span className="text-3xl font-bold gradient-text">DS</span>
               <span className="text-lg font-medium text-white">DS Design</span>
             </div>
-            <p className="text-gray-200 mb-6">Creating exceptional digital experiences through innovative design and development.</p>
+            <p className="text-gray-200 mb-6">Building powerful websites for local businesses in record time — fast, affordable, and ready to use within 24 hours.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-2xl text-gray-300 hover:text-purple-400 transition-colors">
                 <Instagram className="w-6 h-6" />
@@ -50,7 +50,7 @@ export default function Footer() {
           
           {/* Skills */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Skills</h4>
+            <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-300">
               {services.map((service, index) => (
                 <li key={index}>
@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-white border-opacity-10 pt-8 text-center">
-          <p className="text-gray-300">© 2025 DS Design. All rights reserved.</p>
+          <p className="text-gray-300">© 2025 DS Design. Built with ❤️ for small businesses.</p>
         </div>
       </div>
     </footer>

@@ -13,19 +13,22 @@ import { insertContactSchema } from "@shared/schema";
 
 const contactMethods = [
   {
-    icon: "📧",
+    icon: "📩",
+    title: "WhatsApp",
+    description: "Quick chat about your project (Fastest response)",
+    link: "https://wa.me/1234567890"
+  },
+  {
+    icon: "📷",
+    title: "Instagram",
+    description: "See our latest work and behind-the-scenes",
+    link: "https://instagram.com/dsdesign"
+  },
+  {
+    icon: "✉️",
     title: "Email",
-    description: "Best for detailed project discussions (hello@dsdesign.com)"
-  },
-  {
-    icon: "💼",
-    title: "LinkedIn",
-    description: "Connect with me professionally (@dsdesign)"
-  },
-  {
-    icon: "🐙",
-    title: "GitHub",
-    description: "Check out my code and open source projects"
+    description: "Detailed project discussions (hello@dsdesign.com)",
+    link: "mailto:hello@dsdesign.com"
   }
 ];
 
@@ -71,7 +74,7 @@ export default function Contact() {
     <section id="contact" className="py-20 px-6">
       <div className="container mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">Let's Create Excellence</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">Let's Build Something Awesome</h2>
           <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
             Ready to elevate your digital presence? Let's discuss your vision and <span className="text-yellow-400 font-medium">craft something extraordinary</span> together in <span className="gradient-text">under 24 hours</span>.
           </p>

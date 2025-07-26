@@ -16,12 +16,12 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl w-full">
           {/* Text Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
-              <span className="text-white text-4xl md:text-6xl block">Take Your Digital Apparence To </span>
-              <span className="gradient-text text-4xl md:text-6xl block">Another Level</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+              <span className="text-white block">Websites for Small Businesses – </span>
+              <span className="gradient-text block">Delivered in 24 Hours 🚀</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
-              From concept to launch, our expert team delivers <span className="text-yellow-400">modern, mobile-friendly websites</span> that drive results. Fast turnaround, premium quality, guaranteed satisfaction.
+              We build beautiful, fast, and mobile-friendly websites for <span className="text-yellow-400">cafés, salons, renovation companies, and more</span> — all ready in just 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <Button
@@ -33,11 +33,11 @@ export default function Hero() {
               </Button>
               <Button
                 variant="outline"
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection('referral')}
                 className="glass-morphism px-10 py-5 rounded-full text-white font-bold text-xl hover:shadow-xl hover-glow transition-all duration-300 transform hover:scale-105 border-2"
                 size="lg"
               >
-                Get Started
+                Refer & Earn 40%
               </Button>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function Hero() {
               <div className="luxury-border glass-card rounded-3xl p-3 hover-glow transform hover:scale-105 transition-all duration-500">
                 <img 
                   src={mahdiPhoto}
-                  alt="Mahdi - Founder of DSDS Design"
+                  alt="Mahdi - Founder of DS Design"
                   className="rounded-2xl w-80 h-80 object-cover filter brightness-110 contrast-110"
                 />
               </div>

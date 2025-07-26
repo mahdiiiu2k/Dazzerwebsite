@@ -4,22 +4,27 @@ const businessTypes = [
   {
     emoji: "🥐",
     title: "Cafés & Restaurants",
-    description: "Menus, locations, online ordering"
+    description: "Menu displays, location info, online ordering systems"
   },
   {
     emoji: "✂️",
-    title: "Salons & Barbershops",
-    description: "Services, booking, portfolios"
+    title: "Barbershops & Salons",
+    description: "Service listings, booking forms, portfolio galleries"
   },
   {
-    emoji: "🛠️",
-    title: "Contractors & Renovation",
-    description: "Services, quotes, project galleries"
+    emoji: "🛠",
+    title: "Renovation & Handyman",
+    description: "Service descriptions, quote forms, project showcases"
   },
   {
     emoji: "🌿",
-    title: "Landscaping",
-    description: "Services, before/after, estimates"
+    title: "Landscaping & Gardening",
+    description: "Service packages, before/after galleries, estimates"
+  },
+  {
+    emoji: "🏬",
+    title: "Small Local Stores", 
+    description: "Product catalogs, store info, contact details"
   }
 ];
 
@@ -36,13 +41,13 @@ export default function TargetAudience() {
     <section className="py-20 px-6">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Who We Build For</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">Who We Work With</h2>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             We specialize in creating websites for local businesses that need to establish their online presence quickly
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {businessTypes.map((business, index) => (
             <GlassCard key={index} className="text-center" hover>
               <div className="text-5xl mb-4">{business.emoji}</div>

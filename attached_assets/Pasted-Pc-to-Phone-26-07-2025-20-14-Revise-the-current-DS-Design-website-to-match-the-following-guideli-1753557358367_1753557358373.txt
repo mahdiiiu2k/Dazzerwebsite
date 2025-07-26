@@ -1,0 +1,150 @@
+Pc to Phone, [26/07/2025 20:14]
+Revise the current DS Design website to match the following guidelines:
+
+Pc to Phone, [26/07/2025 20:15]
+🧱 Structure & Content Fixes
+
+1. Hero Section (Top of Page)
+
+Headline: “Websites for Small Businesses – Delivered in 24 Hours 🚀”
+
+Subheadline: “We build beautiful, fast, and mobile-friendly websites for cafés, salons, renovation companies, and more — all ready in just 24 hours.”
+
+Two CTA buttons:
+
+“View Our Work”
+
+“Refer & Earn 40%”
+
+
+
+
+---
+
+2. About Us
+
+Title: “Who We Are”
+
+Text:
+
+> “We’re a small, creative team building powerful websites for local businesses in record time. Using modern tools and design, we deliver high-quality websites — fast, affordable, and ready to use within 24 hours.”
+
+
+
+
+
+---
+
+3. What We Offer
+
+Title: “Why Choose DS Design?”
+
+Bullets:
+
+Delivered in 24 hours
+
+Works on all devices
+
+Booking/contact forms included
+
+Instagram & social integration
+
+SEO & speed optimized
+
+Affordable pricing
+
+
+
+
+---
+
+4. Target Niches
+
+Title: “Who We Work With”
+
+Add icons or visuals with:
+
+🥐 Cafés & Restaurants
+
+✂️ Barbershops & Salons
+
+🛠 Renovation & Handyman
+
+🌿 Landscaping & Gardening
+
+🏬 Small Local Stores
+
+
+
+
+---
+
+5. Portfolio
+
+Title: “Our Work”
+
+Replace current projects with mock examples (can be placeholder designs):
+
+Urban Café – Clean, mobile-ready site with menu
+
+FadePro Barbershop – Booking form + gallery
+
+KitchenPro Remodel – Modern layout with quote form
+
+Arizona Landscaping – Scrollable services and Instagram feed
+
+
+
+Each should include a screenshot and 1-line description.
+
+
+---
+
+6. Referral Program
+
+Title: “💸 Refer & Earn 40%”
+
+Text:
+
+> Know someone who needs a website? Refer them to us. If we build their site, you’ll earn 40% of what they pay — no selling, just an introduction!
+
+
+
+CTA: “Refer Someone Now” → Link to WhatsApp, Email, or simple form
+
+
+
+---
+
+7. Contact Section
+
+Title: “Let’s Build Something Awesome”
+
+Simple contact form (Name, Email, Message)
+
+Add:
+
+📩 WhatsApp button
+
+📷 Instagram button
+
+✉️ Email
+
+
+
+
+---
+
+8. Remove or Replace These Sections
+
+❌ Remove GitHub, LinkedIn, Resume, TypeScript, React, Mobile Banking App, Dashboards
+
+✅ Replace with relatable services and client benefits for small/local businesses
+
+
+
+---
+
+Footer:
+
+“© 2025 DS Design. Built with ❤️ for small businesses.”

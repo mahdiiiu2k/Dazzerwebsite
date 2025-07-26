@@ -44,9 +44,9 @@ export default function About() {
     <section id="about" ref={sectionRef} className="py-20 px-6">
       <div className="container mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">About Us</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">Who We Are</h2>
           <p className="text-2xl md:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-light">
-            We're an <span className="text-yellow-400 font-medium">elite team</span> of web designers and developers who specialize in delivering <span className="gradient-text">complete websites</span> for businesses in under 24 hours. Using cutting-edge tools and streamlined processes, we help businesses establish their <span className="text-yellow-400 font-medium">premium online presence</span> with unmatched speed and sophistication.
+            We're a <span className="text-yellow-400 font-medium">small, creative team</span> building powerful websites for <span className="gradient-text">local businesses in record time</span>. Using modern tools and design, we deliver high-quality websites — <span className="text-yellow-400 font-medium">fast, affordable, and ready to use within 24 hours</span>.
           </p>
         </div>
         

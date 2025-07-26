@@ -75,7 +75,7 @@ export default function Referral() {
             💸 <span className="gradient-text">Refer & Earn 40%</span>
           </h2>
           <p className="text-xl text-gray-200 max-w-4xl mx-auto">
-            Know someone who needs a website? If you refer them to us and we close the deal, you earn 40% of the price. No effort, just a referral!
+            Know someone who needs a website? Refer them to us. If we build their site, you'll earn 40% of what they pay — no selling, just an introduction!
           </p>
         </div>
         
