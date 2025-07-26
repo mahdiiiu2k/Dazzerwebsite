@@ -47,25 +47,42 @@ export default function About() {
           <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">We build websites for:</h2>
         </div>
         
-        {/* Services List */}
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-4 mb-8">
+        {/* Enhanced Services Section */}
+        <div className="luxury-border glass-card p-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
-              "Roofing Contractors", "Landscaping Services", "Plumbing Companies", "Exterior Cleaning Services", 
-              "Kitchen Remodeling", "Bathroom Renovation", "Snow Removal Services", 
-              "Window Cleaning Companies", "Gutter Cleaning & Repair", "Pressure Washing Services", 
-              "Roof Repair & Renovation", "Local Retail Shops", "E-commerce Stores"
+              { name: "Roofing Contractors", icon: "🏠" },
+              { name: "Landscaping Services", icon: "🌳" },
+              { name: "Plumbing Companies", icon: "🔧" },
+              { name: "Exterior Cleaning Services", icon: "✨" },
+              { name: "Kitchen Remodeling", icon: "🍳" },
+              { name: "Bathroom Renovation", icon: "🚿" },
+              { name: "Snow Removal Services", icon: "❄️" },
+              { name: "Window Cleaning Companies", icon: "🪟" },
+              { name: "Gutter Cleaning & Repair", icon: "🏘️" },
+              { name: "Pressure Washing Services", icon: "💧" },
+              { name: "Roof Repair & Renovation", icon: "🔨" },
+              { name: "Local Retail Shops", icon: "🏪" },
+              { name: "E-commerce Stores", icon: "🛒" }
             ].map((service, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex-shrink-0"></div>
-                <div className="text-xl text-white font-medium">{service}</div>
+              <div key={index} className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
+                <div className="text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
+                </div>
+                <div className="text-lg text-white font-medium group-hover:text-yellow-400 transition-colors duration-300">
+                  {service.name}
+                </div>
               </div>
             ))}
           </div>
           
-          <div className="mt-12 mb-16">
-            <p className="text-2xl text-white font-light">
-              ...or any type of business that you have
+          {/* Call to Action */}
+          <div className="text-center border-t border-white/10 pt-8">
+            <p className="text-2xl text-yellow-400 font-medium mb-2">
+              Don't see your business type?
+            </p>
+            <p className="text-xl text-gray-300">
+              We work with any type of business that needs a professional website
             </p>
           </div>
         </div>
