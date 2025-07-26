@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, MessageSquare } from "lucide-react";
+import SimpleForm from "./simple-form";
 
 export default function CTA() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -58,7 +59,8 @@ export default function CTA() {
   };
 
   return (
-    <section id="contact" className="py-20 px-6">
+    <section id="contact" className="py-20 px-6" style={{ position: 'relative', zIndex: 10000 }}>
+      <SimpleForm />
       <div className="container mx-auto relative">
         <div className="text-center mb-12 sm:mb-16 px-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 gradient-text">
