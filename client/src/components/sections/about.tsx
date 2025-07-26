@@ -51,10 +51,10 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4 mb-16">
             {[
-              "Roofing", "Landscaping", "Plumbing", "Exterior cleaning services", 
-              "Kitchen remodeling", "Bathroom remodeling", "Snow removal", 
-              "Window cleaning", "Gutter cleaning", "Pressure washing", 
-              "Roof renovation", "Shop", "Ecommerce"
+              "Roofing Contractors", "Landscaping Services", "Plumbing Companies", "Exterior Cleaning Services", 
+              "Kitchen Remodeling", "Bathroom Renovation", "Snow Removal Services", 
+              "Window Cleaning Companies", "Gutter Cleaning & Repair", "Pressure Washing Services", 
+              "Roof Repair & Renovation", "Local Retail Shops", "E-commerce Stores"
             ].map((service, index) => (
               <div key={index} className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex-shrink-0"></div>
