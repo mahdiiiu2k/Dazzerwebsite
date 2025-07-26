@@ -45,9 +45,6 @@ export default function Portfolio() {
       <div className="container mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">Our Work</h2>
-          <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
-            Just a few websites we've delivered for <span className="text-yellow-400 font-medium">small businesses</span> — <span className="gradient-text">fast, clean, and mobile-ready</span>
-          </p>
         </div>
         
         <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-10 mb-16">
