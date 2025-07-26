@@ -65,39 +65,69 @@ export default function CTA() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Contact Form */}
-          <div className="luxury-border glass-card p-8">
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-red-600/20 rounded-full flex items-center justify-center mr-4">
-                <MessageSquare className="text-red-600 text-xl" />
+        <div className="luxury-border glass-card p-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Contact Form */}
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-red-600/20 rounded-full flex items-center justify-center mr-4">
+                  <MessageSquare className="text-red-600 text-xl" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-serif font-semibold text-white">Quote Request</h3>
+                  <p className="text-gray-300 text-sm">Free and no commitment</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-serif font-semibold text-white">Quote Request</h3>
-                <p className="text-gray-300 text-sm">Free and no commitment</p>
-              </div>
-            </div>
-            
-            {isSubmitted ? (
-              <div className="text-center py-8">
-                <div className="text-6xl mb-4">✅</div>
-                <h4 className="text-2xl font-bold text-white mb-2">Message Sent!</h4>
-                <p className="text-gray-300">We'll get back to you within 24 hours!</p>
-              </div>
-            ) : (
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <div className="text-6xl mb-4">✅</div>
+                  <h4 className="text-2xl font-bold text-white mb-2">Message Sent!</h4>
+                  <p className="text-gray-300">We'll get back to you within 24 hours!</p>
+                </div>
+              ) : (
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-gray-300 font-medium">Full Name *</FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                placeholder="Your name..."
+                                className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors"
+                              />
+                            </FormControl>
+                            <FormMessage className="text-red-400" />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <div>
+                        <label className="block text-gray-300 mb-2 font-medium">Phone *</label>
+                        <input
+                          type="tel"
+                          placeholder="+213 XXX XXX XXX"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white focus:border-yellow-500 focus:outline-none transition-colors placeholder-gray-400 rounded-md"
+                        />
+                      </div>
+                    </div>
+                    
                     <FormField
                       control={form.control}
-                      name="name"
+                      name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-gray-300 font-medium">Full Name *</FormLabel>
+                          <FormLabel className="text-gray-300 font-medium">Email</FormLabel>
                           <FormControl>
                             <Input
                               {...field}
-                              placeholder="Your name..."
+                              type="email"
+                              placeholder="your.email@example.com"
                               className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors"
                             />
                           </FormControl>
@@ -106,154 +136,126 @@ export default function CTA() {
                       )}
                     />
                     
-                    <div>
-                      <label className="block text-gray-300 mb-2 font-medium">Phone *</label>
-                      <input
-                        type="tel"
-                        placeholder="+213 XXX XXX XXX"
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white focus:border-yellow-500 focus:outline-none transition-colors placeholder-gray-400 rounded-md"
-                      />
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-gray-300 font-medium">Project Description *</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              {...field}
+                              rows={4}
+                              placeholder="Type of business, features needed, budget range, timeline..."
+                              className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors resize-none"
+                            />
+                          </FormControl>
+                          <FormMessage className="text-red-400" />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Button 
+                        type="submit" 
+                        disabled={contactMutation.isPending}
+                        className="flex-1 bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105"
+                      >
+                        <Mail className="mr-2 h-5 w-5" />
+                        {contactMutation.isPending ? 'Sending...' : 'Send Quote'}
+                      </Button>
+                      <Button 
+                        type="button"
+                        onClick={() => window.open('https://wa.me/213797496469', '_blank')}
+                        className="flex-1 bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105"
+                      >
+                        <Phone className="mr-2 h-5 w-5" />
+                        WhatsApp Us
+                      </Button>
                     </div>
-                  </div>
-                  
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-gray-300 font-medium">Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            {...field}
-                            type="email"
-                            placeholder="your.email@example.com"
-                            className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors"
-                          />
-                        </FormControl>
-                        <FormMessage className="text-red-400" />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-gray-300 font-medium">Project Description *</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            {...field}
-                            rows={4}
-                            placeholder="Type of business, features needed, budget range, timeline..."
-                            className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors resize-none"
-                          />
-                        </FormControl>
-                        <FormMessage className="text-red-400" />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button 
-                      type="submit" 
-                      disabled={contactMutation.isPending}
-                      className="flex-1 bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105"
-                    >
-                      <Mail className="mr-2 h-5 w-5" />
-                      {contactMutation.isPending ? 'Sending...' : 'Send Quote'}
-                    </Button>
-                    <Button 
-                      type="button"
-                      onClick={() => window.open('https://wa.me/213797496469', '_blank')}
-                      className="flex-1 bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105"
-                    >
-                      <Phone className="mr-2 h-5 w-5" />
-                      WhatsApp Us
-                    </Button>
-                  </div>
-                </form>
-              </Form>
-            )}
-          </div>
-          
-          {/* Contact Info */}
-          <div className="space-y-6">
-            {/* Direct Contact */}
-            <div className="luxury-border glass-card p-6">
-              <h4 className="text-xl font-serif font-semibold text-white mb-6 flex items-center">
-                <Phone className="text-yellow-500 mr-3" />
-                Direct Contact
-              </h4>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mr-4">
-                    <Phone className="text-yellow-500 text-sm" />
-                  </div>
-                  <div>
-                    <a href="tel:+213797496469" className="text-white font-medium hover:text-yellow-500 transition-colors cursor-pointer">
-                      +213 797 496 469
-                    </a>
-                    <p className="text-gray-300 text-sm">Call / WhatsApp</p>
+                  </form>
+                </Form>
+              )}
+            </div>
+            
+            {/* Contact Info */}
+            <div className="space-y-6">
+              {/* Direct Contact */}
+              <div className="border-l-4 border-yellow-500 pl-6">
+                <h4 className="text-xl font-serif font-semibold text-white mb-4 flex items-center">
+                  <Phone className="text-yellow-500 mr-3" />
+                  Direct Contact
+                </h4>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mr-4">
+                      <Phone className="text-yellow-500 text-sm" />
+                    </div>
+                    <div>
+                      <a href="tel:+213797496469" className="text-white font-medium hover:text-yellow-500 transition-colors cursor-pointer">
+                        +213 797 496 469
+                      </a>
+                      <p className="text-gray-300 text-sm">Call / WhatsApp</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Our Channels */}
-            <div className="luxury-border glass-card p-6">
-              <h4 className="text-xl font-serif font-semibold text-white mb-6">
-                Our Channels
-              </h4>
-              <div className="space-y-4">
-                {/* DS Design */}
-                <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-600 to-red-900 rounded-xl flex items-center justify-center mr-4">
-                      <span className="text-white font-bold text-sm">DS</span>
-                    </div>
-                    <div>
-                      <h5 className="text-white font-semibold">DS DESIGN</h5>
-                      <p className="text-gray-300 text-sm">Professional web design services</p>
+              {/* Our Channels */}
+              <div className="border-l-4 border-purple-500 pl-6">
+                <h4 className="text-xl font-serif font-semibold text-white mb-4">
+                  Our Channels
+                </h4>
+                <div className="space-y-4">
+                  {/* DS Design */}
+                  <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-yellow-600 to-red-900 rounded-xl flex items-center justify-center mr-4">
+                        <span className="text-white font-bold text-sm">DS</span>
+                      </div>
+                      <div>
+                        <h5 className="text-white font-semibold">DS DESIGN</h5>
+                        <p className="text-gray-300 text-sm">Professional web design services</p>
+                      </div>
                     </div>
                   </div>
+                  
+                  {/* Instagram */}
+                  <a 
+                    href="https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-colors"
+                  >
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                        <span className="text-white text-sm">📷</span>
+                      </div>
+                      <div>
+                        <h5 className="text-white font-semibold">ds.desiiiign</h5>
+                        <p className="text-gray-300 text-sm">Photos and stories from our projects</p>
+                      </div>
+                    </div>
+                  </a>
+                  
+                  {/* WhatsApp */}
+                  <a 
+                    href="https://wa.me/213797496469"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-colors"
+                  >
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mr-4">
+                        <span className="text-white text-sm">💬</span>
+                      </div>
+                      <div>
+                        <h5 className="text-white font-semibold">@dsdesign</h5>
+                        <p className="text-gray-300 text-sm">Quick responses and project updates</p>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-                
-                {/* Instagram */}
-                <a 
-                  href="https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA=="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-colors"
-                >
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
-                      <span className="text-white text-sm">📷</span>
-                    </div>
-                    <div>
-                      <h5 className="text-white font-semibold">ds.desiiiign</h5>
-                      <p className="text-gray-300 text-sm">Photos and stories from our projects</p>
-                    </div>
-                  </div>
-                </a>
-                
-                {/* WhatsApp */}
-                <a 
-                  href="https://wa.me/213797496469"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-colors"
-                >
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mr-4">
-                      <span className="text-white text-sm">💬</span>
-                    </div>
-                    <div>
-                      <h5 className="text-white font-semibold">@dsdesign</h5>
-                      <p className="text-gray-300 text-sm">Quick responses and project updates</p>
-                    </div>
-                  </div>
-                </a>
               </div>
             </div>
           </div>
