@@ -49,7 +49,7 @@ export default function About() {
         
         {/* Services List */}
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-4 mb-16">
+          <div className="grid md:grid-cols-2 gap-4 mb-8">
             {[
               "Roofing Contractors", "Landscaping Services", "Plumbing Companies", "Exterior Cleaning Services", 
               "Kitchen Remodeling", "Bathroom Renovation", "Snow Removal Services", 
@@ -61,6 +61,12 @@ export default function About() {
                 <div className="text-xl text-white font-medium">{service}</div>
               </div>
             ))}
+          </div>
+          
+          <div className="text-center mt-12 mb-16">
+            <p className="text-2xl text-gray-300 font-light">
+              ...or any type of business that you have
+            </p>
           </div>
         </div>
       </div>
