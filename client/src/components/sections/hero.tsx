@@ -18,7 +18,10 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
               <span className="text-white block">Take Your Business Online – </span>
-              <span className="gradient-text block">In Just 24 Hours</span>
+              <span className="gradient-text block relative">
+                <span className="absolute inset-0 gradient-text blur-lg opacity-50 scale-110">In Just 24 Hours</span>
+                <span className="relative z-10">In Just 24 Hours</span>
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
               We build beautiful, fast, and mobile-friendly websites for <span className="text-yellow-400">cafés, salons, renovation companies, and more</span> — all ready in just 24 hours.
