@@ -63,7 +63,7 @@ export default function About() {
             ))}
           </div>
           
-          <div className="text-center mt-12 mb-16">
+          <div className="mt-12 mb-16">
             <p className="text-2xl text-gray-300 font-light">
               ...or any type of business that you have
             </p>
