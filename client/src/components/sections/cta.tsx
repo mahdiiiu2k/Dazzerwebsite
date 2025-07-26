@@ -10,23 +10,40 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { insertContactSchema } from "@shared/schema";
 import { Mail, Phone, MessageSquare, X } from "lucide-react";
+import { z } from "zod";
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, "Name must contain at least 2 characters"),
+  phone: z.string().min(10, "Invalid phone number"),
+  email: z.string().email("Invalid email").optional().or(z.literal("")),
+  message: z.string().min(10, "Message must contain at least 10 characters")
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function CTA() {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const form = useForm({
-    resolver: zodResolver(insertContactSchema),
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
+      phone: "",
       email: "",
       message: ""
     }
   });
 
   const contactMutation = useMutation({
-    mutationFn: async (data: any) => {
-      return await apiRequest('POST', '/api/contact', data);
+    mutationFn: async (data: ContactFormData) => {
+      // Convert form data to match backend schema (remove phone field for now)
+      const backendData = {
+        name: data.name,
+        email: data.email || "",
+        message: `${data.message}\n\nPhone: ${data.phone}`
+      };
+      return await apiRequest('POST', '/api/contact', backendData);
     },
     onSuccess: () => {
       setIsSubmitted(true);
@@ -36,7 +53,8 @@ export default function CTA() {
         description: "Thank you for your message! We'll contact you soon.",
       });
     },
-    onError: () => {
+    onError: (error) => {
+      console.error('Contact form error:', error);
       toast({
         title: "Error",
         description: "An error occurred. Please try again.",
@@ -45,7 +63,7 @@ export default function CTA() {
     }
   });
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: ContactFormData) => {
     contactMutation.mutate(data);
   };
 
@@ -107,14 +125,24 @@ export default function CTA() {
                         )}
                       />
                       
-                      <div>
-                        <label className="block text-gray-300 mb-2 font-medium">Phone *</label>
-                        <input
-                          type="tel"
-                          placeholder="+213 XXX XXX XXX"
-                          className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white focus:border-yellow-500 focus:outline-none transition-colors placeholder-gray-400 rounded-md"
-                        />
-                      </div>
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-gray-300 font-medium">Phone *</FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                type="tel"
+                                placeholder="+213 XXX XXX XXX"
+                                className="bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors"
+                              />
+                            </FormControl>
+                            <FormMessage className="text-red-400" />
+                          </FormItem>
+                        )}
+                      />
                     </div>
                     
                     <FormField
