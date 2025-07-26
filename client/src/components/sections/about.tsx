@@ -57,7 +57,9 @@ export default function About() {
               "Roof Repair & Renovation", "Local Retail Shops", "E-commerce Stores"
             ].map((service, index) => (
               <div key={index} className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
-                <div className="w-3 h-3 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex-shrink-0 group-hover:scale-110 transition-transform duration-300"></div>
+                <div className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-full h-full border-2 border-yellow-500 rounded-sm rotate-45 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20"></div>
+                </div>
                 <div className="text-lg text-white font-medium group-hover:text-yellow-400 transition-colors duration-300">
                   {service}
                 </div>
