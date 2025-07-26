@@ -47,18 +47,21 @@ export default function About() {
           <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">We build websites for:</h2>
         </div>
         
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {[
-            "Roofing", "Landscaping", "Plumbing", "Exterior cleaning services", 
-            "Kitchen remodeling", "Bathroom remodeling", "Snow removal", 
-            "Window cleaning", "Gutter cleaning", "Pressure washing", 
-            "Roof renovation", "Shop", "Ecommerce"
-          ].map((service, index) => (
-            <div key={index} className="luxury-border glass-card p-6 text-center group hover:scale-105 transition-all duration-500">
-              <div className="text-lg text-white font-medium">{service}</div>
-            </div>
-          ))}
+        {/* Services List */}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 mb-16">
+            {[
+              "Roofing", "Landscaping", "Plumbing", "Exterior cleaning services", 
+              "Kitchen remodeling", "Bathroom remodeling", "Snow removal", 
+              "Window cleaning", "Gutter cleaning", "Pressure washing", 
+              "Roof renovation", "Shop", "Ecommerce"
+            ].map((service, index) => (
+              <div key={index} className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"></div>
+                <div className="text-xl text-white font-medium">{service}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
