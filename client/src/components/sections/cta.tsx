@@ -45,6 +45,7 @@ export default function CTA() {
       if (response.ok) {
         setIsSubmitted(true);
         setFormData({ name: "", phone: "", email: "", message: "" });
+        alert("Message sent successfully! We'll contact you soon.");
       } else {
         alert("Error sending message. Please try again.");
       }
@@ -93,76 +94,128 @@ export default function CTA() {
                   <p className="text-gray-300">We'll get back to you within 24 hours!</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} style={{ padding: '20px 0' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                     <div>
-                      <label className="block text-gray-300 font-medium mb-2">Full Name *</label>
+                      <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px' }}>Full Name *</label>
                       <input
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Your name..."
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors rounded-md"
+                        style={{
+                          width: '100%',
+                          padding: '12px',
+                          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                          border: '1px solid rgba(255, 255, 255, 0.3)',
+                          borderRadius: '6px',
+                          color: 'white',
+                          fontSize: '16px'
+                        }}
                         required
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-gray-300 font-medium mb-2">Phone *</label>
+                      <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px' }}>Phone *</label>
                       <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="+213 XXX XXX XXX"
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors rounded-md"
+                        style={{
+                          width: '100%',
+                          padding: '12px',
+                          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                          border: '1px solid rgba(255, 255, 255, 0.3)',
+                          borderRadius: '6px',
+                          color: 'white',
+                          fontSize: '16px'
+                        }}
                         required
                       />
                     </div>
                   </div>
                   
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2">Email</label>
+                  <div style={{ marginBottom: '15px' }}>
+                    <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px' }}>Email</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="your.email@example.com"
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors rounded-md"
+                      style={{
+                        width: '100%',
+                        padding: '12px',
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        borderRadius: '6px',
+                        color: 'white',
+                        fontSize: '16px'
+                      }}
                     />
                   </div>
                   
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2">Project Description *</label>
+                  <div style={{ marginBottom: '20px' }}>
+                    <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px' }}>Project Description *</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
                       placeholder="Type of business, features needed, budget range, timeline..."
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors resize-none rounded-md"
+                      style={{
+                        width: '100%',
+                        padding: '12px',
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        borderRadius: '6px',
+                        color: 'white',
+                        fontSize: '16px',
+                        resize: 'none'
+                      }}
                       required
                     />
                   </div>
                   
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div style={{ display: 'flex', gap: '15px' }}>
                     <button 
                       type="submit" 
                       disabled={isLoading}
-                      className="flex-1 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105 rounded-md flex items-center justify-center"
+                      style={{
+                        flex: 1,
+                        padding: '15px 30px',
+                        backgroundColor: '#dc2626',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '6px',
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        cursor: 'pointer',
+                        opacity: isLoading ? 0.5 : 1
+                      }}
                     >
-                      <Mail className="mr-2 h-5 w-5" />
-                      {isLoading ? 'Sending...' : 'Send Quote'}
+                      {isLoading ? 'Sending...' : '📧 Send Quote'}
                     </button>
                     <button 
                       type="button"
                       onClick={() => window.open('https://wa.me/213797496469', '_blank')}
-                      className="flex-1 bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105 rounded-md flex items-center justify-center"
+                      style={{
+                        flex: 1,
+                        padding: '15px 30px',
+                        backgroundColor: '#16a34a',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '6px',
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        cursor: 'pointer'
+                      }}
                     >
-                      <Phone className="mr-2 h-5 w-5" />
-                      WhatsApp Us
+                      💬 WhatsApp Us
                     </button>
                   </div>
                 </form>
