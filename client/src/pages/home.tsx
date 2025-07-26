@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import Portfolio from "@/components/sections/portfolio";
+import CTA from "@/components/sections/cta";
 import Footer from "@/components/sections/footer";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <About />
       <Portfolio />
+      <CTA />
       <Footer />
     </div>
   );
