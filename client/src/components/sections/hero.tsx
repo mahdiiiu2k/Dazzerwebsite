@@ -11,11 +11,11 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen relative px-6">
-      {/* Small Logo in Top Left */}
-      <div className="absolute top-8 left-8 z-10">
-        <div className="flex items-center space-x-2">
-          <span className="text-2xl font-bold gradient-text">DS</span>
-          <span className="text-sm font-medium text-white">DS Design</span>
+      {/* Luxury Logo in Top Left */}
+      <div className="absolute top-8 left-8 z-10 glass-morphism px-6 py-3 rounded-full">
+        <div className="flex items-center space-x-3">
+          <span className="text-3xl font-bold gradient-text font-serif">DSDS</span>
+          <span className="text-sm font-medium text-platinum-silver tracking-wider">DESIGN</span>
         </div>
       </div>
 
@@ -25,22 +25,22 @@ export default function Hero() {
           {/* Text Content */}
           <div className="text-center lg:text-left">
             <div className="animate-float">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                <span className="text-white">Hi, I'm </span>
-                <span className="gradient-text">Mahdi</span><br />
-                <span className="text-white">We build </span>
-                <span className="gradient-text">professional websites</span>
-                <span className="text-white"> for your business in under </span>
-                <span className="gradient-text">24 hours</span>
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
+                <span className="text-white block mb-2">Hi, I'm </span>
+                <span className="gradient-text block mb-4 text-6xl md:text-8xl">Mahdi</span>
+                <span className="text-white text-3xl md:text-5xl block mb-2">We build </span>
+                <span className="gradient-text text-4xl md:text-6xl block mb-2">professional websites</span>
+                <span className="text-white text-3xl md:text-5xl">for your business in under </span>
+                <span className="gradient-text text-5xl md:text-7xl shimmer">24 hours</span>
               </h1>
             </div>
-            <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-              From concept to launch, our expert team delivers modern, mobile-friendly websites that drive results. Fast turnaround, premium quality, guaranteed satisfaction.
+            <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
+              From concept to launch, our expert team delivers <span className="text-yellow-400">modern, mobile-friendly websites</span> that drive results. Fast turnaround, premium quality, guaranteed satisfaction.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <Button
                 onClick={() => scrollToSection('portfolio')}
-                className="bg-gradient-to-r from-purple-500 to-purple-400 hover:from-purple-600 hover:to-purple-500 px-8 py-4 rounded-full text-white font-semibold text-lg hover:shadow-xl hover-glow transition-all transform hover:scale-105"
+                className="crimson-gradient hover:scale-105 px-10 py-5 rounded-full text-white font-bold text-xl shadow-2xl crimson-glow transition-all duration-300 transform"
                 size="lg"
               >
                 View Our Work
@@ -48,7 +48,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 onClick={() => scrollToSection('contact')}
-                className="glass-morphism px-8 py-4 rounded-full text-white font-semibold text-lg hover:shadow-xl hover-glow transition-all transform hover:scale-105 border-white/20"
+                className="glass-morphism px-10 py-5 rounded-full text-white font-bold text-xl hover:shadow-xl hover-glow transition-all duration-300 transform hover:scale-105 border-2"
                 size="lg"
               >
                 Get Started
@@ -56,18 +56,21 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Profile Picture */}
+          {/* Luxury Profile Picture */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="glass-card rounded-3xl p-2 hover-glow">
+            <div className="relative group">
+              <div className="luxury-border glass-card rounded-3xl p-3 hover-glow transform hover:scale-105 transition-all duration-500">
                 <img 
                   src={mahdiPhoto}
-                  alt="Mahdi - Founder of DS Design"
-                  className="rounded-2xl w-80 h-80 object-cover"
+                  alt="Mahdi - Founder of DSDS Design"
+                  className="rounded-2xl w-80 h-80 object-cover filter brightness-110 contrast-110"
                 />
               </div>
-              {/* Floating gradient background */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-xl opacity-60 animate-pulse"></div>
+              {/* Luxury gradient background with animation */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-yellow-600/20 via-red-900/20 to-yellow-600/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Floating geometric accents */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 border-2 border-yellow-600 rotate-45 opacity-60 group-hover:rotate-90 transition-transform duration-700"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-red-900 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-500"></div>
             </div>
           </div>
         </div>

@@ -70,23 +70,28 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Let's Work Together</h2>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Ready to bring your digital vision to life? Let's discuss your next project and create something amazing together.
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">Let's Create Excellence</h2>
+          <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
+            Ready to elevate your digital presence? Let's discuss your vision and <span className="text-yellow-400 font-medium">craft something extraordinary</span> together in <span className="gradient-text">under 24 hours</span>.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <GlassCard>
-            <h3 className="text-2xl font-bold text-white mb-6">Send us a message</h3>
+          {/* Luxury Contact Form */}
+          <div className="luxury-border glass-card p-10">
+            <h3 className="text-4xl font-bold gradient-text mb-8 font-serif">Send us a message</h3>
             
             {isSubmitted ? (
-              <div className="text-center py-8">
-                <div className="text-6xl mb-4">✅</div>
-                <h4 className="text-2xl font-bold text-white mb-2">Message Sent!</h4>
-                <p className="text-gray-200">We'll get back to you within 24 hours!</p>
+              <div className="text-center py-12">
+                <div className="text-8xl mb-6 animate-pulse">✨</div>
+                <h4 className="text-4xl font-bold gradient-text mb-4 font-serif">Message Sent!</h4>
+                <p className="text-xl text-gray-300">We'll craft your response within <span className="text-yellow-400 font-medium">24 hours</span>!</p>
+                <div className="mt-6 flex justify-center space-x-3">
+                  <div className="w-3 h-3 bg-yellow-600 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-red-900 rounded-full animate-pulse delay-100"></div>
+                  <div className="w-3 h-3 bg-yellow-600 rounded-full animate-pulse delay-200"></div>
+                </div>
               </div>
             ) : (
               <Form {...form}>
@@ -96,12 +101,12 @@ export default function Contact() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white font-medium">Name</FormLabel>
+                        <FormLabel className="text-yellow-400 font-semibold text-lg">Name</FormLabel>
                         <FormControl>
                           <Input 
                             {...field}
                             placeholder="Your name"
-                            className="bg-white/10 border-white/20 text-white placeholder-gray-300 focus:ring-purple-500"
+                            className="bg-black/30 border-yellow-600/30 text-white placeholder-gray-400 focus:ring-yellow-600 focus:border-yellow-600 text-lg p-4 rounded-xl"
                           />
                         </FormControl>
                         <FormMessage />
@@ -114,13 +119,13 @@ export default function Contact() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white font-medium">Email</FormLabel>
+                        <FormLabel className="text-yellow-400 font-semibold text-lg">Email</FormLabel>
                         <FormControl>
                           <Input 
                             {...field}
                             type="email"
                             placeholder="your@email.com"
-                            className="bg-white/10 border-white/20 text-white placeholder-gray-300 focus:ring-purple-500"
+                            className="bg-black/30 border-yellow-600/30 text-white placeholder-gray-400 focus:ring-yellow-600 focus:border-yellow-600 text-lg p-4 rounded-xl"
                           />
                         </FormControl>
                         <FormMessage />
@@ -133,13 +138,13 @@ export default function Contact() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white font-medium">Message</FormLabel>
+                        <FormLabel className="text-yellow-400 font-semibold text-lg">Message</FormLabel>
                         <FormControl>
                           <Textarea 
                             {...field}
-                            rows={5}
+                            rows={6}
                             placeholder="Tell us about your project..."
-                            className="bg-white/10 border-white/20 text-white placeholder-gray-300 focus:ring-purple-500"
+                            className="bg-black/30 border-yellow-600/30 text-white placeholder-gray-400 focus:ring-yellow-600 focus:border-yellow-600 text-lg p-4 rounded-xl"
                           />
                         </FormControl>
                         <FormMessage />
@@ -150,40 +155,40 @@ export default function Contact() {
                   <Button 
                     type="submit" 
                     disabled={submitContact.isPending}
-                    className="w-full bg-gradient-to-r from-purple-500 to-purple-400 hover:from-purple-600 hover:to-purple-500 px-8 py-4 rounded-full text-white font-semibold text-lg hover:shadow-xl hover-glow transition-all"
+                    className="w-full crimson-gradient hover:scale-105 px-8 py-5 rounded-full text-white font-bold text-xl shadow-2xl crimson-glow transition-all duration-300 transform"
                   >
-                    {submitContact.isPending ? "Sending..." : "Send Message"}
+                    {submitContact.isPending ? "Crafting..." : "Send Message"}
                   </Button>
                 </form>
               </Form>
             )}
-          </GlassCard>
+          </div>
           
-          {/* Contact Methods */}
-          <div className="space-y-8">
+          {/* Luxury Contact Methods */}
+          <div className="space-y-10">
             {/* Direct Contact Options */}
             {contactMethods.map((method, index) => (
-              <GlassCard key={index} hover>
-                <div className="flex items-center space-x-4">
-                  <div className="text-3xl">{method.icon}</div>
+              <div key={index} className="luxury-border glass-card p-8 group hover:scale-105 transition-all duration-500">
+                <div className="flex items-center space-x-6">
+                  <div className="text-5xl group-hover:scale-110 transition-transform duration-300">{method.icon}</div>
                   <div>
-                    <h4 className="text-xl font-bold text-white">{method.title}</h4>
-                    <p className="text-gray-200 text-sm">{method.description}</p>
+                    <h4 className="text-2xl font-bold gradient-text mb-2 font-serif">{method.title}</h4>
+                    <p className="text-lg text-gray-300">{method.description}</p>
                   </div>
                 </div>
-              </GlassCard>
+              </div>
             ))}
             
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-2 gap-4">
-              <GlassCard className="text-center">
-                <div className="text-2xl font-bold gradient-text">24h</div>
-                <div className="text-sm text-gray-300">Response Time</div>
-              </GlassCard>
-              <GlassCard className="text-center">
-                <div className="text-2xl font-bold gradient-text">5+</div>
-                <div className="text-sm text-gray-300">Years Experience</div>
-              </GlassCard>
+            {/* Luxury Trust Indicators */}
+            <div className="grid grid-cols-2 gap-6">
+              <div className="luxury-border glass-card p-6 text-center group hover:scale-105 transition-all duration-500">
+                <div className="text-4xl font-bold gradient-text mb-3 group-hover:scale-110 transition-transform duration-300">24h</div>
+                <div className="text-lg text-yellow-400 font-medium">Response Time</div>
+              </div>
+              <div className="luxury-border glass-card p-6 text-center group hover:scale-105 transition-all duration-500">
+                <div className="text-4xl font-bold gradient-text mb-3 group-hover:scale-110 transition-transform duration-300">100+</div>
+                <div className="text-lg text-yellow-400 font-medium">Projects Delivered</div>
+              </div>
             </div>
           </div>
         </div>
