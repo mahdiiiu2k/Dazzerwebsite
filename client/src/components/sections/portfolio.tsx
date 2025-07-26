@@ -18,7 +18,7 @@ export default function Portfolio() {
         {/* Website Showcase */}
         <div className="luxury-border glass-card p-8 max-w-6xl mx-auto mb-16">
           <div className="text-center mb-8">
-            <h3 className="text-3xl md:text-4xl font-bold text-white font-serif mb-4">AG Construction & Renovation Company</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-white font-serif mb-4">AG Construction & Renovation</h3>
             <p className="text-xl text-white font-light">Professional website delivered in 24 hours</p>
           </div>
           <div className="relative w-full h-[600px] rounded-2xl overflow-hidden">
