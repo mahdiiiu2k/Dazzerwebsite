@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Mail, Phone, MessageSquare } from "lucide-react";
-import SimpleForm from "./simple-form";
 
 export default function CTA() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -60,8 +59,7 @@ export default function CTA() {
 
   return (
     <section id="contact" className="py-20 px-6" style={{ position: 'relative', zIndex: 10000 }}>
-      <SimpleForm />
-      <div className="container mx-auto relative">
+      <div className="container mx-auto relative" style={{ zIndex: 10001 }}>
         <div className="text-center mb-12 sm:mb-16 px-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 gradient-text">
             Need a Website?
@@ -75,7 +73,7 @@ export default function CTA() {
           </p>
         </div>
 
-        <div className="luxury-border glass-card p-8 max-w-7xl mx-auto">
+        <div className="luxury-border glass-card p-8 max-w-7xl mx-auto" style={{ position: 'relative', zIndex: 10002 }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Form */}
             <div>
@@ -96,7 +94,7 @@ export default function CTA() {
                   <p className="text-gray-300">We'll get back to you within 24 hours!</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ padding: '20px 0' }}>
+                <form onSubmit={handleSubmit} style={{ padding: '20px 0', position: 'relative', zIndex: 10003 }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                     <div>
                       <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px' }}>Full Name *</label>
