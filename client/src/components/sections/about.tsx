@@ -51,26 +51,15 @@ export default function About() {
         <div className="luxury-border glass-card p-12 max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
-              { name: "Roofing Contractors", icon: "🏠" },
-              { name: "Landscaping Services", icon: "🌳" },
-              { name: "Plumbing Companies", icon: "🔧" },
-              { name: "Exterior Cleaning Services", icon: "✨" },
-              { name: "Kitchen Remodeling", icon: "🍳" },
-              { name: "Bathroom Renovation", icon: "🚿" },
-              { name: "Snow Removal Services", icon: "❄️" },
-              { name: "Window Cleaning Companies", icon: "🪟" },
-              { name: "Gutter Cleaning & Repair", icon: "🏘️" },
-              { name: "Pressure Washing Services", icon: "💧" },
-              { name: "Roof Repair & Renovation", icon: "🔨" },
-              { name: "Local Retail Shops", icon: "🏪" },
-              { name: "E-commerce Stores", icon: "🛒" }
+              "Roofing Contractors", "Landscaping Services", "Plumbing Companies", "Exterior Cleaning Services", 
+              "Kitchen Remodeling", "Bathroom Renovation", "Snow Removal Services", 
+              "Window Cleaning Companies", "Gutter Cleaning & Repair", "Pressure Washing Services", 
+              "Roof Repair & Renovation", "Local Retail Shops", "E-commerce Stores"
             ].map((service, index) => (
               <div key={index} className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
-                <div className="text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
+                <div className="w-3 h-3 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex-shrink-0 group-hover:scale-110 transition-transform duration-300"></div>
                 <div className="text-lg text-white font-medium group-hover:text-yellow-400 transition-colors duration-300">
-                  {service.name}
+                  {service}
                 </div>
               </div>
             ))}
