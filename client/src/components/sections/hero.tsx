@@ -18,7 +18,7 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
               <span className="text-white block">Take Your Business Online – </span>
-              <span className="gradient-text block relative drop-shadow-2xl" style={{textShadow: '0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3)'}}>
+              <span className="gradient-text block relative drop-shadow-2xl" style={{textShadow: '0 0 20px rgba(251, 191, 36, 0.6), 0 0 40px rgba(251, 191, 36, 0.4), 0 0 60px rgba(251, 191, 36, 0.2)'}}>
                 In Just 24 Hours
               </span>
             </h1>
