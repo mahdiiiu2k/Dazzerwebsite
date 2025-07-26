@@ -64,7 +64,7 @@ export default function About() {
           </div>
           
           <div className="mt-12 mb-16">
-            <p className="text-2xl text-gray-300 font-light">
+            <p className="text-2xl text-white font-light">
               ...or any type of business that you have
             </p>
           </div>
