@@ -1,7 +1,9 @@
-// Simple, robust contact function for Netlify
+// Final working contact function for Netlify
 const nodemailer = require('nodemailer');
 
 exports.handler = async (event, context) => {
+  console.log('Function started - Method:', event.httpMethod);
+  
   // CORS headers for all responses
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -10,7 +12,7 @@ exports.handler = async (event, context) => {
     'Content-Type': 'application/json'
   };
 
-  // Handle preflight
+  // Handle preflight requests
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
   }
@@ -29,11 +31,12 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    // Parse request
+    console.log('Parsing request body...');
     const { name, phone, email, message } = JSON.parse(event.body || '{}');
     
     // Validate required fields
     if (!name || !message) {
+      console.log('Validation failed - missing required fields');
       return {
         statusCode: 400,
         headers,
@@ -45,25 +48,33 @@ exports.handler = async (event, context) => {
       };
     }
 
+    console.log('Request validated successfully');
+
     // Check environment variables
     const gmailUser = process.env.GMAIL_USER;
     const gmailPassword = process.env.GMAIL_APP_PASSWORD;
     
+    console.log('Environment check:', {
+      GMAIL_USER: gmailUser ? 'configured' : 'missing',
+      GMAIL_APP_PASSWORD: gmailPassword ? 'configured' : 'missing'
+    });
+    
     if (!gmailUser || !gmailPassword) {
       console.error('Missing Gmail credentials');
       return {
-        statusCode: 200, // Don't fail the form submission
+        statusCode: 200,
         headers,
         body: JSON.stringify({ 
           success: false, 
           emailSent: false, 
-          message: 'Email service not configured',
-          debug: 'Environment variables missing'
+          message: 'Email service not configured - missing environment variables'
         })
       };
     }
 
-    // Create email transporter
+    console.log('Creating email transporter...');
+    
+    // Create email transporter (FIXED: was createTransporter, now createTransport)
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -72,25 +83,37 @@ exports.handler = async (event, context) => {
       }
     });
 
+    console.log('Transporter created successfully');
+
     // Email content
     const mailOptions = {
       from: gmailUser,
       to: 'chouikimahdiabderrahmane@gmail.com',
       subject: `New Contact Form Submission from ${name}`,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-        <p><strong>Email:</strong> ${email || 'Not provided'}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-        <hr>
-        <p><small>Sent from DS Design website on ${new Date().toLocaleString()}</small></p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #4a0d21;">New Contact Form Submission</h2>
+          <div style="background: #f9f9f9; padding: 20px; border-radius: 8px;">
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+            <p><strong>Email:</strong> ${email || 'Not provided'}</p>
+            <hr>
+            <p><strong>Message:</strong></p>
+            <p style="background: white; padding: 15px; border-radius: 4px; border-left: 4px solid #4a0d21;">${message}</p>
+          </div>
+          <p style="color: #666; font-size: 12px; margin-top: 20px;">
+            Sent from DS Design website on ${new Date().toLocaleString()}
+          </p>
+        </div>
       `
     };
 
+    console.log('Sending email to:', mailOptions.to);
+
     // Send email
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    
+    console.log('Email sent successfully! Message ID:', info.messageId);
     
     return {
       statusCode: 200,
@@ -99,12 +122,20 @@ exports.handler = async (event, context) => {
         success: true, 
         emailSent: true, 
         message: 'Email sent successfully',
-        contact: { id: Date.now().toString(), name, email, message }
+        contact: { 
+          id: Date.now().toString(), 
+          name, 
+          email: email || '', 
+          phone: phone || '',
+          message,
+          createdAt: new Date().toISOString()
+        }
       })
     };
 
   } catch (error) {
     console.error('Function error:', error);
+    console.error('Error stack:', error.stack);
     
     return {
       statusCode: 200, // Don't fail the form submission

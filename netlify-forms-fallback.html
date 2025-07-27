@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Netlify Forms</title>
+</head>
+<body>
+    <h2>Test Pure Netlify Forms (No Functions)</h2>
+    
+    <!-- This form will work 100% on Netlify without any functions -->
+    <form name="contact-test" method="POST" data-netlify="true" action="/success.html">
+        <input type="hidden" name="form-name" value="contact-test" />
+        
+        <div>
+            <label>Name:</label>
+            <input type="text" name="name" required />
+        </div>
+        
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" />
+        </div>
+        
+        <div>
+            <label>Message:</label>
+            <textarea name="message" required></textarea>
+        </div>
+        
+        <button type="submit">Send Test Message</button>
+    </form>
+    
+    <p><strong>Instructions:</strong></p>
+    <ol>
+        <li>Upload this file to your site root</li>
+        <li>Submit the form</li>
+        <li>Check Netlify Dashboard → Forms for the submission</li>
+        <li>If this works, we can configure email notifications in Netlify Forms settings</li>
+    </ol>
+</body>
+</html>
