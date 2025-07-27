@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MessageSquare } from "lucide-react";
+import { Mail, Phone, MessageSquare, Instagram } from "lucide-react";
 
 export default function CTA() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -244,19 +244,19 @@ export default function CTA() {
               {/* Direct Contact */}
               <div className="border border-yellow-500/30 rounded-xl p-6 backdrop-blur-sm" style={{ backgroundColor: '#21252a' }}>
                 <h4 className="text-2xl font-serif font-bold text-white mb-6 flex items-center">
-                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                    <Phone className="text-white" size={20} />
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg shadow-yellow-500/30">
+                    <Mail className="text-black" size={22} />
                   </div>
                   Direct Contact
                 </h4>
                 <div className="space-y-6">
                   {/* WhatsApp */}
                   <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style={{ backgroundColor: '#124925' }}>
-                      <MessageSquare className="text-white" size={18} />
+                    <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg shadow-yellow-500/30 border border-yellow-300/20">
+                      <MessageSquare className="text-black" size={20} />
                     </div>
                     <div>
-                      <a href="https://wa.me/213797496469" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-green-400 transition-colors cursor-pointer">
+                      <a href="https://wa.me/213797496469" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
                         WhatsApp Chat
                       </a>
                     </div>
@@ -264,11 +264,11 @@ export default function CTA() {
 
                   {/* Instagram */}
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
-                      <span className="text-white text-sm">📷</span>
+                    <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg shadow-yellow-500/30 border border-yellow-300/20">
+                      <Instagram className="text-black" size={20} />
                     </div>
                     <div>
-                      <a href="https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-pink-400 transition-colors cursor-pointer">
+                      <a href="https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
                         ds.desiiiign
                       </a>
                     </div>
