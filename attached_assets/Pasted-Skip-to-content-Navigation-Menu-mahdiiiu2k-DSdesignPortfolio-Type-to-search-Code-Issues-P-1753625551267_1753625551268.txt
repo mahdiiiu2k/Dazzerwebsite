@@ -1,0 +1,130 @@
+Skip to content
+Navigation Menu
+mahdiiiu2k
+DSdesignPortfolio
+
+Type / to search
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Owner avatar
+DSdesignPortfolio
+Public
+mahdiiiu2k/DSdesignPortfolio
+Go to file
+t
+Name		
+author
+lilixe4910
+Enable contact form submissions and static site deployment to Netlify
+4548804
+ · 
+3 hours ago
+attached_assets
+Improve display of featured website in portfolio section for better v…
+3 hours ago
+client
+Enable contact form submissions and static site deployment to Netlify
+3 hours ago
+server
+Enable contact form submissions to send email notifications to the admin
+3 hours ago
+shared
+Set up core website structure and components for DS Design platform
+yesterday
+.gitignore
+Set up core website structure and components for DS Design platform
+yesterday
+.replit
+Enable contact form submissions to send email notifications to the admin
+3 hours ago
+README_NETLIFY_DEPLOYMENT.md
+Enable contact form submissions and static site deployment to Netlify
+3 hours ago
+components.json
+Set up core website structure and components for DS Design platform
+yesterday
+drizzle.config.ts
+Set up core website structure and components for DS Design platform
+yesterday
+netlify.toml
+Enable contact form submissions and static site deployment to Netlify
+3 hours ago
+package-lock.json
+Enable contact form submissions to send email notifications to the admin
+3 hours ago
+package.json
+Enable contact form submissions to send email notifications to the admin
+3 hours ago
+postcss.config.js
+Set up core website structure and components for DS Design platform
+yesterday
+replit.md
+Revamp website to focus on fast, affordable websites for small busine…
+18 hours ago
+tailwind.config.ts
+Set up core website structure and components for DS Design platform
+yesterday
+tsconfig.json
+Set up core website structure and components for DS Design platform
+yesterday
+vite.config.ts
+Set up core website structure and components for DS Design platform
+yesterday
+Repository files navigation
+README
+Add a README
+Help people interested in this repository understand your project by adding a README.
+About
+replit.com/@lilixe4910/DSdesignPortfolio
+ Activity
+Stars
+ 0 stars
+Watchers
+ 0 watching
+Forks
+ 0 forks
+Releases
+No releases published
+Create a new release
+Packages
+No packages published
+Publish your first package
+Languages
+TypeScript
+97.2%
+ 
+CSS
+2.4%
+ 
+Other
+0.4%
+Suggested workflows
+Based on your tech stack
+Deno logo
+Deno
+Test your Deno project
+Gulp logo
+Gulp
+Build a NodeJS project with npm and gulp.
+Grunt logo
+Grunt
+Build a NodeJS project with npm and grunt.
+More workflows
+Footer
+© 2025 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
+Manage cookies
+Do not share my personal information
