@@ -81,7 +81,6 @@ export default function CTA() {
                 <Mail className="text-yellow-600 mr-4" size={28} />
                 <div>
                   <h3 className="text-2xl font-serif font-semibold text-white">Quote Request</h3>
-                  <p className="text-gray-300 text-sm">Free and no commitment</p>
                 </div>
               </div>
               
