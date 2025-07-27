@@ -62,9 +62,11 @@ export default function CTA() {
         })
       });
 
+      console.log('Email response status:', emailResponse.status);
       const emailResult = await emailResponse.json();
+      console.log('Email result:', emailResult);
       
-      if (emailResult.success) {
+      if (emailResponse.ok && emailResult.success) {
         // Email sent successfully
         setFormData({ name: "", phone: "", email: "", message: "" });
         setShowSuccessPopup(true);
@@ -73,6 +75,7 @@ export default function CTA() {
         }, 3000);
       } else {
         // Email failed but form was submitted
+        console.error('Email failed:', emailResult);
         alert("Message received but email notification failed. We'll still get back to you!");
         setFormData({ name: "", phone: "", email: "", message: "" });
         setShowSuccessPopup(true);
