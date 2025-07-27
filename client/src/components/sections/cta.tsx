@@ -227,7 +227,7 @@ export default function CTA() {
                       style={{
                         width: 'auto',
                         padding: '12px 32px',
-                        backgroundColor: '#16a34a',
+                        backgroundColor: '#124925',
                         color: 'white',
                         fontWeight: '600',
                         borderRadius: '8px',
@@ -241,19 +241,19 @@ export default function CTA() {
                         fontSize: '16px',
                         minHeight: '44px',
                         transform: 'scale(1)',
-                        boxShadow: '0 4px 12px rgba(22, 163, 74, 0.3)'
+                        boxShadow: '0 4px 12px rgba(18, 73, 37, 0.3)'
                       }}
                       onMouseEnter={(e) => {
                         const target = e.target as HTMLButtonElement;
                         target.style.transform = 'scale(1.05)';
-                        target.style.backgroundColor = '#15803d';
-                        target.style.boxShadow = '0 6px 20px rgba(22, 163, 74, 0.5)';
+                        target.style.backgroundColor = '#0f3a1f';
+                        target.style.boxShadow = '0 6px 20px rgba(18, 73, 37, 0.5)';
                       }}
                       onMouseLeave={(e) => {
                         const target = e.target as HTMLButtonElement;
                         target.style.transform = 'scale(1)';
-                        target.style.backgroundColor = '#16a34a';
-                        target.style.boxShadow = '0 4px 12px rgba(22, 163, 74, 0.3)';
+                        target.style.backgroundColor = '#124925';
+                        target.style.boxShadow = '0 4px 12px rgba(18, 73, 37, 0.3)';
                       }}
                     >
                       <MessageSquare size={18} />
@@ -332,7 +332,7 @@ export default function CTA() {
                     className="block bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-colors"
                   >
                     <div className="flex items-center">
-                      <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mr-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style={{ backgroundColor: '#124925' }}>
                         <span className="text-white text-sm">💬</span>
                       </div>
                       <div>
