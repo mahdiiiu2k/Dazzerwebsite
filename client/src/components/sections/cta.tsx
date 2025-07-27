@@ -249,7 +249,7 @@ export default function CTA() {
                 <div className="space-y-6">
                   {/* WhatsApp */}
                   <div className="flex items-center">
-                    <MessageSquare className="text-yellow-600 mr-6" size={24} />
+                    <Phone className="text-yellow-600 mr-6" size={24} />
                     <div>
                       <a href="https://wa.me/213797496469" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
                         WhatsApp Chat
