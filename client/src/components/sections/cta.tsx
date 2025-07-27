@@ -243,8 +243,7 @@ export default function CTA() {
             <div className="space-y-6">
               {/* Direct Contact */}
               <div className="border border-yellow-500/30 rounded-xl p-6 backdrop-blur-sm" style={{ backgroundColor: '#21252a' }}>
-                <h4 className="text-2xl font-serif font-bold text-white mb-6 flex items-center">
-                  <Mail className="text-yellow-600 mr-4" size={28} />
+                <h4 className="text-2xl font-serif font-bold text-white mb-6">
                   Direct Contact
                 </h4>
                 <div className="space-y-6">
