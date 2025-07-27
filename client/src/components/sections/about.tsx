@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { MessageSquare } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 
 export default function About() {
@@ -81,9 +82,55 @@ export default function About() {
             <p className="text-2xl text-yellow-400 font-medium mb-2">
               Don't see your business type?
             </p>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-gray-300 mb-6">
               We work with any type of business that needs a professional website
             </p>
+            
+            {/* Contact Us Button */}
+            <button 
+              type="button"
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              style={{
+                width: 'auto',
+                padding: '12px 32px',
+                backgroundColor: '#4a0d21',
+                color: 'white',
+                fontWeight: '600',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+                fontSize: '16px',
+                minHeight: '44px',
+                transform: 'scale(1)',
+                boxShadow: '0 4px 12px rgba(74, 13, 33, 0.3)',
+                margin: '0 auto'
+              }}
+              onMouseEnter={(e) => {
+                const target = e.target as HTMLButtonElement;
+                target.style.transform = 'scale(1.05)';
+                target.style.backgroundColor = '#5a1729';
+                target.style.boxShadow = '0 6px 20px rgba(74, 13, 33, 0.5)';
+              }}
+              onMouseLeave={(e) => {
+                const target = e.target as HTMLButtonElement;
+                target.style.transform = 'scale(1)';
+                target.style.backgroundColor = '#4a0d21';
+                target.style.boxShadow = '0 4px 12px rgba(74, 13, 33, 0.3)';
+              }}
+            >
+              <MessageSquare size={18} />
+              Contact Us
+            </button>
           </div>
         </div>
       </div>
