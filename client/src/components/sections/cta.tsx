@@ -48,8 +48,8 @@ export default function CTA() {
         body: netlifyParams.toString()
       }).catch(err => console.log('Netlify form backup failed:', err));
 
-      // 2. Send email via your existing API
-      const emailResponse = await fetch('/api/contact', {
+      // 2. Send email via Netlify function
+      const emailResponse = await fetch('/.netlify/functions/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
