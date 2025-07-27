@@ -9,7 +9,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
   app.post("/api/contact", async (req, res) => {
     try {
-      const validatedData = insertContactSchema.parse(req.body);
+      // Make email optional by providing default empty string
+      const requestData = {
+        ...req.body,
+        email: req.body.email || ""
+      };
+      const validatedData = insertContactSchema.parse(requestData);
       const contact = await storage.createContact(validatedData);
       
       // Extract phone from message if it exists

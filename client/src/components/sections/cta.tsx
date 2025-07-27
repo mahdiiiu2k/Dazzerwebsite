@@ -65,31 +65,18 @@ export default function CTA() {
         })
       });
 
-      console.log('Email response status:', emailResponse.status);
       const emailResult = await emailResponse.json();
-      console.log('Email result:', emailResult);
-      
-      // Debug the exact values
-      console.log('Checking conditions:');
-      console.log('- emailResponse.ok:', emailResponse.ok);
-      console.log('- emailResult.success:', emailResult.success);
-      console.log('- emailResult.emailSent:', emailResult.emailSent);
       
       // Check if email was actually sent successfully
-      if (emailResponse.ok && emailResult.success && emailResult.emailSent === true) {
-        // Email sent successfully
-        console.log('✅ All conditions met - showing success!');
+      if (emailResponse.ok && emailResult.success && emailResult.emailSent) {
+        // Email sent successfully - show success popup
         setFormData({ name: "", phone: "", email: "", message: "" });
         setShowSuccessPopup(true);
         setTimeout(() => {
           setShowSuccessPopup(false);
         }, 3000);
       } else {
-        // Debug why it failed
-        console.log('❌ Conditions not met - showing error');
-        console.log('- Response OK:', emailResponse.ok);
-        console.log('- Success:', emailResult.success);
-        console.log('- Email Sent:', emailResult.emailSent);
+        // Email failed - show error message
         alert("Message received but email notification failed. We'll still get back to you!");
         setFormData({ name: "", phone: "", email: "", message: "" });
       }
