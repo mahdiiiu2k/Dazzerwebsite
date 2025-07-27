@@ -49,7 +49,7 @@ export default function CTA() {
       }).catch(err => console.log('Netlify form backup failed:', err));
 
       // 2. Send email via serverless function (works for both Replit and Netlify)
-      let emailEndpoint = '/.netlify/functions/contact-fixed';
+      let emailEndpoint = '/.netlify/functions/contact-simple';
       
       // Fallback to local API if on Replit
       if (window.location.hostname === 'localhost' || window.location.port === '5000') {
