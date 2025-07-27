@@ -43,9 +43,9 @@ export default function Portfolio() {
           <div className="md:hidden text-center py-8">
             <Button 
               onClick={openWebsite}
-              className="bg-blue-900 hover:bg-blue-800 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 text-sm w-full max-w-xs mx-auto"
+              className="bg-blue-900 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300"
             >
-              AG Construction & Renovation Website
+              AG Construction & <br />Renovation Website
             </Button>
           </div>
         </div>
