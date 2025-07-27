@@ -69,33 +69,27 @@ export default function CTA() {
       const emailResult = await emailResponse.json();
       console.log('Email result:', emailResult);
       
+      // Debug the exact values
+      console.log('Checking conditions:');
+      console.log('- emailResponse.ok:', emailResponse.ok);
+      console.log('- emailResult.success:', emailResult.success);
+      console.log('- emailResult.emailSent:', emailResult.emailSent);
+      
       // Check if email was actually sent successfully
-      if (emailResponse.ok && emailResult.success && emailResult.emailSent) {
+      if (emailResponse.ok && emailResult.success && emailResult.emailSent === true) {
         // Email sent successfully
-        console.log('✅ Email sent successfully!');
+        console.log('✅ All conditions met - showing success!');
         setFormData({ name: "", phone: "", email: "", message: "" });
         setShowSuccessPopup(true);
         setTimeout(() => {
           setShowSuccessPopup(false);
         }, 3000);
-      } else if (emailResponse.ok && emailResult.success) {
-        // Form processed but email might have failed
-        console.log('Form processed, checking email status:', emailResult.emailSent);
-        if (emailResult.emailSent) {
-          // Actually succeeded
-          setFormData({ name: "", phone: "", email: "", message: "" });
-          setShowSuccessPopup(true);
-          setTimeout(() => {
-            setShowSuccessPopup(false);
-          }, 3000);
-        } else {
-          // Email failed
-          alert("Message received but email notification failed. We'll still get back to you!");
-          setFormData({ name: "", phone: "", email: "", message: "" });
-        }
       } else {
-        // Complete failure
-        console.error('Email failed:', emailResult);
+        // Debug why it failed
+        console.log('❌ Conditions not met - showing error');
+        console.log('- Response OK:', emailResponse.ok);
+        console.log('- Success:', emailResult.success);
+        console.log('- Email Sent:', emailResult.emailSent);
         alert("Message received but email notification failed. We'll still get back to you!");
         setFormData({ name: "", phone: "", email: "", message: "" });
       }
