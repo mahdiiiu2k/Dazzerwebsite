@@ -45,7 +45,7 @@ export default function Portfolio() {
               onClick={openWebsite}
               className="bg-purple-950 hover:bg-purple-900 text-white font-medium py-12 px-12 rounded-lg transition-all duration-300 text-lg"
             >
-              <span className="block text-center">
+              <span className="block text-left">
                 AG Construction &<br />
                 Renovation Website <ArrowRight className="w-5 h-5 inline ml-1" />
               </span>
