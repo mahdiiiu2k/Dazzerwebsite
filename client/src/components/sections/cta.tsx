@@ -225,18 +225,39 @@ export default function CTA() {
                       type="button"
                       onClick={() => window.open('https://wa.me/213797496469', '_blank')}
                       style={{
-                        flex: 1,
-                        padding: '15px 30px',
+                        width: 'auto',
+                        padding: '12px 32px',
                         backgroundColor: '#16a34a',
                         color: 'white',
+                        fontWeight: '600',
+                        borderRadius: '8px',
                         border: 'none',
-                        borderRadius: '6px',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
                         fontSize: '16px',
-                        fontWeight: 'bold',
-                        cursor: 'pointer'
+                        minHeight: '44px',
+                        transform: 'scale(1)',
+                        boxShadow: '0 4px 12px rgba(22, 163, 74, 0.3)'
+                      }}
+                      onMouseEnter={(e) => {
+                        const target = e.target as HTMLButtonElement;
+                        target.style.transform = 'scale(1.05)';
+                        target.style.backgroundColor = '#15803d';
+                        target.style.boxShadow = '0 6px 20px rgba(22, 163, 74, 0.5)';
+                      }}
+                      onMouseLeave={(e) => {
+                        const target = e.target as HTMLButtonElement;
+                        target.style.transform = 'scale(1)';
+                        target.style.backgroundColor = '#16a34a';
+                        target.style.boxShadow = '0 4px 12px rgba(22, 163, 74, 0.3)';
                       }}
                     >
-                      💬 WhatsApp Us
+                      <MessageSquare size={18} />
+                      WhatsApp Us
                     </button>
                   </div>
                 </form>
