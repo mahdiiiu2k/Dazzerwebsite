@@ -80,7 +80,7 @@ export default function About() {
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">
             <p className="text-2xl text-yellow-400 font-medium mb-2">
-              Don't see your business type?
+              Don't see your business here?
             </p>
             <p className="text-xl text-gray-300 mb-6">
               We work with any type of business that needs a professional website
