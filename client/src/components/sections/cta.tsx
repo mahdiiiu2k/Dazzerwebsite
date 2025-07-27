@@ -187,21 +187,23 @@ export default function CTA() {
                       disabled={isLoading}
                       style={{
                         flex: 1,
-                        padding: '16px 32px',
+                        padding: '20px 40px',
                         backgroundColor: '#4a0d21',
                         color: 'white',
-                        fontWeight: '600',
-                        borderRadius: '8px',
+                        fontWeight: '700',
+                        borderRadius: '12px',
                         border: 'none',
                         cursor: 'pointer',
                         transition: 'all 0.3s ease',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        gap: '8px',
+                        gap: '10px',
+                        fontSize: '18px',
+                        minHeight: '60px',
                         opacity: isLoading ? 0.5 : 1,
                         transform: 'scale(1)',
-                        boxShadow: '0 4px 12px rgba(74, 13, 33, 0.3)'
+                        boxShadow: '0 6px 20px rgba(74, 13, 33, 0.4)'
                       }}
                       onMouseEnter={(e) => {
                         const target = e.target as HTMLButtonElement;
