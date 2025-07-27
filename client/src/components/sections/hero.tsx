@@ -1,28 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
 import mahdiPhoto from "@assets/PicMa_2402454_1753546746971_1753546907613.jpg";
 
 export default function Hero() {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  // Preload the image with higher priority
-  useEffect(() => {
-    const img = new Image();
-    img.src = mahdiPhoto;
-    img.onload = () => setImageLoaded(true);
-    
-    // Add preload link to head for immediate loading
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = mahdiPhoto;
-    document.head.appendChild(link);
-    
-    return () => {
-      // Cleanup
-      document.head.removeChild(link);
-    };
-  }, []);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -52,30 +31,11 @@ export default function Hero() {
           {/* Luxury Profile Picture */}
           <div className="flex flex-col items-center lg:items-end order-1 lg:order-2">
             <div className="relative group">
-              {/* Image loading skeleton */}
-              <div className={`absolute inset-0 bg-gradient-to-br from-purple-900/50 to-purple-700/50 rounded-3xl animate-pulse transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`} 
-                   style={{zIndex: 1}}></div>
-              <div className="luxury-border glass-card rounded-3xl p-3 hover-glow transform hover:scale-105 transition-all duration-500 relative" 
-                   style={{zIndex: 2}}>
+              <div className="luxury-border glass-card rounded-3xl p-3 hover-glow transform hover:scale-105 transition-all duration-500">
                 <img 
                   src={mahdiPhoto}
                   alt="Mahdi - Founder of DS Design"
-                  className={`rounded-2xl w-64 h-64 sm:w-80 sm:h-80 object-cover filter brightness-110 contrast-110 hero-image ${imageLoaded ? 'loaded' : ''}`}
-                  loading="eager"
-                  decoding="async"
-                  style={{
-                    willChange: 'transform',
-                    backfaceVisibility: 'hidden',
-                    imageRendering: 'crisp-edges'
-                  }}
-                  onLoad={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    img.style.opacity = '1';
-                    setImageLoaded(true);
-                  }}
-                  onError={(e) => {
-                    console.log('Image failed to load');
-                  }}
+                  className="rounded-2xl w-64 h-64 sm:w-80 sm:h-80 object-cover filter brightness-110 contrast-110"
                 />
               </div>
               {/* Luxury gradient background with animation */}
