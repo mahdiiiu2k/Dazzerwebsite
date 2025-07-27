@@ -245,7 +245,7 @@ export default function CTA() {
                           target.style.boxShadow = '0 4px 12px rgba(18, 73, 37, 0.3)';
                         }}
                       >
-                        <MessageSquare size={18} />
+                        <Phone size={18} />
                         WhatsApp Us
                       </button>
                     </div>
