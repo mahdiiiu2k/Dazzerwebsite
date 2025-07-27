@@ -124,6 +124,55 @@
   .hover-glow:hover {
     box-shadow: 0 0 30px rgba(205, 127, 50, 0.4);
   }
+
+  /* Mobile-specific optimizations */
+  @media (max-width: 768px) {
+    .glass-card {
+      padding: 1rem;
+    }
+    
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .luxury-border {
+      border-width: 1px;
+    }
+
+    /* Prevent horizontal scroll on mobile */
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Better touch targets for mobile */
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Improve text readability on mobile */
+    .gradient-text {
+      font-size: clamp(1.5rem, 8vw, 4rem);
+      line-height: 1.2;
+    }
+
+    /* Better form inputs on mobile */
+    input, textarea {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .glass-card {
+      padding: 0.75rem;
+    }
+    
+    section {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
   
   .crimson-glow:hover {
     box-shadow: 0 0 30px rgba(128, 0, 32, 0.4);

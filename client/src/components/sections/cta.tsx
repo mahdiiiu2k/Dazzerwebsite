@@ -62,29 +62,29 @@ export default function CTA() {
   };
 
   return (
-    <section id="contact" className="py-20 px-6" style={{ position: 'relative', zIndex: 10000 }}>
+    <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6" style={{ position: 'relative', zIndex: 10000 }}>
       <div className="container mx-auto relative" style={{ zIndex: 10001 }}>
-        <div className="text-center mb-12 sm:mb-16 px-4">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 gradient-text">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-2 sm:px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 sm:mb-6 gradient-text">
             Need a Website?
           </h2>
-          <div className="w-16 sm:w-24 h-1 bg-yellow-600 mx-auto mb-6"></div>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <div className="w-12 sm:w-16 lg:w-24 h-1 bg-yellow-600 mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Get your professional website delivered in 24 hours
           </p>
-          <p className="text-base text-gray-400 mt-4">
+          <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4">
             Free quote with no commitment required
           </p>
         </div>
 
-        <div className="luxury-border glass-card p-8 max-w-7xl mx-auto" style={{ position: 'relative', zIndex: 10002 }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="luxury-border glass-card p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto" style={{ position: 'relative', zIndex: 10002 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             {/* Contact Form */}
             <div className="order-2 lg:order-1">
-              <div className="flex items-center mb-6">
-                <Mail className="text-yellow-600 mr-4" size={28} />
+              <div className="flex items-center mb-4 sm:mb-6">
+                <Mail className="text-yellow-600 mr-3 sm:mr-4" size={24} />
                 <div>
-                  <h3 className="text-2xl font-serif font-semibold text-white">Direct Message</h3>
+                  <h3 className="text-xl sm:text-2xl font-serif font-semibold text-white">Direct Message</h3>
                 </div>
               </div>
               
@@ -95,8 +95,8 @@ export default function CTA() {
                   <p className="text-gray-300">We'll get back to you within 24 hours!</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ padding: '20px 0', position: 'relative', zIndex: 10003 }}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <form onSubmit={handleSubmit} style={{ padding: '16px 0', position: 'relative', zIndex: 10003 }}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                     <div className="space-y-3">
                       <label className="block text-sm font-medium text-gray-200 tracking-wide">
                         Your Name <span className="text-red-400">*</span>
@@ -128,7 +128,7 @@ export default function CTA() {
                     </div>
                   </div>
                   
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-3 mb-4 sm:mb-6">
                     <label className="block text-sm font-medium text-gray-200 tracking-wide">
                       Email Address
                     </label>
@@ -142,7 +142,7 @@ export default function CTA() {
                     />
                   </div>
                   
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-3 mb-6 sm:mb-8">
                     <label className="block text-sm font-medium text-gray-200 tracking-wide">
                       Your Message <span className="text-red-400">*</span>
                     </label>
@@ -205,8 +205,8 @@ export default function CTA() {
             {/* Contact Info */}
             <div className="space-y-6 order-1 lg:order-2">
               {/* Direct Contact */}
-              <div className="border border-yellow-500/30 rounded-xl p-6 backdrop-blur-sm" style={{ backgroundColor: '#21252a' }}>
-                <h4 className="text-2xl font-serif font-bold text-white mb-6">
+              <div className="border border-yellow-500/30 rounded-xl p-4 sm:p-6 backdrop-blur-sm" style={{ backgroundColor: '#21252a' }}>
+                <h4 className="text-xl sm:text-2xl font-serif font-bold text-white mb-4 sm:mb-6">
                   Direct Contact
                 </h4>
                 <div className="space-y-6">
@@ -328,7 +328,10 @@ export default function CTA() {
             fontWeight: '600',
             fontSize: '16px',
             border: '1px solid rgba(0, 0, 0, 0.1)',
-            animation: 'slideInFromBottom 0.5s ease-out'
+            animation: 'slideInFromBottom 0.5s ease-out',
+            maxWidth: 'calc(100vw - 40px)',
+            width: 'auto',
+            textAlign: 'center'
           }}
         >
           <span>Message sent successfully!</span>
