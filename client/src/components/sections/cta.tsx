@@ -95,7 +95,7 @@ export default function CTA() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div className="space-y-3">
                       <label className="block text-sm font-medium text-gray-200 tracking-wide">
-                        Full Name <span className="text-red-400">*</span>
+                        Your Name <span className="text-red-400">*</span>
                       </label>
                       <input
                         type="text"
