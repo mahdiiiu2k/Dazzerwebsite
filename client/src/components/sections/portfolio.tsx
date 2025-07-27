@@ -40,7 +40,7 @@ export default function Portfolio() {
           </div>
 
           {/* Mobile: Show only button */}
-          <div className="md:hidden text-center py-8">
+          <div className="md:hidden flex justify-center items-center py-8">
             <Button 
               onClick={openWebsite}
               className="bg-blue-900 hover:bg-blue-800 text-white font-medium py-8 px-12 rounded-lg transition-all duration-300 text-lg"
