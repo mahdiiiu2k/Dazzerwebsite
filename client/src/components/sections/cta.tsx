@@ -252,11 +252,45 @@ export default function CTA() {
 
                   {/* Instagram */}
                   <div className="flex items-center">
-                    <Instagram className="text-yellow-600 mr-6" size={24} />
                     <div>
-                      <a href="https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
+                      <button 
+                        type="button"
+                        onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
+                        style={{
+                          width: 'auto',
+                          padding: '12px 32px',
+                          backgroundColor: '#E4405F',
+                          color: 'white',
+                          fontWeight: '600',
+                          borderRadius: '8px',
+                          border: 'none',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '6px',
+                          fontSize: '16px',
+                          minHeight: '44px',
+                          transform: 'scale(1)',
+                          boxShadow: '0 4px 12px rgba(228, 64, 95, 0.3)'
+                        }}
+                        onMouseEnter={(e) => {
+                          const target = e.target as HTMLButtonElement;
+                          target.style.transform = 'scale(1.05)';
+                          target.style.backgroundColor = '#C13584';
+                          target.style.boxShadow = '0 6px 20px rgba(228, 64, 95, 0.5)';
+                        }}
+                        onMouseLeave={(e) => {
+                          const target = e.target as HTMLButtonElement;
+                          target.style.transform = 'scale(1)';
+                          target.style.backgroundColor = '#E4405F';
+                          target.style.boxShadow = '0 4px 12px rgba(228, 64, 95, 0.3)';
+                        }}
+                      >
+                        <Instagram size={18} />
                         ds.desiiiign
-                      </a>
+                      </button>
                     </div>
                   </div>
 
