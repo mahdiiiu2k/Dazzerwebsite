@@ -76,7 +76,7 @@ export default function CTA() {
         <div className="luxury-border glass-card p-8 max-w-7xl mx-auto" style={{ position: 'relative', zIndex: 10002 }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Form */}
-            <div>
+            <div className="order-2 lg:order-1">
               <div className="flex items-center mb-6">
                 <Mail className="text-yellow-600 mr-4" size={28} />
                 <div>
@@ -237,7 +237,7 @@ export default function CTA() {
             </div>
             
             {/* Contact Info */}
-            <div className="space-y-6">
+            <div className="space-y-6 order-1 lg:order-2">
               {/* Direct Contact */}
               <div className="border border-yellow-500/30 rounded-xl p-6 backdrop-blur-sm" style={{ backgroundColor: '#21252a' }}>
                 <h4 className="text-2xl font-serif font-bold text-white mb-6">
