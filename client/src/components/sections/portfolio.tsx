@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Portfolio() {
   const scrollToContact = () => {
@@ -46,7 +46,7 @@ export default function Portfolio() {
               className="bg-blue-900 hover:bg-blue-800 text-white font-medium py-8 px-12 rounded-lg transition-all duration-300 text-lg"
             >
               AG Construction & <br />Renovation Website
-              <ExternalLink className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>
