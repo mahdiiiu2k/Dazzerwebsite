@@ -185,7 +185,36 @@ export default function CTA() {
                     <button 
                       type="submit" 
                       disabled={isLoading}
-                      className="flex-1 px-8 py-4 bg-gradient-to-r from-red-900 to-red-800 hover:from-red-800 hover:to-red-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-900/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      style={{
+                        flex: 1,
+                        padding: '16px 32px',
+                        backgroundColor: '#4a0d21',
+                        color: 'white',
+                        fontWeight: '600',
+                        borderRadius: '8px',
+                        border: 'none',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        opacity: isLoading ? 0.5 : 1,
+                        transform: 'scale(1)',
+                        boxShadow: '0 4px 12px rgba(74, 13, 33, 0.3)'
+                      }}
+                      onMouseEnter={(e) => {
+                        const target = e.target as HTMLButtonElement;
+                        target.style.transform = 'scale(1.05)';
+                        target.style.backgroundColor = '#5a1729';
+                        target.style.boxShadow = '0 6px 20px rgba(74, 13, 33, 0.5)';
+                      }}
+                      onMouseLeave={(e) => {
+                        const target = e.target as HTMLButtonElement;
+                        target.style.transform = 'scale(1)';
+                        target.style.backgroundColor = '#4a0d21';
+                        target.style.boxShadow = '0 4px 12px rgba(74, 13, 33, 0.3)';
+                      }}
                     >
                       <Mail size={18} />
                       {isLoading ? 'Envoi en cours...' : 'Envoyer'}
