@@ -16,8 +16,14 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-20">
+        {/* Desktop: Show main heading */}
+        <div className="text-center mb-20 hidden md:block">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">Our Work</h2>
+        </div>
+        
+        {/* Mobile: Show small heading above the card */}
+        <div className="md:hidden mb-4">
+          <p className="text-white text-sm text-left">some of our work:</p>
         </div>
         
         {/* Website Showcase */}
