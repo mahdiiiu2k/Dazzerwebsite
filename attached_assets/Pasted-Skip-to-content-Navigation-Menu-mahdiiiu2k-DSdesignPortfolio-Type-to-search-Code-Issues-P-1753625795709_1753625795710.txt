@@ -1,0 +1,160 @@
+Skip to content
+Navigation Menu
+mahdiiiu2k
+DSdesignPortfolio
+
+Type / to search
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Owner avatar
+DSdesignPortfolio
+Public
+mahdiiiu2k/DSdesignPortfolio
+Go to file
+t
+Name		
+author
+johefet860
+Guide users to easily finalize the Netlify deployment process
+07a3caf
+ · 
+1 minute ago
+attached_assets
+Update instructions to include serverless functions for Netlify deplo…
+2 minutes ago
+client
+Improve contact form and fix email sending confirmation logic
+53 minutes ago
+netlify/functions
+Improve contact form's reliability and error handling for better user…
+45 minutes ago
+server
+Improve contact form and fix email sending confirmation logic
+53 minutes ago
+shared
+Improve contact form and fix email sending confirmation logic
+53 minutes ago
+.gitignore
+Set up core website structure and components for DS Design platform
+yesterday
+.replit
+Enable contact form submissions to send email notifications to the admin
+4 hours ago
+DEPLOYMENT_FIX.md
+Fix contact form email sending issues on Netlify deployment
+1 hour ago
+FILES_TO_UPLOAD.md
+Update instructions to include serverless functions for Netlify deplo…
+2 minutes ago
+MANUAL_DEPLOYMENT_GUIDE.md
+Improve contact form's reliability and error handling for better user…
+45 minutes ago
+NETLIFY_DEBUG_GUIDE.md
+Provide debugging steps for Netlify 500 errors with contact form
+13 minutes ago
+NETLIFY_EMAIL_SETUP.md
+Fix contact form email sending issues on Netlify deployment
+1 hour ago
+NETLIFY_SETUP_STEPS.md
+Provide instructions for setting up environment variables on Netlify
+1 hour ago
+PUSH_GUIDE.md
+Guide users to easily finalize the Netlify deployment process
+1 minute ago
+README_NETLIFY_DEPLOYMENT.md
+Improve contact form reliability and provide clear post-deployment in…
+2 hours ago
+READY_FOR_NETLIFY.md
+Prepare contact form for deployment and ensure successful email sending
+51 minutes ago
+components.json
+Set up core website structure and components for DS Design platform
+yesterday
+drizzle.config.ts
+Set up core website structure and components for DS Design platform
+yesterday
+netlify.toml
+Enable contact form submissions by using a dedicated email function
+1 hour ago
+package-lock.json
+Enable contact form submissions to send email notifications to the admin
+4 hours ago
+package.json
+Enable contact form submissions to send email notifications to the admin
+4 hours ago
+postcss.config.js
+Set up core website structure and components for DS Design platform
+yesterday
+replit.md
+Guide users to easily finalize the Netlify deployment process
+1 minute ago
+tailwind.config.ts
+Set up core website structure and components for DS Design platform
+yesterday
+tsconfig.json
+Set up core website structure and components for DS Design platform
+yesterday
+vite.config.ts
+Set up core website structure and components for DS Design platform
+yesterday
+Repository files navigation
+README
+Add a README
+Help people interested in this repository understand your project by adding a README.
+About
+replit.com/@lilixe4910/DSdesignPortfolio
+ Activity
+Stars
+ 0 stars
+Watchers
+ 0 watching
+Forks
+ 0 forks
+Releases
+No releases published
+Create a new release
+Packages
+No packages published
+Publish your first package
+Languages
+TypeScript
+92.8%
+ 
+JavaScript
+4.3%
+ 
+CSS
+2.3%
+ 
+HTML
+0.6%
+Suggested workflows
+Based on your tech stack
+Gulp logo
+Gulp
+Build a NodeJS project with npm and gulp.
+Webpack logo
+Webpack
+Build a NodeJS project with npm and webpack.
+SLSA Generic generator logo
+SLSA Generic generator
+Generate SLSA3 provenance for your existing release workflows
+More workflows
+Footer
+© 2025 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
+Manage cookies
+Do not share my personal information
