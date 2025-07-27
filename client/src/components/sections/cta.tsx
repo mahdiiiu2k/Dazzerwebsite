@@ -153,7 +153,7 @@ export default function CTA() {
                     />
                   </div>
                   
-                  <div style={{ display: 'flex', gap: '15px' }}>
+                  <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
                     <button 
                       type="submit" 
                       disabled={isLoading}
