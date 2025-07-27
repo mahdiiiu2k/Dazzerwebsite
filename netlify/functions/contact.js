@@ -107,6 +107,15 @@ exports.handler = async (event, context) => {
     // Send email
     await transporter.sendMail(mailOptions);
     
+    // Create contact record with same format as Replit backend
+    const contact = {
+      id: Math.random().toString(36).substr(2, 9),
+      name,
+      email: email || '',
+      message,
+      createdAt: new Date().toISOString()
+    };
+    
     return {
       statusCode: 200,
       headers: {
@@ -114,8 +123,9 @@ exports.handler = async (event, context) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ 
-        success: true, 
-        message: 'Email sent successfully'
+        success: true,
+        contact: contact,
+        emailSent: true
       })
     };
 
@@ -129,7 +139,8 @@ exports.handler = async (event, context) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ 
-        success: false, 
+        success: false,
+        emailSent: false,
         message: 'Failed to send email',
         error: error.message
       })

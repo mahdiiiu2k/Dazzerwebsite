@@ -7,6 +7,8 @@ In your Netlify dashboard, add these environment variables:
 1. **GMAIL_USER** = chouikimahdu@gmail.com
 2. **GMAIL_APP_PASSWORD** = [Your 16-character Gmail App Password]
 
+**IMPORTANT:** You do NOT need SESSION_SECRET for Netlify - only the Gmail credentials above.
+
 ## How to Set Environment Variables in Netlify:
 
 1. Go to your Netlify dashboard
