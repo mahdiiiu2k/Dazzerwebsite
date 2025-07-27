@@ -294,13 +294,7 @@ export default function CTA() {
                     </div>
                   </div>
 
-                  {/* Response Time */}
-                  <div className="border-t border-white/10 pt-4 mt-6">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-300">Average response time:</span>
-                      <span className="text-yellow-400 font-semibold">&lt; 1 hour</span>
-                    </div>
-                  </div>
+
                 </div>
               </div>
 
