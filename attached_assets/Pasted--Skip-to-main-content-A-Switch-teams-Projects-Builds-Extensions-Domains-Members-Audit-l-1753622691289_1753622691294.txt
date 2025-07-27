@@ -1,0 +1,281 @@
+
+Skip to main content
+
+
+A
+Switch teams
+Projects
+Builds
+Extensions
+Domains
+Members
+Audit log
+Security Scorecard
+Usage & billing
+Team settings
+Visual editor dashboard
+Upgrade
+
+M
+Projects
+dsdesignportfolio
+Switch projects
+
+News
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Support
+Project navigation
+Project overview
+Project configuration
+Deploys
+Preview Servers
+Logs
+Metrics
+Domain management
+Forms
+Blobs
+
+Configuration for dsdesignportfolio
+dsdesignportfolio.netlify.app
+
+Deploys from GitHub.
+
+Last update at 2:09 PM (15 minutes ago).
+
+Skip to content
+General
+Project details
+Visitor access
+Status badges
+Project members
+Danger zone
+Build & deploy
+Continuous deployment
+Post processing
+Split Testing
+Build plugins
+Environment variables
+Environment variables
+Project policies
+Visual editor
+Notifications
+Slack notifications
+Emails and webhooks
+Functions
+Overview
+Configuration
+Identity
+Access & security
+Firewall Traffic Rules
+Web Application Firewall
+Emails
+Configuration
+Environment variables
+Securely store secrets, API keys, tokens, and other environment variables
+
+Learn more about environment variables in the docs
+
+Add a variable
+Filter by key name
+Filter by key name
+
+Any scope
+Any context
+Sort
+
+GMAIL_APP_PASSWORD
+All scopes · Same value in all deploy contexts
+
+M
+Mahdi Chouiki updated an hour ago
+
+Options
+Deploy context	Value	
+Production
+
+•••••••
+
+Deploy Previews
+
+•••••••
+
+Branch deploys
+
+•••••••
+
+Preview Server
+
+•••••••
+
+Local development (Netlify CLI)
+
+•••••••
+
+GMAIL_USER
+All scopes · Same value in all deploy contexts
+
+M
+Mahdi Chouiki updated an hour ago
+
+Options
+Deploy context	Value	
+Production
+
+•••••••
+
+Deploy Previews
+
+•••••••
+
+Branch deploys
+
+•••••••
+
+Preview Server
+
+•••••••
+
+Local development (Netlify CLI)
+
+•••••••
+
+Project policies
+Configure project-wide environment variable policies
+
+Sensitive variable policy
+Deploy Previews triggered by a pull request from an unrecognized author’s fork are considered untrusted deploys. Choose how to manage sensitive environment variable access for these deploys.
+Untrusted deploys
+Require approval
+Learn more about sensitive variable policy in the docs
+
+Edit settings
+Docs
+Pricing
+Support
+Blog
+Changelog
+Terms
+© 2025 Netlify
+
