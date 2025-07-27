@@ -187,7 +187,7 @@ export default function CTA() {
                       disabled={isLoading}
                       style={{
                         width: 'auto',
-                        padding: '12px 24px',
+                        padding: '12px 32px',
                         backgroundColor: '#4a0d21',
                         color: 'white',
                         fontWeight: '600',
