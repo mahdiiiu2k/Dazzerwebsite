@@ -69,27 +69,35 @@ export default function CTA() {
       const emailResult = await emailResponse.json();
       console.log('Email result:', emailResult);
       
-      // Also log the response text if it's not JSON
-      if (!emailResponse.ok) {
-        console.error('Response not OK:', emailResponse.statusText);
-      }
-      
-      if (emailResponse.ok) {
-        // Email sent successfully (response was OK)
+      // Check if email was actually sent successfully
+      if (emailResponse.ok && emailResult.success && emailResult.emailSent) {
+        // Email sent successfully
+        console.log('✅ Email sent successfully!');
         setFormData({ name: "", phone: "", email: "", message: "" });
         setShowSuccessPopup(true);
         setTimeout(() => {
           setShowSuccessPopup(false);
         }, 3000);
+      } else if (emailResponse.ok && emailResult.success) {
+        // Form processed but email might have failed
+        console.log('Form processed, checking email status:', emailResult.emailSent);
+        if (emailResult.emailSent) {
+          // Actually succeeded
+          setFormData({ name: "", phone: "", email: "", message: "" });
+          setShowSuccessPopup(true);
+          setTimeout(() => {
+            setShowSuccessPopup(false);
+          }, 3000);
+        } else {
+          // Email failed
+          alert("Message received but email notification failed. We'll still get back to you!");
+          setFormData({ name: "", phone: "", email: "", message: "" });
+        }
       } else {
-        // Email failed but form was submitted
+        // Complete failure
         console.error('Email failed:', emailResult);
         alert("Message received but email notification failed. We'll still get back to you!");
         setFormData({ name: "", phone: "", email: "", message: "" });
-        setShowSuccessPopup(true);
-        setTimeout(() => {
-          setShowSuccessPopup(false);
-        }, 3000);
       }
       
     } catch (error) {
