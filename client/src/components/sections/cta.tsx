@@ -64,7 +64,7 @@ export default function CTA() {
 
       const emailResult = await emailResponse.json();
       
-      if (emailResult.success && emailResult.emailSent) {
+      if (emailResult.success) {
         // Email sent successfully
         setFormData({ name: "", phone: "", email: "", message: "" });
         setShowSuccessPopup(true);
