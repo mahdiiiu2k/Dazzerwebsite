@@ -48,7 +48,7 @@ export default function Portfolio() {
                 onClick={openWebsite}
                 className="backdrop-blur-md bg-white/10 hover:bg-black/30 text-white font-medium py-4 px-8 rounded-lg transition-all duration-300 text-lg border border-white/20"
               >
-                View the website outside <ArrowRight className="w-5 h-5 inline ml-2" />
+                View the website in a new tab <ArrowRight className="w-5 h-5 inline ml-2" />
               </Button>
             </div>
           </div>
