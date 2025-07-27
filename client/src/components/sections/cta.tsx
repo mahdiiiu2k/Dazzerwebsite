@@ -313,38 +313,37 @@ export default function CTA() {
         <div 
           style={{
             position: 'fixed',
-            top: '20px',
-            right: '20px',
-            backgroundColor: '#4a0d21',
-            color: 'white',
+            bottom: '20px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: 'white',
+            color: '#333',
             padding: '16px 24px',
             borderRadius: '8px',
-            boxShadow: '0 8px 32px rgba(74, 13, 33, 0.6)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
             zIndex: 99999,
             display: 'flex',
             alignItems: 'center',
-            gap: '12px',
+            justifyContent: 'center',
             fontWeight: '600',
             fontSize: '16px',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            animation: 'slideInFromRight 0.5s ease-out'
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            animation: 'slideInFromBottom 0.5s ease-out'
           }}
         >
-          <div style={{ fontSize: '20px' }}>✅</div>
           <span>Message sent successfully!</span>
         </div>
       )}
       
       <style dangerouslySetInnerHTML={{
         __html: `
-          @keyframes slideInFromRight {
+          @keyframes slideInFromBottom {
             from {
-              transform: translateX(100%);
+              transform: translateX(-50%) translateY(100%);
               opacity: 0;
             }
             to {
-              transform: translateX(0);
+              transform: translateX(-50%) translateY(0);
               opacity: 1;
             }
           }
