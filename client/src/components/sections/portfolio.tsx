@@ -43,7 +43,7 @@ export default function Portfolio() {
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               />
             </div>
-            <div className="text-center">
+            <div className="text-left">
               <Button 
                 onClick={openWebsite}
                 className="backdrop-blur-md bg-white/10 hover:bg-black/30 text-white font-medium py-4 px-8 rounded-lg transition-all duration-300 text-lg border border-white/20"
