@@ -30,38 +30,60 @@ export default function CTA() {
     setIsLoading(true);
     
     try {
-      // Use URLSearchParams for proper form encoding
-      const params = new URLSearchParams();
-      params.append('form-name', 'contact');
-      params.append('name', formData.name);
-      params.append('phone', formData.phone);
-      params.append('email', formData.email || '');
-      params.append('message', formData.message);
+      // Send to both Netlify Forms (for backup) and SendGrid function (for email)
+      
+      // 1. Submit to Netlify Forms for backup
+      const netlifyParams = new URLSearchParams();
+      netlifyParams.append('form-name', 'contact');
+      netlifyParams.append('name', formData.name);
+      netlifyParams.append('phone', formData.phone);
+      netlifyParams.append('email', formData.email || '');
+      netlifyParams.append('message', formData.message);
 
-      const response = await fetch('/', {
+      fetch('/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: params.toString()
+        body: netlifyParams.toString()
+      }).catch(err => console.log('Netlify form backup failed:', err));
+
+      // 2. Send email via serverless function
+      const emailResponse = await fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || '',
+          message: formData.message
+        })
       });
 
-      // Reset form and show success regardless of response status
-      // because Netlify Forms often return strange status codes
-      setFormData({ name: "", phone: "", email: "", message: "" });
-      setShowSuccessPopup(true);
-      setTimeout(() => {
-        setShowSuccessPopup(false);
-      }, 3000);
+      const emailResult = await emailResponse.json();
+      
+      if (emailResult.success) {
+        // Email sent successfully
+        setFormData({ name: "", phone: "", email: "", message: "" });
+        setShowSuccessPopup(true);
+        setTimeout(() => {
+          setShowSuccessPopup(false);
+        }, 3000);
+      } else {
+        // Email failed but form was submitted
+        alert("Message received but email notification failed. We'll still get back to you!");
+        setFormData({ name: "", phone: "", email: "", message: "" });
+        setShowSuccessPopup(true);
+        setTimeout(() => {
+          setShowSuccessPopup(false);
+        }, 3000);
+      }
       
     } catch (error) {
       console.error('Contact form error:', error);
-      // Still show success for Netlify forms
-      setFormData({ name: "", phone: "", email: "", message: "" });
-      setShowSuccessPopup(true);
-      setTimeout(() => {
-        setShowSuccessPopup(false);
-      }, 3000);
+      alert("There was an issue sending your message. Please try again or contact us directly via WhatsApp.");
     } finally {
       setIsLoading(false);
     }
