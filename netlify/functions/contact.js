@@ -63,7 +63,8 @@ exports.handler = async (event, context) => {
 
     // Check if Gmail credentials are available
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
-      console.error('Gmail credentials not found');
+      console.error('Gmail credentials not found. GMAIL_USER:', process.env.GMAIL_USER ? 'exists' : 'missing');
+      console.error('GMAIL_APP_PASSWORD:', process.env.GMAIL_APP_PASSWORD ? 'exists' : 'missing');
       return {
         statusCode: 500,
         headers: {
@@ -72,7 +73,11 @@ exports.handler = async (event, context) => {
         },
         body: JSON.stringify({ 
           success: false, 
-          message: 'Email service not configured' 
+          message: 'Email service not configured - missing environment variables',
+          details: {
+            GMAIL_USER: process.env.GMAIL_USER ? 'configured' : 'missing',
+            GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? 'configured' : 'missing'
+          }
         })
       };
     }
@@ -89,7 +94,7 @@ exports.handler = async (event, context) => {
     // Email content
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: 'chouikimahdu@gmail.com',
+      to: 'chouikimahdiabderrahmane@gmail.com',
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f4f4f4; padding: 20px;">
@@ -123,7 +128,35 @@ exports.handler = async (event, context) => {
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    console.log('Attempting to send email to:', mailOptions.to);
+    console.log('From email:', mailOptions.from);
+    
+    try {
+      const info = await transporter.sendMail(mailOptions);
+      console.log('Email sent successfully. Message ID:', info.messageId);
+    } catch (emailError) {
+      console.error('Failed to send email:', emailError.message);
+      console.error('Email error details:', {
+        code: emailError.code,
+        response: emailError.response,
+        responseCode: emailError.responseCode
+      });
+      
+      return {
+        statusCode: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+          success: false,
+          emailSent: false,
+          message: 'Failed to send email',
+          error: emailError.message,
+          details: 'Check function logs in Netlify dashboard for more details'
+        })
+      };
+    }
     
     // Create contact record with same format as Replit backend
     const contact = {
