@@ -147,7 +147,7 @@ export default function CTA() {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={5}
-                      placeholder="Tell us about your project and what you need..."
+                      placeholder="Ask questions, or tell us about your project and what you want to build"
                       className="w-full px-4 py-3 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 focus:outline-none transition-all duration-300 resize-none"
                       required
                     />
