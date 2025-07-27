@@ -30,7 +30,7 @@ export default function CTA() {
     setIsLoading(true);
     
     try {
-      // Send to both Netlify Forms (for backup) and SendGrid function (for email)
+      // Send to both Netlify Forms (for backup) and your existing email API
       
       // 1. Submit to Netlify Forms for backup
       const netlifyParams = new URLSearchParams();
@@ -48,8 +48,8 @@ export default function CTA() {
         body: netlifyParams.toString()
       }).catch(err => console.log('Netlify form backup failed:', err));
 
-      // 2. Send email via serverless function
-      const emailResponse = await fetch('/.netlify/functions/send-email', {
+      // 2. Send email via your existing API
+      const emailResponse = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export default function CTA() {
 
       const emailResult = await emailResponse.json();
       
-      if (emailResult.success) {
+      if (emailResult.success && emailResult.emailSent) {
         // Email sent successfully
         setFormData({ name: "", phone: "", email: "", message: "" });
         setShowSuccessPopup(true);
