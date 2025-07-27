@@ -213,4 +213,21 @@
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
   }
+
+  /* Image optimization styles */
+  img {
+    content-visibility: auto;
+    contain-intrinsic-size: 320px 320px;
+  }
+
+  /* Hero image specific optimizations */
+  .hero-image {
+    transform: translateZ(0);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .hero-image.loaded {
+    opacity: 1;
+  }
 }
