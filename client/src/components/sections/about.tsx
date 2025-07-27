@@ -98,7 +98,7 @@ export default function About() {
               style={{
                 width: 'auto',
                 padding: '12px 32px',
-                backgroundColor: '#4a0d21',
+                backgroundColor: '#124925',
                 color: 'white',
                 fontWeight: '600',
                 borderRadius: '8px',
@@ -112,20 +112,20 @@ export default function About() {
                 fontSize: '16px',
                 minHeight: '44px',
                 transform: 'scale(1)',
-                boxShadow: '0 4px 12px rgba(74, 13, 33, 0.3)',
+                boxShadow: '0 4px 12px rgba(18, 73, 37, 0.3)',
                 margin: '0 auto'
               }}
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.05)';
-                target.style.backgroundColor = '#5a1729';
-                target.style.boxShadow = '0 6px 20px rgba(74, 13, 33, 0.5)';
+                target.style.backgroundColor = '#0f3a1f';
+                target.style.boxShadow = '0 6px 20px rgba(18, 73, 37, 0.5)';
               }}
               onMouseLeave={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1)';
-                target.style.backgroundColor = '#4a0d21';
-                target.style.boxShadow = '0 4px 12px rgba(74, 13, 33, 0.3)';
+                target.style.backgroundColor = '#124925';
+                target.style.boxShadow = '0 4px 12px rgba(18, 73, 37, 0.3)';
               }}
             >
               <MessageSquare size={18} />
