@@ -244,13 +244,13 @@ export default function CTA() {
               {/* Direct Contact */}
               <div className="border border-yellow-500/30 rounded-xl p-6 backdrop-blur-sm" style={{ backgroundColor: '#21252a' }}>
                 <h4 className="text-2xl font-serif font-bold text-white mb-6 flex items-center">
-                  <Mail className="text-yellow-500 mr-4" size={28} />
+                  <Mail className="text-yellow-600 mr-4" size={28} />
                   Direct Contact
                 </h4>
                 <div className="space-y-6">
                   {/* WhatsApp */}
                   <div className="flex items-center">
-                    <MessageSquare className="text-yellow-500 mr-6" size={24} />
+                    <MessageSquare className="text-yellow-600 mr-6" size={24} />
                     <div>
                       <a href="https://wa.me/213797496469" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
                         WhatsApp Chat
@@ -260,7 +260,7 @@ export default function CTA() {
 
                   {/* Instagram */}
                   <div className="flex items-center">
-                    <Instagram className="text-yellow-500 mr-6" size={24} />
+                    <Instagram className="text-yellow-600 mr-6" size={24} />
                     <div>
                       <a href="https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
                         ds.desiiiign
