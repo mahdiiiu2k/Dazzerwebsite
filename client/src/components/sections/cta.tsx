@@ -140,7 +140,7 @@ export default function CTA() {
                   
                   <div className="space-y-3 mb-8">
                     <label className="block text-sm font-medium text-gray-200 tracking-wide">
-                      Project Description <span className="text-red-400">*</span>
+                      Your Message <span className="text-red-400">*</span>
                     </label>
                     <textarea
                       name="message"
