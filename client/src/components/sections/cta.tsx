@@ -66,8 +66,13 @@ export default function CTA() {
       const emailResult = await emailResponse.json();
       console.log('Email result:', emailResult);
       
-      if (emailResponse.ok && emailResult.success) {
-        // Email sent successfully
+      // Also log the response text if it's not JSON
+      if (!emailResponse.ok) {
+        console.error('Response not OK:', emailResponse.statusText);
+      }
+      
+      if (emailResponse.ok) {
+        // Email sent successfully (response was OK)
         setFormData({ name: "", phone: "", email: "", message: "" });
         setShowSuccessPopup(true);
         setTimeout(() => {
