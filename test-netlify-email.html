@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netlify Email Function Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+        .result { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .error { background: #ffe6e6; border-left: 4px solid #ff0000; }
+        .success { background: #e6ffe6; border-left: 4px solid #00aa00; }
+        button { background: #007cba; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #005a8b; }
+        pre { background: #f9f9f9; padding: 10px; border-radius: 3px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Netlify Email Function Debugger</h1>
+    <p>This tool helps diagnose email function issues on your Netlify deployment.</p>
+    
+    <div>
+        <h3>Step 1: Check Function Status</h3>
+        <button onclick="testEmailConfig()">Test Email Configuration</button>
+        <div id="configResult"></div>
+    </div>
+
+    <div>
+        <h3>Step 2: Test Email Sending</h3>
+        <button onclick="testEmailSending()">Send Test Email</button>
+        <div id="emailResult"></div>
+    </div>
+
+    <div>
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Upload this file to your Netlify site root directory</li>
+            <li>Access it at: https://your-site.netlify.app/test-netlify-email.html</li>
+            <li>Click the buttons above to test your email function</li>
+            <li>Check the results to identify the exact problem</li>
+        </ol>
+    </div>
+
+    <script>
+        async function testEmailConfig() {
+            const resultDiv = document.getElementById('configResult');
+            resultDiv.innerHTML = '<p>Testing email configuration...</p>';
+            
+            try {
+                const response = await fetch('/.netlify/functions/test-email');
+                const result = await response.json();
+                
+                resultDiv.innerHTML = `
+                    <div class="result ${result.status === 'success' ? 'success' : 'error'}">
+                        <h4>Configuration Test Result:</h4>
+                        <p><strong>Status:</strong> ${result.status}</p>
+                        <p><strong>Message:</strong> ${result.message}</p>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    </div>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="result error">
+                        <h4>Configuration Test Failed:</h4>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                        <p>The test-email function might not be deployed or there's a network issue.</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function testEmailSending() {
+            const resultDiv = document.getElementById('emailResult');
+            resultDiv.innerHTML = '<p>Testing email sending...</p>';
+            
+            try {
+                const response = await fetch('/.netlify/functions/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: 'Test User',
+                        phone: '+1234567890',
+                        email: 'test@example.com',
+                        message: 'This is a test message from the Netlify email debugger.'
+                    })
+                });
+
+                const result = await response.json();
+                
+                resultDiv.innerHTML = `
+                    <div class="result ${result.success ? 'success' : 'error'}">
+                        <h4>Email Test Result:</h4>
+                        <p><strong>Success:</strong> ${result.success}</p>
+                        <p><strong>Email Sent:</strong> ${result.emailSent}</p>
+                        <p><strong>Message:</strong> ${result.message}</p>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    </div>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="result error">
+                        <h4>Email Test Failed:</h4>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                        <p>The contact function might not be deployed or there's a network issue.</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

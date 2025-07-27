@@ -61,22 +61,32 @@ exports.handler = async (event, context) => {
       };
     }
 
+    // Log all available environment variables (safely)
+    console.log('Environment check:', {
+      GMAIL_USER: process.env.GMAIL_USER ? 'configured' : 'missing',
+      GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? 'configured' : 'missing',
+      NODE_ENV: process.env.NODE_ENV,
+      availableEnvVars: Object.keys(process.env).filter(key => key.includes('GMAIL'))
+    });
+
     // Check if Gmail credentials are available
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
       console.error('Gmail credentials not found. GMAIL_USER:', process.env.GMAIL_USER ? 'exists' : 'missing');
       console.error('GMAIL_APP_PASSWORD:', process.env.GMAIL_APP_PASSWORD ? 'exists' : 'missing');
       return {
-        statusCode: 500,
+        statusCode: 200, // Changed to 200 to avoid CORS issues
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ 
-          success: false, 
+          success: false,
+          emailSent: false,
           message: 'Email service not configured - missing environment variables',
-          details: {
+          debug: {
             GMAIL_USER: process.env.GMAIL_USER ? 'configured' : 'missing',
-            GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? 'configured' : 'missing'
+            GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? 'configured' : 'missing',
+            allEnvKeys: Object.keys(process.env).filter(key => key.includes('GMAIL'))
           }
         })
       };

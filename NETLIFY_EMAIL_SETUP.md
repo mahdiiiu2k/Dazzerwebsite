@@ -81,3 +81,34 @@ curl -X POST https://your-site.netlify.app/.netlify/functions/contact \
 - Check Gmail Sent folder for confirmation
 - Email goes to: chouikimahdiabderrahmane@gmail.com
 - Subject: "New Contact Form Submission from [Name]"
+
+### 6. Debug Your Specific Issue
+
+Since you're getting "Message received but email notification failed", follow these steps:
+
+**Step 1: Check Function Logs**
+1. Go to your Netlify Dashboard
+2. Click on your site
+3. Go to "Functions" tab
+4. Click on "contact" function
+5. Look at the logs for error details
+
+**Step 2: Test Environment Variables**
+Upload the `test-netlify-email.html` file to your site and visit:
+`https://your-site.netlify.app/test-netlify-email.html`
+
+This will show you exactly what's wrong.
+
+**Step 3: Common Fixes**
+- Make sure environment variables are named exactly: `GMAIL_USER` and `GMAIL_APP_PASSWORD`
+- Redeploy your site after adding environment variables
+- Generate a new Gmail App Password if the current one doesn't work
+- Check that your Gmail account has 2-factor authentication enabled
+
+**Step 4: Quick Test**
+Run this command in your terminal (replace YOUR-SITE with your actual Netlify URL):
+```bash
+curl -X POST https://YOUR-SITE.netlify.app/.netlify/functions/test-email
+```
+
+This will show you the environment variable status.

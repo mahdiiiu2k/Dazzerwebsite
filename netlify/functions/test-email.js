@@ -36,7 +36,8 @@ exports.handler = async (event, context) => {
           status: 'error',
           message: 'Email credentials not configured',
           environment: envCheck,
-          instructions: 'Add GMAIL_USER and GMAIL_APP_PASSWORD to Netlify environment variables'
+          allEnvVars: Object.keys(process.env).sort(),
+          instructions: 'Add GMAIL_USER and GMAIL_APP_PASSWORD to Netlify environment variables and redeploy'
         })
       };
     }
