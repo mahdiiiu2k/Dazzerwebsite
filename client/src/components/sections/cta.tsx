@@ -250,18 +250,6 @@ export default function CTA() {
                   Direct Contact
                 </h4>
                 <div className="space-y-6">
-                  {/* Phone Number */}
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
-                      <Phone className="text-white" size={18} />
-                    </div>
-                    <div>
-                      <a href="tel:+213797496469" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
-                        +213 797 496 469
-                      </a>
-                    </div>
-                  </div>
-
                   {/* WhatsApp */}
                   <div className="flex items-center">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style={{ backgroundColor: '#124925' }}>
@@ -270,6 +258,18 @@ export default function CTA() {
                     <div>
                       <a href="https://wa.me/213797496469" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-green-400 transition-colors cursor-pointer">
                         WhatsApp Chat
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Instagram */}
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                      <span className="text-white text-sm">📷</span>
+                    </div>
+                    <div>
+                      <a href="https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-pink-400 transition-colors cursor-pointer">
+                        ds.desiiiign
                       </a>
                     </div>
                   </div>
@@ -284,62 +284,7 @@ export default function CTA() {
                 </div>
               </div>
 
-              {/* Our Channels */}
-              <div className="border-l-4 border-purple-500 pl-6">
-                <h4 className="text-xl font-serif font-semibold text-white mb-4">
-                  Our Channels
-                </h4>
-                <div className="space-y-4">
-                  {/* DS Design */}
-                  <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 bg-gradient-to-br from-yellow-600 to-red-900 rounded-xl flex items-center justify-center mr-4">
-                        <span className="text-white font-bold text-sm">DS</span>
-                      </div>
-                      <div>
-                        <h5 className="text-white font-semibold">DS DESIGN</h5>
-                        <p className="text-gray-300 text-sm">Professional web design services</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Instagram */}
-                  <a 
-                    href="https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA=="
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-colors"
-                  >
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
-                        <span className="text-white text-sm">📷</span>
-                      </div>
-                      <div>
-                        <h5 className="text-white font-semibold">ds.desiiiign</h5>
-                        <p className="text-gray-300 text-sm">Photos and stories from our projects</p>
-                      </div>
-                    </div>
-                  </a>
-                  
-                  {/* WhatsApp */}
-                  <a 
-                    href="https://wa.me/213797496469"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-colors"
-                  >
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style={{ backgroundColor: '#124925' }}>
-                        <span className="text-white text-sm">💬</span>
-                      </div>
-                      <div>
-                        <h5 className="text-white font-semibold">@dsdesign</h5>
-                        <p className="text-gray-300 text-sm">Quick responses and project updates</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
