@@ -48,8 +48,11 @@ export default function CTA() {
         body: netlifyParams.toString()
       }).catch(err => console.log('Netlify form backup failed:', err));
 
-      // 2. Send email via Netlify function
-      const emailResponse = await fetch('/.netlify/functions/contact', {
+      // 2. Send email via appropriate endpoint (Replit vs Netlify)
+      const isNetlify = window.location.hostname.includes('netlify');
+      const emailEndpoint = isNetlify ? '/.netlify/functions/contact' : '/api/contact';
+      
+      const emailResponse = await fetch(emailEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
