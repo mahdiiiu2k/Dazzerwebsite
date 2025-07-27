@@ -208,7 +208,6 @@ export default function CTA() {
                 <div className="space-y-6">
                   {/* WhatsApp */}
                   <div className="flex items-center">
-                    <Phone className="text-yellow-600 mr-6" size={24} />
                     <div>
                       <button 
                         type="button"
