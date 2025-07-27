@@ -80,7 +80,7 @@ export default function CTA() {
               <div className="flex items-center mb-6">
                 <Mail className="text-yellow-600 mr-4" size={28} />
                 <div>
-                  <h3 className="text-2xl font-serif font-semibold text-white">Quote Request</h3>
+                  <h3 className="text-2xl font-serif font-semibold text-white">Direct Message</h3>
                 </div>
               </div>
               
