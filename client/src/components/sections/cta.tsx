@@ -245,7 +245,7 @@ export default function CTA() {
                         }}
                       >
                         <Phone size={18} />
-                        WhatsApp
+                        WhatsApp Us
                       </button>
                     </div>
                   </div>
