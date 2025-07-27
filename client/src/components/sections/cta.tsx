@@ -191,7 +191,7 @@ export default function CTA() {
                       }}
                     >
                       <Mail size={18} />
-                      {isLoading ? 'Envoi en cours...' : 'Envoyer'}
+                      {isLoading ? 'Sending...' : 'Send'}
                     </button>
                   </div>
                 </form>
