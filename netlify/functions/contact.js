@@ -1,27 +1,36 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = async (event, context) => {
-  // Handle CORS
+  console.log('Function invoked with method:', event.httpMethod);
+  console.log('Headers:', JSON.stringify(event.headers, null, 2));
+  
+  // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS'
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Max-Age': '3600'
       },
-      body: ''
+      body: JSON.stringify({ message: 'CORS preflight OK' })
     };
   }
 
   if (event.httpMethod !== 'POST') {
+    console.log('Invalid method:', event.httpMethod);
     return {
       statusCode: 405,
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: 'Method Not Allowed' })
+      body: JSON.stringify({ 
+        success: false,
+        emailSent: false,
+        message: 'Method Not Allowed - only POST requests accepted' 
+      })
     };
   }
 

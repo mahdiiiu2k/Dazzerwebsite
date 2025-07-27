@@ -48,14 +48,22 @@ export default function CTA() {
         body: netlifyParams.toString()
       }).catch(err => console.log('Netlify form backup failed:', err));
 
-      // 2. Send email via appropriate endpoint (Replit vs Netlify)
-      const isNetlify = window.location.hostname.includes('netlify');
-      const emailEndpoint = isNetlify ? '/.netlify/functions/contact' : '/api/contact';
+      // 2. Send email via serverless function (works for both Replit and Netlify)
+      let emailEndpoint = '/.netlify/functions/contact-simple';
+      
+      // Fallback to local API if on Replit
+      if (window.location.hostname === 'localhost' || window.location.port === '5000') {
+        emailEndpoint = '/api/contact';
+      }
+      
+      console.log('Sending email to endpoint:', emailEndpoint);
+      console.log('Form data:', { name: formData.name, phone: formData.phone, email: formData.email, message: formData.message });
       
       const emailResponse = await fetch(emailEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
           name: formData.name,
@@ -65,19 +73,36 @@ export default function CTA() {
         })
       });
 
-      const emailResult = await emailResponse.json();
+      console.log('Email response status:', emailResponse.status);
+      console.log('Email response headers:', Object.fromEntries(emailResponse.headers.entries()));
+      
+      let emailResult;
+      try {
+        emailResult = await emailResponse.json();
+        console.log('Email response body:', emailResult);
+      } catch (parseError) {
+        console.error('Failed to parse email response:', parseError);
+        const responseText = await emailResponse.text();
+        console.error('Raw response:', responseText);
+        
+        alert("There was an issue processing your message. Please try again or contact us directly via WhatsApp.");
+        return;
+      }
       
       // Check if email was actually sent successfully
       if (emailResponse.ok && emailResult.success && emailResult.emailSent) {
         // Email sent successfully - show success popup
+        console.log('Email sent successfully!');
         setFormData({ name: "", phone: "", email: "", message: "" });
         setShowSuccessPopup(true);
         setTimeout(() => {
           setShowSuccessPopup(false);
         }, 3000);
       } else {
-        // Email failed - show error message
-        alert("Message received but email notification failed. We'll still get back to you!");
+        // Email failed - show detailed error
+        console.error('Email sending failed:', emailResult);
+        const errorMessage = emailResult.message || emailResult.error || 'Unknown error';
+        alert(`Message received but email notification failed: ${errorMessage}. We'll still get back to you!`);
         setFormData({ name: "", phone: "", email: "", message: "" });
       }
       
