@@ -186,7 +186,7 @@ export default function CTA() {
                       type="submit" 
                       disabled={isLoading}
                       style={{
-                        flex: 1,
+                        width: 'auto',
                         padding: '12px 24px',
                         backgroundColor: '#4a0d21',
                         color: 'white',
