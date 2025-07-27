@@ -117,7 +117,7 @@ export default function CTA() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="Enter your phone number"
+                        placeholder="Your number"
                         className="w-full px-4 py-3 bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 focus:outline-none transition-all duration-300"
                         required
                       />
