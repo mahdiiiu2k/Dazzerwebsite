@@ -34,7 +34,7 @@ export default function Portfolio() {
               <h3 className="text-3xl md:text-4xl font-bold text-white font-serif mb-4">AG Construction & Renovation</h3>
               <p className="text-xl text-white font-light">Professional website delivered in 24 hours</p>
             </div>
-            <div className="relative w-full h-[600px] rounded-2xl overflow-hidden">
+            <div className="relative w-full h-[600px] rounded-2xl overflow-hidden mb-6">
               <iframe
                 src="https://guileless-begonia-56229e.netlify.app/"
                 className="w-full h-full border-0 rounded-2xl"
@@ -42,6 +42,14 @@ export default function Portfolio() {
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               />
+            </div>
+            <div className="text-center">
+              <Button 
+                onClick={openWebsite}
+                className="backdrop-blur-md bg-white/10 hover:bg-black/30 text-white font-medium py-4 px-8 rounded-lg transition-all duration-300 text-lg border border-white/20"
+              >
+                View the website outside <ArrowRight className="w-5 h-5 inline ml-2" />
+              </Button>
             </div>
           </div>
 
