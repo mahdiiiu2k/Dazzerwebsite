@@ -4,14 +4,13 @@
 
 1. **Build the website:**
    ```bash
-   cd client
-   npm run build
+   vite build
    ```
 
 2. **Upload to Netlify:**
    - Go to [netlify.com](https://netlify.com) and sign up/login
    - Click "Add new site" → "Deploy manually"
-   - Drag and drop the `client/dist` folder
+   - Drag and drop the `dist/public` folder
    - Your site will be live immediately!
 
 ## Advanced Setup (with Git integration)
@@ -24,8 +23,8 @@
    - In Netlify, click "Add new site" → "Import from Git"
    - Connect your GitHub account and select your repository
    - Use these build settings:
-     - **Build command:** `cd client && npm run build`
-     - **Publish directory:** `client/dist`
+     - **Build command:** `vite build`
+     - **Publish directory:** `dist/public`
    - Click "Deploy site"
 
 ## Contact Form Setup
