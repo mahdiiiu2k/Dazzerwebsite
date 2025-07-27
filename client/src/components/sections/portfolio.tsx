@@ -43,7 +43,7 @@ export default function Portfolio() {
           <div className="md:hidden flex justify-center items-center py-8">
             <Button 
               onClick={openWebsite}
-              className="bg-purple-950 hover:bg-purple-900 text-white font-medium py-12 px-12 rounded-lg transition-all duration-300 text-lg"
+              className="bg-purple-950/80 backdrop-blur-md hover:bg-purple-900/80 text-white font-medium py-12 px-12 rounded-lg transition-all duration-300 text-lg"
             >
               <span className="block text-left">
                 AG Construction &<br />
