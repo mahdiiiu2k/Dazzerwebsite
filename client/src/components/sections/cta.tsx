@@ -119,7 +119,7 @@ export default function CTA() {
       <div className="container mx-auto relative" style={{ zIndex: 10001 }}>
         <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-2 sm:px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 sm:mb-6 gradient-text">
-            Need a Website?
+            Need a website for your business?
           </h2>
           <div className="w-12 sm:w-16 lg:w-24 h-1 bg-yellow-600 mx-auto mb-4 sm:mb-6"></div>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
