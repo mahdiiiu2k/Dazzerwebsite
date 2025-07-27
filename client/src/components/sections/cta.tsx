@@ -4,6 +4,7 @@ import { Mail, Phone, MessageSquare, Instagram } from "lucide-react";
 export default function CTA() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -43,9 +44,12 @@ export default function CTA() {
       });
 
       if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({ name: "", phone: "", email: "", message: "" });
-        alert("Message sent successfully! We'll contact you soon.");
+        // Show success popup
+        setShowSuccessPopup(true);
+        // Hide popup after 3 seconds
+        setTimeout(() => {
+          setShowSuccessPopup(false);
+        }, 3000);
       } else {
         alert("Error sending message. Please try again.");
       }
@@ -303,6 +307,49 @@ export default function CTA() {
           </div>
         </div>
       </div>
+      
+      {/* Success Popup */}
+      {showSuccessPopup && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: '20px',
+            right: '20px',
+            backgroundColor: '#4a0d21',
+            color: 'white',
+            padding: '16px 24px',
+            borderRadius: '8px',
+            boxShadow: '0 8px 32px rgba(74, 13, 33, 0.6)',
+            zIndex: 99999,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            fontWeight: '600',
+            fontSize: '16px',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            animation: 'slideInFromRight 0.5s ease-out'
+          }}
+        >
+          <div style={{ fontSize: '20px' }}>✅</div>
+          <span>Message sent successfully!</span>
+        </div>
+      )}
+      
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes slideInFromRight {
+            from {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+            to {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+        `
+      }} />
     </section>
   );
 }
