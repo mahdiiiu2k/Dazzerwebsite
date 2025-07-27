@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema, insertReferralSchema } from "@shared/schema";
 import { z } from "zod";
+import { sendContactEmail } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -10,7 +11,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertContactSchema.parse(req.body);
       const contact = await storage.createContact(validatedData);
-      res.json({ success: true, contact });
+      
+      // Extract phone from message if it exists
+      const phoneMatch = validatedData.message.match(/Phone:\s*(.+)/);
+      const phone = phoneMatch ? phoneMatch[1] : undefined;
+      const messageWithoutPhone = validatedData.message.replace(/\n\nPhone:\s*.+$/, '');
+      
+      // Send email notification
+      const emailSent = await sendContactEmail({
+        name: validatedData.name,
+        email: validatedData.email,
+        phone: phone,
+        message: messageWithoutPhone
+      });
+      
+      if (!emailSent) {
+        console.warn('Failed to send email notification, but contact was saved');
+      }
+      
+      res.json({ success: true, contact, emailSent });
     } catch (error) {
       if (error instanceof z.ZodError) {
         res.status(400).json({ 
@@ -19,6 +38,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           errors: error.errors 
         });
       } else {
+        console.error('Contact form error:', error);
         res.status(500).json({ 
           success: false, 
           message: "Failed to submit contact form" 
