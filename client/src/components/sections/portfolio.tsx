@@ -23,7 +23,7 @@ export default function Portfolio() {
         
         {/* Mobile: Show small heading above the card */}
         <div className="md:hidden mb-4">
-          <p className="text-white text-lg text-left">-Some Of Our Work:</p>
+          <p className="text-white text-2xl text-left">-Some Of Our Work:</p>
         </div>
         
         {/* Website Showcase */}
