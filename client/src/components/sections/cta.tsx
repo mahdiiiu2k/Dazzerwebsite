@@ -158,7 +158,7 @@ export default function CTA() {
                       type="submit" 
                       disabled={isLoading}
                       style={{
-                        width: 'auto',
+                        width: '100%',
                         padding: '12px 32px',
                         backgroundColor: '#4a0d21',
                         color: 'white',
@@ -193,44 +193,6 @@ export default function CTA() {
                       <Mail size={18} />
                       {isLoading ? 'Envoi en cours...' : 'Envoyer'}
                     </button>
-                    <button 
-                      type="button"
-                      onClick={() => window.open('https://wa.me/213797496469', '_blank')}
-                      style={{
-                        width: 'auto',
-                        padding: '12px 32px',
-                        backgroundColor: '#124925',
-                        color: 'white',
-                        fontWeight: '600',
-                        borderRadius: '8px',
-                        border: 'none',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '6px',
-                        fontSize: '16px',
-                        minHeight: '44px',
-                        transform: 'scale(1)',
-                        boxShadow: '0 4px 12px rgba(18, 73, 37, 0.3)'
-                      }}
-                      onMouseEnter={(e) => {
-                        const target = e.target as HTMLButtonElement;
-                        target.style.transform = 'scale(1.05)';
-                        target.style.backgroundColor = '#0f3a1f';
-                        target.style.boxShadow = '0 6px 20px rgba(18, 73, 37, 0.5)';
-                      }}
-                      onMouseLeave={(e) => {
-                        const target = e.target as HTMLButtonElement;
-                        target.style.transform = 'scale(1)';
-                        target.style.backgroundColor = '#124925';
-                        target.style.boxShadow = '0 4px 12px rgba(18, 73, 37, 0.3)';
-                      }}
-                    >
-                      <MessageSquare size={18} />
-                      WhatsApp Us
-                    </button>
                   </div>
                 </form>
               )}
@@ -248,9 +210,44 @@ export default function CTA() {
                   <div className="flex items-center">
                     <Phone className="text-yellow-600 mr-6" size={24} />
                     <div>
-                      <a href="https://wa.me/213797496469" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
-                        WhatsApp Chat
-                      </a>
+                      <button 
+                        type="button"
+                        onClick={() => window.open('https://wa.me/213797496469', '_blank')}
+                        style={{
+                          width: 'auto',
+                          padding: '12px 32px',
+                          backgroundColor: '#124925',
+                          color: 'white',
+                          fontWeight: '600',
+                          borderRadius: '8px',
+                          border: 'none',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '6px',
+                          fontSize: '16px',
+                          minHeight: '44px',
+                          transform: 'scale(1)',
+                          boxShadow: '0 4px 12px rgba(18, 73, 37, 0.3)'
+                        }}
+                        onMouseEnter={(e) => {
+                          const target = e.target as HTMLButtonElement;
+                          target.style.transform = 'scale(1.05)';
+                          target.style.backgroundColor = '#0f3a1f';
+                          target.style.boxShadow = '0 6px 20px rgba(18, 73, 37, 0.5)';
+                        }}
+                        onMouseLeave={(e) => {
+                          const target = e.target as HTMLButtonElement;
+                          target.style.transform = 'scale(1)';
+                          target.style.backgroundColor = '#124925';
+                          target.style.boxShadow = '0 4px 12px rgba(18, 73, 37, 0.3)';
+                        }}
+                      >
+                        <MessageSquare size={18} />
+                        WhatsApp Us
+                      </button>
                     </div>
                   </div>
 
