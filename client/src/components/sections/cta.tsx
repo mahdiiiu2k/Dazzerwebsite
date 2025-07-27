@@ -29,21 +29,23 @@ export default function CTA() {
 
     setIsLoading(true);
     try {
-      const backendData = {
-        name: formData.name,
-        email: formData.email || "",
-        message: `${formData.message}\n\nPhone: ${formData.phone}`
-      };
+      // Create form data for Netlify Forms
+      const netlifyFormData = new FormData();
+      netlifyFormData.append('form-name', 'contact');
+      netlifyFormData.append('name', formData.name);
+      netlifyFormData.append('phone', formData.phone);
+      netlifyFormData.append('email', formData.email || '');
+      netlifyFormData.append('message', formData.message);
 
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(backendData),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(netlifyFormData as any).toString()
       });
 
       if (response.ok) {
+        // Reset form
+        setFormData({ name: "", phone: "", email: "", message: "" });
         // Show success popup
         setShowSuccessPopup(true);
         // Hide popup after 3 seconds
@@ -95,7 +97,18 @@ export default function CTA() {
                   <p className="text-gray-300">We'll get back to you within 24 hours!</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ padding: '16px 0', position: 'relative', zIndex: 10003 }}>
+                <form 
+                  name="contact" 
+                  method="POST" 
+                  data-netlify="true" 
+                  data-netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit} 
+                  style={{ padding: '16px 0', position: 'relative', zIndex: 10003 }}
+                >
+                  {/* Netlify form detection */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  {/* Honeypot field for spam protection */}
+                  <input type="hidden" name="bot-field" />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                     <div className="space-y-3">
                       <label className="block text-sm font-medium text-gray-200 tracking-wide">

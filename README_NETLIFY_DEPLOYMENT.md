@@ -1,0 +1,55 @@
+# Deploy DS Design Website to Netlify
+
+## Quick Setup
+
+1. **Build the website:**
+   ```bash
+   cd client
+   npm run build
+   ```
+
+2. **Upload to Netlify:**
+   - Go to [netlify.com](https://netlify.com) and sign up/login
+   - Click "Add new site" → "Deploy manually"
+   - Drag and drop the `client/dist` folder
+   - Your site will be live immediately!
+
+## Advanced Setup (with Git integration)
+
+1. **Push your code to GitHub:**
+   - Create a new GitHub repository
+   - Push your code to the repository
+
+2. **Connect to Netlify:**
+   - In Netlify, click "Add new site" → "Import from Git"
+   - Connect your GitHub account and select your repository
+   - Use these build settings:
+     - **Build command:** `cd client && npm run build`
+     - **Publish directory:** `client/dist`
+   - Click "Deploy site"
+
+## Contact Form Setup
+
+The contact form now uses **Netlify Forms** instead of a backend server:
+
+- ✅ Form submissions will appear in your Netlify dashboard under "Forms"
+- ✅ You'll receive email notifications for new submissions
+- ✅ No server or email configuration needed
+- ✅ Built-in spam protection included
+
+## Custom Domain (Optional)
+
+1. In your Netlify site dashboard, go to "Domain settings"
+2. Click "Add custom domain"
+3. Follow the instructions to point your domain to Netlify
+
+## What Changed for Netlify
+
+- ❌ **Removed:** Express.js backend server
+- ❌ **Removed:** Gmail SMTP email integration
+- ❌ **Removed:** Database connections
+- ✅ **Added:** Netlify Forms for contact submissions
+- ✅ **Added:** Static site generation
+- ✅ **Kept:** All design and functionality intact
+
+Your website will work exactly the same way for visitors, but now it's optimized for Netlify's static hosting!
