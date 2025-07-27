@@ -252,40 +252,30 @@ export default function CTA() {
                 <div className="space-y-6">
                   {/* Phone Number */}
                   <div className="bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-all duration-300">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
-                          <Phone className="text-white" size={18} />
-                        </div>
-                        <div>
-                          <a href="tel:+213797496469" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
-                            +213 797 496 469
-                          </a>
-                          <p className="text-gray-300 text-sm">Available 24/7 for urgent projects</p>
-                        </div>
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
+                        <Phone className="text-white" size={18} />
                       </div>
-                      <div className="text-green-400 text-xs font-medium bg-green-400/20 px-3 py-1 rounded-full">
-                        ACTIVE
+                      <div>
+                        <a href="tel:+213797496469" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
+                          +213 797 496 469
+                        </a>
+                        <p className="text-gray-300 text-sm">Available 24/7 for urgent projects</p>
                       </div>
                     </div>
                   </div>
 
                   {/* WhatsApp */}
                   <div className="bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-all duration-300">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style={{ backgroundColor: '#124925' }}>
-                          <MessageSquare className="text-white" size={18} />
-                        </div>
-                        <div>
-                          <a href="https://wa.me/213797496469" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-green-400 transition-colors cursor-pointer">
-                            WhatsApp Chat
-                          </a>
-                          <p className="text-gray-300 text-sm">Quick responses & file sharing</p>
-                        </div>
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style={{ backgroundColor: '#124925' }}>
+                        <MessageSquare className="text-white" size={18} />
                       </div>
-                      <div className="text-green-400 text-xs font-medium bg-green-400/20 px-3 py-1 rounded-full">
-                        FAST
+                      <div>
+                        <a href="https://wa.me/213797496469" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-green-400 transition-colors cursor-pointer">
+                          WhatsApp Chat
+                        </a>
+                        <p className="text-gray-300 text-sm">Quick responses & file sharing</p>
                       </div>
                     </div>
                   </div>
