@@ -25,8 +25,26 @@ exports.handler = async (event, context) => {
     };
   }
 
+  let requestData;
   try {
-    const { name, email, phone, message } = JSON.parse(event.body);
+    requestData = JSON.parse(event.body || '{}');
+  } catch (parseError) {
+    console.error('Error parsing request body:', parseError);
+    return {
+      statusCode: 400,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        success: false, 
+        message: 'Invalid request body - not valid JSON' 
+      })
+    };
+  }
+
+  try {
+    const { name, email, phone, message } = requestData;
 
     // Validate required fields
     if (!name || !message) {
@@ -129,8 +147,8 @@ exports.handler = async (event, context) => {
       })
     };
 
-  } catch (error) {
-    console.error('Error sending email:', error);
+  } catch (processingError) {
+    console.error('Error in contact function processing:', processingError);
     
     return {
       statusCode: 500,
@@ -141,8 +159,8 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ 
         success: false,
         emailSent: false,
-        message: 'Failed to send email',
-        error: error.message
+        message: 'Failed to process contact form',
+        error: processingError.message
       })
     };
   }
