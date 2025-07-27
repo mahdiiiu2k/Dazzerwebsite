@@ -260,7 +260,6 @@ export default function CTA() {
                         <a href="tel:+213797496469" className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors cursor-pointer">
                           +213 797 496 469
                         </a>
-                        <p className="text-gray-300 text-sm">Available 24/7 for urgent projects</p>
                       </div>
                     </div>
                   </div>
@@ -275,7 +274,6 @@ export default function CTA() {
                         <a href="https://wa.me/213797496469" target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-lg hover:text-green-400 transition-colors cursor-pointer">
                           WhatsApp Chat
                         </a>
-                        <p className="text-gray-300 text-sm">Quick responses & file sharing</p>
                       </div>
                     </div>
                   </div>
