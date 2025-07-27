@@ -188,17 +188,35 @@ export default function CTA() {
                       style={{
                         flex: 1,
                         padding: '15px 30px',
-                        backgroundColor: '#dc2626',
+                        backgroundColor: '#722F37', // Wine red
                         color: 'white',
                         border: 'none',
                         borderRadius: '6px',
                         fontSize: '16px',
                         fontWeight: 'bold',
                         cursor: 'pointer',
-                        opacity: isLoading ? 0.5 : 1
+                        opacity: isLoading ? 0.5 : 1,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        boxShadow: '0 4px 20px rgba(114, 47, 55, 0.4), 0 0 20px rgba(114, 47, 55, 0.2)',
+                        transition: 'all 0.3s ease',
+                        transform: 'scale(1)',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.opacity = '0.9';
+                        e.target.style.transform = 'scale(1.05)';
+                        e.target.style.boxShadow = '0 8px 30px rgba(114, 47, 55, 0.6), 0 0 30px rgba(114, 47, 55, 0.4)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.opacity = isLoading ? '0.5' : '1';
+                        e.target.style.transform = 'scale(1)';
+                        e.target.style.boxShadow = '0 4px 20px rgba(114, 47, 55, 0.4), 0 0 20px rgba(114, 47, 55, 0.2)';
                       }}
                     >
-                      {isLoading ? 'Sending...' : '📧 Send Quote'}
+                      <Mail size={18} />
+                      {isLoading ? 'Envoi en cours...' : 'Envoyer'}
                     </button>
                     <button 
                       type="button"
