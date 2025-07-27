@@ -94,7 +94,7 @@ export default function CTA() {
                   <p className="text-gray-300">We'll get back to you within 24 hours!</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="p-8 bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl" style={{ position: 'relative', zIndex: 10003 }}>
+                <form onSubmit={handleSubmit} style={{ padding: '20px 0', position: 'relative', zIndex: 10003 }}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div className="space-y-3">
                       <label className="block text-sm font-medium text-gray-200 tracking-wide">
@@ -156,26 +156,83 @@ export default function CTA() {
                     />
                   </div>
                   
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div style={{ display: 'flex', gap: '15px' }}>
                     <button 
                       type="submit" 
                       disabled={isLoading}
-                      className="flex-1 px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-semibold rounded-xl border border-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-3"
+                      style={{
+                        width: 'auto',
+                        padding: '12px 32px',
+                        backgroundColor: '#4a0d21',
+                        color: 'white',
+                        fontWeight: '600',
+                        borderRadius: '8px',
+                        border: 'none',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        fontSize: '16px',
+                        minHeight: '44px',
+                        opacity: isLoading ? 0.5 : 1,
+                        transform: 'scale(1)',
+                        boxShadow: '0 4px 12px rgba(74, 13, 33, 0.3)'
+                      }}
+                      onMouseEnter={(e) => {
+                        const target = e.target as HTMLButtonElement;
+                        target.style.transform = 'scale(1.05)';
+                        target.style.backgroundColor = '#5a1729';
+                        target.style.boxShadow = '0 6px 20px rgba(74, 13, 33, 0.5)';
+                      }}
+                      onMouseLeave={(e) => {
+                        const target = e.target as HTMLButtonElement;
+                        target.style.transform = 'scale(1)';
+                        target.style.backgroundColor = '#4a0d21';
+                        target.style.boxShadow = '0 4px 12px rgba(74, 13, 33, 0.3)';
+                      }}
                     >
-                      <Mail size={20} />
-                      <span className="text-lg">{isLoading ? 'Sending...' : 'Send Quote Request'}</span>
+                      <Mail size={18} />
+                      {isLoading ? 'Envoi en cours...' : 'Envoyer'}
                     </button>
                     <button 
                       type="button"
                       onClick={() => window.open('https://wa.me/213797496469', '_blank')}
-                      className="flex-1 px-8 py-4 bg-gradient-to-r from-green-800 to-green-900 hover:from-green-900 hover:to-green-950 text-white font-semibold rounded-xl border border-green-700/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 flex items-center justify-center gap-3"
-                      style={{ 
-                        background: 'linear-gradient(135deg, #124925 0%, #0f3a1f 100%)',
-                        borderColor: 'rgba(18, 73, 37, 0.5)'
+                      style={{
+                        width: 'auto',
+                        padding: '12px 32px',
+                        backgroundColor: '#124925',
+                        color: 'white',
+                        fontWeight: '600',
+                        borderRadius: '8px',
+                        border: 'none',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        fontSize: '16px',
+                        minHeight: '44px',
+                        transform: 'scale(1)',
+                        boxShadow: '0 4px 12px rgba(18, 73, 37, 0.3)'
+                      }}
+                      onMouseEnter={(e) => {
+                        const target = e.target as HTMLButtonElement;
+                        target.style.transform = 'scale(1.05)';
+                        target.style.backgroundColor = '#0f3a1f';
+                        target.style.boxShadow = '0 6px 20px rgba(18, 73, 37, 0.5)';
+                      }}
+                      onMouseLeave={(e) => {
+                        const target = e.target as HTMLButtonElement;
+                        target.style.transform = 'scale(1)';
+                        target.style.backgroundColor = '#124925';
+                        target.style.boxShadow = '0 4px 12px rgba(18, 73, 37, 0.3)';
                       }}
                     >
-                      <MessageSquare size={20} />
-                      <span className="text-lg">WhatsApp Us</span>
+                      <MessageSquare size={18} />
+                      WhatsApp Us
                     </button>
                   </div>
                 </form>
