@@ -29,21 +29,20 @@ export default function CTA() {
 
     setIsLoading(true);
     try {
-      // Create form data for Netlify Forms
-      const netlifyFormData = new FormData();
-      netlifyFormData.append('form-name', 'contact');
-      netlifyFormData.append('name', formData.name);
-      netlifyFormData.append('phone', formData.phone);
-      netlifyFormData.append('email', formData.email || '');
-      netlifyFormData.append('message', formData.message);
+      // For Netlify Forms, we need to submit with form-encoded data
+      const formDataToSend = new FormData();
+      formDataToSend.append('form-name', 'contact');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('email', formData.email || '');
+      formDataToSend.append('message', formData.message);
 
       const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(netlifyFormData as any).toString()
+        body: formDataToSend
       });
 
-      if (response.ok) {
+      if (response.ok || response.status === 200) {
         // Reset form
         setFormData({ name: "", phone: "", email: "", message: "" });
         // Show success popup
