@@ -242,7 +242,7 @@ export default function CTA() {
             {/* Contact Info */}
             <div className="space-y-6">
               {/* Direct Contact */}
-              <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/30 rounded-xl p-6 backdrop-blur-sm">
+              <div className="border border-yellow-500/30 rounded-xl p-6 backdrop-blur-sm" style={{ backgroundColor: '#21252a' }}>
                 <h4 className="text-2xl font-serif font-bold text-white mb-6 flex items-center">
                   <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mr-4">
                     <Phone className="text-white" size={20} />
