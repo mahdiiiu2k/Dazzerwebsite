@@ -89,7 +89,7 @@ exports.handler = async (event, context) => {
     // Email content
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: 'chouikimahdiabderrahmane@gmail.com',
+      to: 'chouikimahdu@gmail.com',
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f4f4f4; padding: 20px;">
