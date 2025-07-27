@@ -46,16 +46,21 @@ export default function Portfolio() {
           </div>
 
           {/* Mobile: Show only button */}
-          <div className="md:hidden flex justify-center items-center py-8">
-            <Button 
-              onClick={openWebsite}
-              className="backdrop-blur-md bg-white/10 hover:bg-black/30 text-white font-medium py-12 px-12 rounded-lg transition-all duration-300 text-lg border border-white/20"
-            >
-              <span className="block text-left">
-                AG Construction &<br />
-                Renovation Website <ArrowRight className="w-5 h-5 inline ml-1" />
-              </span>
-            </Button>
+          <div className="md:hidden py-8">
+            <div className="text-center mb-6">
+              <h3 className="text-white text-2xl font-serif font-bold">AG Construction & Renovation</h3>
+            </div>
+            <div className="flex justify-center items-center">
+              <Button 
+                onClick={openWebsite}
+                className="backdrop-blur-md bg-white/10 hover:bg-black/30 text-white font-medium py-12 px-12 rounded-lg transition-all duration-300 text-lg border border-white/20"
+              >
+                <span className="block text-left">
+                  AG Construction &<br />
+                  Renovation Website <ArrowRight className="w-5 h-5 inline ml-1" />
+                </span>
+              </Button>
+            </div>
           </div>
         </div>
         
