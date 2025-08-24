@@ -66,7 +66,7 @@ export default function About() {
         <div className="luxury-border glass-card p-12 max-w-6xl mx-auto">
           <div className="mb-12">
             <div className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full">
-              <div className="flex-shrink-0 mr-4">
+              <div className="flex-shrink-0 mr-8">
                 <img 
                   src={outfitImage} 
                   alt="Brooklyn 98 outfit" 
