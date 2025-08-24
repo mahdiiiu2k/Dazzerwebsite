@@ -88,7 +88,7 @@ export default function About() {
                 fontWeight: '600',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: 'flex-start',
                 gap: '6px',
                 transition: 'all 0.3s ease',
                 transform: 'scale(1)',
