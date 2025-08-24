@@ -80,7 +80,7 @@ export default function About() {
                 background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
                 color: 'white',
                 border: 'none',
-                padding: '12px 32px',
+                padding: '20px 48px',
                 borderRadius: '8px',
                 cursor: 'pointer',
                 fontSize: '16px',
