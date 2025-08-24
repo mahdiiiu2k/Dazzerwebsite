@@ -56,7 +56,12 @@ export default function About() {
 
   return (
     <>
-      {/* Duplicated Instagram Button - Moved outside section */}
+      <section 
+        id="about" 
+        ref={sectionRef} 
+        className={`${isSmallScreen ? '-mt-44' : '-mt-96 md:-mt-32'} pb-20 px-6`}
+      >
+      {/* Instagram Button - Positioned above the line */}
       <div style={{ 
         textAlign: 'center', 
         marginBottom: '32px',
@@ -91,12 +96,6 @@ export default function About() {
           ds.desiiiign
         </button>
       </div>
-
-      <section 
-        id="about" 
-        ref={sectionRef} 
-        className={`${isSmallScreen ? '-mt-44' : '-mt-96 md:-mt-32'} pb-20 px-6`}
-      >
       <div className="container mx-auto">
 
         {/* Enhanced Services Section */}
