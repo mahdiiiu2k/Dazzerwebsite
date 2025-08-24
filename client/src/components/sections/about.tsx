@@ -60,7 +60,6 @@ export default function About() {
       <div style={{ 
         textAlign: 'center', 
         marginBottom: '32px',
-        background: 'rgba(255,0,0,0.2)',
         padding: '20px',
         position: 'relative',
         zIndex: 999
@@ -68,7 +67,6 @@ export default function About() {
         <button 
           type="button"
           onClick={() => {
-            alert('Instagram button clicked!');
             console.log('Instagram Button clicked!');
             window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
           }}
@@ -114,7 +112,10 @@ export default function About() {
               <div className="flex justify-start">
                 <button 
                   type="button"
-                  onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
+                  onClick={() => {
+                    console.log('Instagram Button clicked!');
+                    window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
+                  }}
                   style={{
                     width: 'auto',
                     padding: '12px 32px',
