@@ -79,13 +79,6 @@ export default function About() {
           
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">
-            <p className="text-2xl text-yellow-400 font-medium mb-2">
-              Don't see your business here?
-            </p>
-            <p className="text-xl text-gray-300 mb-6">
-              We work with any type of business that needs a professional website
-            </p>
-            
             {/* Direct Contact Section */}
             <div className="border border-yellow-500/30 rounded-xl p-4 sm:p-6 backdrop-blur-sm max-w-md mx-auto" style={{ backgroundColor: '#21252a' }}>
               <h4 className="text-xl sm:text-2xl font-serif font-bold text-white mb-4 sm:mb-6 text-center">
