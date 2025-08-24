@@ -66,7 +66,7 @@ export default function About() {
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
           
           {/* Duplicated Instagram Button - Above the line */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 relative z-10">
             <button 
               type="button"
               onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
@@ -87,7 +87,10 @@ export default function About() {
                 fontSize: '16px',
                 minHeight: '44px',
                 transform: 'scale(1)',
-                boxShadow: '0 4px 12px rgba(240, 148, 51, 0.3)'
+                boxShadow: '0 4px 12px rgba(240, 148, 51, 0.3)',
+                position: 'relative',
+                zIndex: 10,
+                pointerEvents: 'auto'
               }}
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
