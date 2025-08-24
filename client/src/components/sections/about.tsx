@@ -80,14 +80,14 @@ export default function About() {
               }}
               data-testid="pinterest-link"
             >
-              <div className="flex-shrink-0 mr-8">
+              <div className="flex-shrink-0 mr-8 pointer-events-none">
                 <img 
                   src={outfitImage} 
                   alt="Brooklyn 98 outfit" 
-                  className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg shadow-lg border-2 border-white/30 pointer-events-none"
+                  className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg shadow-lg border-2 border-white/30"
                 />
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
+              <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300 pointer-events-none">
                 #1
               </div>
             </a>
