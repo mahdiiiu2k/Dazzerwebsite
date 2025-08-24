@@ -19,7 +19,7 @@ export default function Hero() {
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight">
               <span className="text-white block">Dazzer 🌟 </span>
               <span className="gradient-text block relative drop-shadow-2xl" style={{textShadow: '0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3)'}}>
-                In Just 24 Hours
+                Find The Best Items
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
