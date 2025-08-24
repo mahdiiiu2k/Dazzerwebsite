@@ -10,9 +10,9 @@ export default function Hero() {
   };
 
   return (
-    <section className="h-screen relative px-4 sm:px-6 pt-32 sm:pt-40 flex items-center">
+    <section className="min-h-screen relative px-4 sm:px-6 pt-32 sm:pt-40">
       {/* Main Content */}
-      <div className="container mx-auto flex items-center justify-center">
+      <div className="container mx-auto h-full flex items-center justify-center">
         <div className="flex flex-col items-center max-w-4xl w-full">
           {/* Luxury Profile Picture */}
           <div className="flex flex-col items-center mb-8 sm:mb-12">
