@@ -66,7 +66,7 @@ export default function About() {
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
           <div className="mb-6 md:mb-12">
             <a 
-              href="https://google.com"
+              href="https://fr.pinterest.com/pin/15551561209611818/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer no-underline block"
@@ -84,7 +84,7 @@ export default function About() {
                 <img 
                   src={outfitImage} 
                   alt="Brooklyn 98 outfit" 
-                  className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg shadow-lg border-2 border-white/30"
+                  className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg shadow-lg border-2 border-white/30 pointer-events-none"
                 />
               </div>
               <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
