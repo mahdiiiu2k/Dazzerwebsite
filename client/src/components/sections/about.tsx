@@ -79,7 +79,7 @@ export default function About() {
                 window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
               }}
               style={{
-                background: '#1f2937',
+                background: '#696969',
                 color: 'white',
                 border: '1px solid #6b7280',
                 padding: '12px 8px',
@@ -99,13 +99,13 @@ export default function About() {
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.02)';
-                target.style.background = '#252f3f';
+                target.style.background = '#7a7a7a';
                 target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
               }}
               onMouseLeave={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1)';
-                target.style.background = '#1f2937';
+                target.style.background = '#696969';
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
@@ -124,7 +124,7 @@ export default function About() {
                 window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
               }}
               style={{
-                background: '#1f2937',
+                background: '#696969',
                 color: 'white',
                 border: '1px solid #6b7280',
                 padding: '12px 8px',
@@ -144,13 +144,13 @@ export default function About() {
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.02)';
-                target.style.background = '#252f3f';
+                target.style.background = '#7a7a7a';
                 target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
               }}
               onMouseLeave={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1)';
-                target.style.background = '#1f2937';
+                target.style.background = '#696969';
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
@@ -169,7 +169,7 @@ export default function About() {
                 window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
               }}
               style={{
-                background: '#1f2937',
+                background: '#696969',
                 color: 'white',
                 border: '1px solid #6b7280',
                 padding: '12px 8px',
@@ -189,13 +189,13 @@ export default function About() {
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.02)';
-                target.style.background = '#252f3f';
+                target.style.background = '#7a7a7a';
                 target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
               }}
               onMouseLeave={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1)';
-                target.style.background = '#1f2937';
+                target.style.background = '#696969';
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
