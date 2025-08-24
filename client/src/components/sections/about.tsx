@@ -80,7 +80,7 @@ export default function About() {
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">
             {/* Direct Contact Section */}
-            <div className="border border-yellow-500/30 rounded-xl p-4 sm:p-6 backdrop-blur-sm max-w-md mx-auto" style={{ backgroundColor: '#21252a' }}>
+            <div className="border border-yellow-500/30 rounded-xl p-4 sm:p-6 backdrop-blur-sm" style={{ backgroundColor: '#21252a' }}>
               <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight text-left">
                 Need a Collab? Contact us:
               </h4>
