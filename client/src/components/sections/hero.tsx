@@ -40,7 +40,7 @@ export default function Hero() {
                 Clean. Iconic. Timeless
               </span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
               Find what inspires you, all below. Collab?<br />
               Contact us on <span 
                 className="cursor-pointer transition-all duration-300 instagram-gradient"
