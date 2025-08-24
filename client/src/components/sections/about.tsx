@@ -71,8 +71,10 @@ export default function About() {
       }}>
         <button 
           type="button"
-          onClick={() => {
-            console.log('Instagram Button clicked!');
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Test button clicked!');
             window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
           }}
           style={{
@@ -89,7 +91,9 @@ export default function About() {
             justifyContent: 'center',
             gap: '6px',
             fontSize: '16px',
-            minHeight: '44px'
+            minHeight: '44px',
+            position: 'relative',
+            zIndex: 1000
           }}
         >
           <Instagram size={18} />
