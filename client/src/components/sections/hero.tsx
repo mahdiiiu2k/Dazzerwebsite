@@ -43,11 +43,7 @@ export default function Hero() {
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
               Find what inspires you, all below. Collab?<br />
               Contact us on <span 
-                className="text-yellow-400 cursor-pointer hover:text-yellow-300 transition-colors duration-300"
-                style={{
-                  animation: 'textShimmer 2s ease-in-out infinite alternate',
-                  textShadow: '0 0 10px rgba(251, 191, 36, 0.5), 0 0 20px rgba(251, 191, 36, 0.3)',
-                }}
+                className="gradient-text cursor-pointer hover:opacity-80 transition-opacity duration-300"
                 onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
               >Instagram</span>.
             </p>
