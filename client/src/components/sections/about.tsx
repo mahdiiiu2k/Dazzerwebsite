@@ -82,7 +82,7 @@ export default function About() {
             {/* Direct Contact Section */}
             <div className="border border-yellow-500/30 rounded-xl p-4 sm:p-6 backdrop-blur-sm max-w-md mx-auto" style={{ backgroundColor: '#21252a' }}>
               <h4 className="text-xl sm:text-2xl font-serif font-bold text-white mb-4 sm:mb-6 text-center">
-                Direct Contact
+                Need a Collab?
               </h4>
               <div className="flex justify-center">
                 <button 
