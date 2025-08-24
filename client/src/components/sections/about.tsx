@@ -44,9 +44,6 @@ export default function About() {
   return (
     <section id="about" ref={sectionRef} className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 gradient-text font-serif tracking-wide">We build websites for:</h2>
-        </div>
         
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-12 max-w-6xl mx-auto">
