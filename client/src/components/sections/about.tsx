@@ -79,7 +79,7 @@ export default function About() {
               style={{
                 background: '#1f2937',
                 color: 'white',
-                border: 'none',
+                border: '1px solid #6b7280',
                 padding: '28px 16px',
                 borderRadius: '8px',
                 cursor: 'pointer',
