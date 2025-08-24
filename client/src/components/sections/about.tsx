@@ -63,41 +63,43 @@ export default function About() {
       >
       <div className="container mx-auto">
 
-        {/* Instagram Button - Positioned to overlay above the line */}
-        <div style={{
-          textAlign: 'center',
-          position: 'relative',
-          zIndex: 99999,
-          marginBottom: '-20px'
-        }}>
-          <button 
-            onClick={() => {
-              console.log('Test button clicked!');
-              window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
-            }}
-            style={{
-              background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
-              color: 'white',
-              border: 'none',
-              padding: '12px 32px',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              fontSize: '16px',
-              fontWeight: '600',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              position: 'relative',
-              zIndex: 99999
-            }}
-          >
-            <Instagram size={18} />
-            ds.desiiiign
-          </button>
-        </div>
-
-        {/* Enhanced Services Section */}
-        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto" style={{paddingTop: '40px'}}>
+        {/* Enhanced Services Section - with space for button */}
+        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto" style={{paddingTop: '70px', position: 'relative'}}>
+          
+          {/* Instagram Button - Positioned above the line */}
+          <div style={{
+            position: 'absolute',
+            top: '20px',
+            left: '0',
+            right: '0',
+            textAlign: 'center',
+            zIndex: 99999
+          }}>
+            <button 
+              onClick={() => {
+                console.log('Test button clicked!');
+                window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
+              }}
+              style={{
+                background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
+                color: 'white',
+                border: 'none',
+                padding: '12px 32px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                fontSize: '16px',
+                fontWeight: '600',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                position: 'relative',
+                zIndex: 99999
+              }}
+            >
+              <Instagram size={18} />
+              ds.desiiiign
+            </button>
+          </div>
 
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">
