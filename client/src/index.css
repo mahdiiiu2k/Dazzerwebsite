@@ -214,14 +214,5 @@
     animation: shimmer 2s infinite;
   }
 
-  /* Text shimmer animation for Instagram link */
-  @keyframes textShimmer {
-    0% {
-      text-shadow: 0 0 10px rgba(251, 191, 36, 0.5), 0 0 20px rgba(251, 191, 36, 0.3);
-    }
-    100% {
-      text-shadow: 0 0 20px rgba(251, 191, 36, 0.8), 0 0 30px rgba(251, 191, 36, 0.6), 0 0 40px rgba(251, 191, 36, 0.4);
-    }
-  }
 
 }
