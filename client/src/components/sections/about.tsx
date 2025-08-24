@@ -65,7 +65,10 @@ export default function About() {
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
           <div className="mb-6 md:mb-12">
-            <div className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full">
+            <div 
+              className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer"
+              onClick={() => window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank')}
+            >
               <div className="flex-shrink-0 mr-8">
                 <img 
                   src={outfitImage} 
