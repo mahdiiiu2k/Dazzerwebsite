@@ -72,7 +72,7 @@ export default function About() {
             marginBottom: '20px',
             padding: '10px',
             position: 'relative',
-            zIndex: 1001
+            zIndex: 9999
           }}>
             <button 
               type="button"
@@ -98,7 +98,8 @@ export default function About() {
                 fontSize: '16px',
                 minHeight: '44px',
                 position: 'relative',
-                zIndex: 1002
+                zIndex: 10000,
+                pointerEvents: 'auto'
               }}
             >
               <Instagram size={18} />
