@@ -10,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen relative px-4 sm:px-6 pt-32 sm:pt-40">
+    <section className="min-h-screen relative px-4 sm:px-6 pt-32 sm:pt-40 pb-8 sm:pb-16">
       {/* Main Content */}
       <div className="container mx-auto h-full flex items-center justify-center">
         <div className="flex flex-col items-center max-w-4xl w-full">
@@ -40,7 +40,7 @@ export default function Hero() {
                 Clean. Iconic. Timeless
               </span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-0 leading-relaxed max-w-2xl mx-auto">
               Find what inspires you, all below.
             </p>
 
