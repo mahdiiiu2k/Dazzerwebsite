@@ -89,7 +89,7 @@ export default function About() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'flex-start',
-                gap: '6px',
+                gap: '12px',
                 transition: 'all 0.3s ease',
                 transform: 'scale(1)',
                 boxShadow: '0 4px 12px rgba(107, 114, 128, 0.3)',
