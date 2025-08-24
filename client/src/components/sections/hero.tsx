@@ -40,7 +40,7 @@ export default function Hero() {
                 Clean. Iconic. Timeless
               </span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-0 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
               Find what inspires you, all below.
             </p>
 

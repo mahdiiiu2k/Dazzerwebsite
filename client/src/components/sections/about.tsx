@@ -42,7 +42,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" ref={sectionRef} className="-mt-72 md:-mt-16 pb-20 px-6">
+    <section id="about" ref={sectionRef} className="-mt-96 sm:-mt-32 pb-20 px-6">
       <div className="container mx-auto">
         
         {/* Enhanced Services Section */}
