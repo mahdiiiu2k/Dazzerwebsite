@@ -63,21 +63,13 @@ export default function About() {
       >
       <div className="container mx-auto">
 
-        {/* Container to position button exactly above the rectangle line */}
-        <div style={{
-          maxWidth: '72rem',
-          margin: '0 auto',
-          position: 'relative',
-          zIndex: 99999
-        }}>
-          {/* Instagram Button - Positioned to appear above the line */}
+        {/* Enhanced Services Section */}
+        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
+
+          {/* Instagram Button - Now positioned inside rectangle, above the line */}
           <div style={{
             textAlign: 'center',
-            position: 'absolute',
-            top: '80px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 99999
+            marginBottom: '32px'
           }}>
             <button 
               onClick={() => {
@@ -95,19 +87,13 @@ export default function About() {
                 fontWeight: '600',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '6px',
-                position: 'relative',
-                zIndex: 99999
+                gap: '6px'
               }}
             >
               <Instagram size={18} />
               ds.desiiiign
             </button>
           </div>
-        </div>
-
-        {/* Enhanced Services Section */}
-        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto" style={{paddingTop: '70px'}}>
 
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">

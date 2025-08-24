@@ -221,7 +221,8 @@
   
   .luxury-border {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    pointer-events: auto;
   }
   
   .luxury-border::before {
