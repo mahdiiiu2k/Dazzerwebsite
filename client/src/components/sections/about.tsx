@@ -56,18 +56,14 @@ export default function About() {
 
   return (
     <>
-      <section 
-        id="about" 
-        ref={sectionRef} 
-        className={`${isSmallScreen ? '-mt-44' : '-mt-96 md:-mt-32'} pb-20 px-6`}
-      >
-      {/* Instagram Button - Positioned above the line */}
+      {/* Instagram Button - Positioned completely outside and above the section */}
       <div style={{ 
         textAlign: 'center', 
-        marginBottom: '32px',
+        marginBottom: '20px',
         padding: '20px',
         position: 'relative',
-        zIndex: 999
+        zIndex: 1001,
+        backgroundColor: 'transparent'
       }}>
         <button 
           type="button"
@@ -93,13 +89,19 @@ export default function About() {
             fontSize: '16px',
             minHeight: '44px',
             position: 'relative',
-            zIndex: 1000
+            zIndex: 1002
           }}
         >
           <Instagram size={18} />
           ds.desiiiign
         </button>
       </div>
+      
+      <section 
+        id="about" 
+        ref={sectionRef} 
+        className={`${isSmallScreen ? '-mt-44' : '-mt-96 md:-mt-32'} pb-20 px-6`}
+      >
       <div className="container mx-auto">
 
         {/* Enhanced Services Section */}
