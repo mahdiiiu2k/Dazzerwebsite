@@ -70,7 +70,7 @@ export default function About() {
                 <img 
                   src={outfitImage} 
                   alt="Brooklyn 98 outfit" 
-                  className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-lg shadow-lg border border-white/10"
+                  className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-lg shadow-lg border-2 border-white/10"
                 />
               </div>
               <div className="text-6xl md:text-8xl font-bold text-white group-hover:text-white transition-colors duration-300">
