@@ -111,56 +111,6 @@ export default function About() {
               </div>
             </div>
           </div>
-          
-          {/* Call to Action */}
-          <div className="text-center border-t border-white/10 pt-8">
-            {/* Direct Contact Section */}
-            <div className="border border-yellow-500/30 rounded-xl p-4 sm:p-6 backdrop-blur-sm max-w-md mx-auto" style={{ backgroundColor: '#21252a' }}>
-              <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight text-left">
-                Need a Collab? Contact us:
-              </h4>
-              <div className="flex justify-start">
-                <button 
-                  type="button"
-                  onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
-                  style={{
-                    width: 'auto',
-                    padding: '12px 32px',
-                    background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
-                    color: 'white',
-                    fontWeight: '600',
-                    borderRadius: '8px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    fontSize: '16px',
-                    minHeight: '44px',
-                    transform: 'scale(1)',
-                    boxShadow: '0 4px 12px rgba(240, 148, 51, 0.3)'
-                  }}
-                  onMouseEnter={(e) => {
-                    const target = e.target as HTMLButtonElement;
-                    target.style.transform = 'scale(1.05)';
-                    target.style.background = 'linear-gradient(45deg, #e6683c 0%,#dc2743 25%,#cc2366 50%,#bc1888 75%,#8a3ab9 100%)';
-                    target.style.boxShadow = '0 6px 20px rgba(240, 148, 51, 0.5)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const target = e.target as HTMLButtonElement;
-                    target.style.transform = 'scale(1)';
-                    target.style.background = 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)';
-                    target.style.boxShadow = '0 4px 12px rgba(240, 148, 51, 0.3)';
-                  }}
-                >
-                  <Instagram size={18} />
-                  ds.desiiiign
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
