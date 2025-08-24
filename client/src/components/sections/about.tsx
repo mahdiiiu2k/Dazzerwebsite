@@ -49,7 +49,7 @@ export default function About() {
         </div>
         
         {/* Enhanced Services Section */}
-        <div className="luxury-border glass-card rounded-3xl p-12 max-w-6xl mx-auto hover-glow transform hover:scale-105 transition-all duration-500">
+        <div className="luxury-border glass-card p-12 max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               { name: "Roofing Contractors", icon: "✦" },
