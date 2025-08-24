@@ -81,7 +81,7 @@ export default function About() {
                 background: '#1f2937',
                 color: 'white',
                 border: '1px solid #6b7280',
-                padding: '28px 8px',
+                padding: '12px 8px',
                 borderRadius: '8px',
                 cursor: 'pointer',
                 fontSize: '24px',
