@@ -47,7 +47,7 @@ export default function Hero() {
                 onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
               >
                 Instagram
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-500 ease-out group-hover/instagram:w-full"></span>
+                <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300 transition-all duration-200 ease-out group-hover/instagram:w-full"></span>
               </span>.
             </p>
 
