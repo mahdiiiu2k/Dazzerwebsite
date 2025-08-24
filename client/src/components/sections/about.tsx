@@ -77,7 +77,7 @@ export default function About() {
                 window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
               }}
               style={{
-                background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
+                background: 'linear-gradient(45deg, #3b82f6 0%, #1d4ed8 25%, #1e40af 50%, #1e3a8a 75%, #1e293b 100%)',
                 color: 'white',
                 border: 'none',
                 padding: '28px 16px',
@@ -91,20 +91,20 @@ export default function About() {
                 gap: '6px',
                 transition: 'all 0.3s ease',
                 transform: 'scale(1)',
-                boxShadow: '0 4px 12px rgba(240, 148, 51, 0.3)',
+                boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)',
                 width: '100%'
               }}
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.05)';
-                target.style.background = 'linear-gradient(45deg, #e6683c 0%,#dc2743 25%,#cc2366 50%,#bc1888 75%,#8a3ab9 100%)';
-                target.style.boxShadow = '0 6px 20px rgba(240, 148, 51, 0.5)';
+                target.style.background = 'linear-gradient(45deg, #60a5fa 0%, #3b82f6 25%, #2563eb 50%, #1d4ed8 75%, #1e40af 100%)';
+                target.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.5)';
               }}
               onMouseLeave={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1)';
-                target.style.background = 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)';
-                target.style.boxShadow = '0 4px 12px rgba(240, 148, 51, 0.3)';
+                target.style.background = 'linear-gradient(45deg, #3b82f6 0%, #1d4ed8 25%, #1e40af 50%, #1e3a8a 75%, #1e293b 100%)';
+                target.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.3)';
               }}
             >
               <Instagram size={18} />
