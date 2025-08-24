@@ -64,36 +64,32 @@ export default function About() {
         
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
-          <div className="mb-6 md:mb-12">
-            <a 
-              href="https://fr.pinterest.com/pin/15551561209611818/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer"
-              style={{ 
-                textDecoration: 'none',
-                color: 'inherit',
-                display: 'flex',
-                width: '100%',
-                height: 'auto',
-                minHeight: '100px',
-                alignItems: 'center',
-                zIndex: 999,
-                position: 'relative'
-              }}
-              data-testid="pinterest-link"
-            >
-              <div className="flex-shrink-0 mr-8 pointer-events-none">
+          <div className="mb-6 md:mb-12 relative">
+            <div className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full relative">
+              <div className="flex-shrink-0 mr-8">
                 <img 
                   src={outfitImage} 
                   alt="Brooklyn 98 outfit" 
                   className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg shadow-lg border-2 border-white/30"
                 />
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300 pointer-events-none">
+              <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
                 #1
               </div>
-            </a>
+              <a 
+                href="https://fr.pinterest.com/pin/15551561209611818/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 w-full h-full cursor-pointer"
+                style={{ 
+                  zIndex: 10,
+                  textDecoration: 'none'
+                }}
+                data-testid="pinterest-link"
+              >
+                <span className="sr-only">View on Pinterest</span>
+              </a>
+            </div>
           </div>
           
           {/* Call to Action */}
