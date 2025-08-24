@@ -77,7 +77,7 @@ export default function About() {
                 window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
               }}
               style={{
-                background: 'linear-gradient(45deg, #6b7280 0%, #4b5563 25%, #374151 50%, #1f2937 75%, #111827 100%)',
+                background: '#6b7280',
                 color: 'white',
                 border: 'none',
                 padding: '28px 16px',
@@ -97,13 +97,13 @@ export default function About() {
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.05)';
-                target.style.background = 'linear-gradient(45deg, #9ca3af 0%, #6b7280 25%, #4b5563 50%, #374151 75%, #1f2937 100%)';
+                target.style.background = '#9ca3af';
                 target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
               }}
               onMouseLeave={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1)';
-                target.style.background = 'linear-gradient(45deg, #6b7280 0%, #4b5563 25%, #374151 50%, #1f2937 75%, #111827 100%)';
+                target.style.background = '#6b7280';
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
