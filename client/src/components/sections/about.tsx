@@ -63,24 +63,26 @@ export default function About() {
       >
       <div className="container mx-auto">
 
-        {/* Instagram Button - Simple positioning outside problematic containers */}
-        <div className="text-center mb-8">
+        {/* Instagram Button - Testing with absolutely basic approach */}
+        <div style={{textAlign: 'center', marginBottom: '32px', padding: '20px', backgroundColor: '#000'}}>
           <button 
-            type="button"
             onClick={() => {
+              alert('Button works!');
               console.log('Test button clicked!');
               window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
             }}
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 text-white font-semibold rounded-lg cursor-pointer"
             style={{
               background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
+              color: 'white',
               border: 'none',
+              padding: '15px 30px',
+              borderRadius: '8px',
+              cursor: 'pointer',
               fontSize: '16px',
-              minHeight: '44px'
+              fontWeight: 'bold'
             }}
           >
-            <Instagram size={18} />
-            ds.desiiiign
+            🔗 ds.desiiiign
           </button>
         </div>
 
