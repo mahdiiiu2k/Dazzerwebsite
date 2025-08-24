@@ -63,16 +63,20 @@ export default function About() {
       >
       <div className="container mx-auto">
 
-        {/* Enhanced Services Section - with space for button */}
-        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto" style={{paddingTop: '70px', position: 'relative'}}>
-          
-          {/* Instagram Button - Positioned above the line */}
+        {/* Container to position button exactly above the rectangle line */}
+        <div style={{
+          maxWidth: '72rem',
+          margin: '0 auto',
+          position: 'relative',
+          zIndex: 99999
+        }}>
+          {/* Instagram Button - Positioned to appear above the line */}
           <div style={{
-            position: 'absolute',
-            top: '20px',
-            left: '0',
-            right: '0',
             textAlign: 'center',
+            position: 'absolute',
+            top: '80px',
+            left: '50%',
+            transform: 'translateX(-50%)',
             zIndex: 99999
           }}>
             <button 
@@ -100,6 +104,10 @@ export default function About() {
               ds.desiiiign
             </button>
           </div>
+        </div>
+
+        {/* Enhanced Services Section */}
+        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto" style={{paddingTop: '70px'}}>
 
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">
