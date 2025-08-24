@@ -64,8 +64,18 @@ export default function About() {
         
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
-          <div className="mb-6 md:mb-12 relative">
-            <div className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full">
+          <div className="mb-6 md:mb-12">
+            <button
+              type="button"
+              onClick={() => window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank')}
+              className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer border-0 text-left"
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                border: 'none',
+                outline: 'none',
+                width: '100%'
+              }}
+            >
               <div className="flex-shrink-0 mr-8">
                 <img 
                   src={outfitImage} 
@@ -76,16 +86,7 @@ export default function About() {
               <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
                 #1
               </div>
-            </div>
-            <div
-              className="absolute inset-0 w-full h-full cursor-pointer z-10"
-              onClick={() => window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank')}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                outline: 'none'
-              }}
-            ></div>
+            </button>
           </div>
           
           {/* Call to Action */}
