@@ -41,8 +41,8 @@ export default function Hero() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
-              Find what inspires you, all below.<br />
-              Collab? Contact us on <span className="text-yellow-400">Instagram</span>.
+              Find what inspires you, all below. Collab?<br />
+              Contact us on <span className="text-yellow-400">Instagram</span>.
             </p>
 
           </div>
