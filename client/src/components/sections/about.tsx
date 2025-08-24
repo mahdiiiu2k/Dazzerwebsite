@@ -87,7 +87,22 @@ export default function About() {
                 fontWeight: '600',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '6px'
+                gap: '6px',
+                transition: 'all 0.3s ease',
+                transform: 'scale(1)',
+                boxShadow: '0 4px 12px rgba(240, 148, 51, 0.3)'
+              }}
+              onMouseEnter={(e) => {
+                const target = e.target as HTMLButtonElement;
+                target.style.transform = 'scale(1.05)';
+                target.style.background = 'linear-gradient(45deg, #e6683c 0%,#dc2743 25%,#cc2366 50%,#bc1888 75%,#8a3ab9 100%)';
+                target.style.boxShadow = '0 6px 20px rgba(240, 148, 51, 0.5)';
+              }}
+              onMouseLeave={(e) => {
+                const target = e.target as HTMLButtonElement;
+                target.style.transform = 'scale(1)';
+                target.style.background = 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)';
+                target.style.boxShadow = '0 4px 12px rgba(240, 148, 51, 0.3)';
               }}
             >
               <Instagram size={18} />
