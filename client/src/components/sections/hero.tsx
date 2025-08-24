@@ -43,9 +43,12 @@ export default function Hero() {
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
               Find what inspires you, all below. Collab?<br />
               Contact us on <span 
-                className="cursor-pointer transition-all duration-300 instagram-gradient"
+                className="cursor-pointer transition-all duration-300 instagram-gradient relative inline-block group/instagram"
                 onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
-              >Instagram</span>.
+              >
+                Instagram
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-500 ease-out group-hover/instagram:w-full"></span>
+              </span>.
             </p>
 
           </div>
