@@ -46,7 +46,7 @@ export default function Hero() {
                 className="cursor-pointer transition-all duration-300"
                 onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
                 style={{
-                  background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433)',
+                  background: 'linear-gradient(45deg, #fbbf24, #f59e0b, #d97706, #f59e0b, #fbbf24)',
                   backgroundSize: '200% auto',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
