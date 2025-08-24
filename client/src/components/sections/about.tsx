@@ -67,6 +67,7 @@ export default function About() {
           <div className="mb-6 md:mb-12">
             <button
               type="button"
+              onClick={() => alert('Button clicked!')}
               className="flex items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 w-full cursor-pointer border-0 text-white font-bold text-xl"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
