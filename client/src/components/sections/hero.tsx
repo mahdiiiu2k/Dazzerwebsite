@@ -43,16 +43,8 @@ export default function Hero() {
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
               Find what inspires you, all below. Collab?<br />
               Contact us on <span 
-                className="cursor-pointer transition-all duration-300"
+                className="cursor-pointer transition-all duration-300 instagram-gradient"
                 onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
-                style={{
-                  background: 'linear-gradient(45deg, #fbbf24, #f59e0b, #d97706, #f59e0b, #fbbf24)',
-                  backgroundSize: '200% auto',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  animation: 'gradientShift 3s ease infinite'
-                }}
               >Instagram</span>.
             </p>
 
