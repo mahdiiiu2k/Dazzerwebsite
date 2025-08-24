@@ -81,7 +81,7 @@ export default function About() {
                 background: '#1f2937',
                 color: 'white',
                 border: '1px solid #6b7280',
-                padding: '28px 16px',
+                padding: '28px 8px',
                 borderRadius: '8px',
                 cursor: 'pointer',
                 fontSize: '24px',
@@ -108,7 +108,7 @@ export default function About() {
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
-              <img src={buttonImage} alt="outfit" style={{ width: '48px', height: '48px', objectFit: 'cover', borderRadius: '8px', border: '2px solid #6b7280' }} />
+              <img src={buttonImage} alt="outfit" style={{ width: '64px', height: '64px', objectFit: 'cover', borderRadius: '10px', border: '2px solid #6b7280' }} />
               #1
             </button>
           </div>
