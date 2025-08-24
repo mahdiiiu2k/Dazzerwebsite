@@ -62,82 +62,26 @@ export default function About() {
     >
       <div className="container mx-auto">
         
-        {/* TEST BUTTON OUTSIDE GLASS CARD */}
-        <div style={{ marginBottom: '20px' }}>
-          <button
-            type="button"
-            onClick={() => {
-              alert('TEST BUTTON WORKS! Now trying Pinterest...');
-              window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
-            }}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              padding: '16px',
-              borderRadius: '12px',
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
-              color: 'white',
-              cursor: 'pointer',
-              border: '2px solid yellow',
-              outline: 'none'
-            }}
-          >
-            <div style={{ flexShrink: 0, marginRight: '32px' }}>
-              <img 
-                src={outfitImage} 
-                alt="Brooklyn 98 outfit" 
-                style={{
-                  width: '80px',
-                  height: '80px',
-                  objectFit: 'cover',
-                  borderRadius: '8px',
-                  border: '2px solid rgba(255, 255, 255, 0.3)'
-                }}
-              />
-            </div>
-            <div style={{
-              fontSize: '48px',
-              fontWeight: 'bold',
-              color: 'white'
-            }}>
-              #1 TEST
-            </div>
-          </button>
-        </div>
-
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
           <div className="mb-6 md:mb-12">
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              padding: '16px',
-              borderRadius: '12px',
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
-              width: '100%',
-              color: 'white'
-            }}>
-              <div style={{ flexShrink: 0, marginRight: '32px' }}>
+            <a 
+              href="https://fr.pinterest.com/pin/15551561209611818/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer no-underline"
+            >
+              <div className="flex-shrink-0 mr-8">
                 <img 
                   src={outfitImage} 
                   alt="Brooklyn 98 outfit" 
-                  style={{
-                    width: '80px',
-                    height: '80px',
-                    objectFit: 'cover',
-                    borderRadius: '8px',
-                    border: '2px solid rgba(255, 255, 255, 0.3)'
-                  }}
+                  className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg shadow-lg border-2 border-white/30"
                 />
               </div>
-              <div style={{
-                fontSize: '48px',
-                fontWeight: 'bold',
-                color: 'white'
-              }}>
-                #1 (NOT CLICKABLE)
+              <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
+                #1
               </div>
-            </div>
+            </a>
           </div>
           
           {/* Call to Action */}
