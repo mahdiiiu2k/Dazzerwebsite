@@ -108,7 +108,7 @@ export default function About() {
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
-              <img src={buttonImage} alt="outfit" style={{ width: '64px', height: '64px', objectFit: 'cover', borderRadius: '10px', border: '2px solid #6b7280' }} />
+              <img src={buttonImage} alt="outfit" style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #6b7280' }} />
               #1
             </button>
           </div>
