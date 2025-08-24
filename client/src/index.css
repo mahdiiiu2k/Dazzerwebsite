@@ -23,11 +23,19 @@
 
 .instagram-gradient:hover {
   background: linear-gradient(45deg, #fef08a, #fde047, #facc15, #fde047, #fef08a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   transform: scale(1.05);
 }
 
 .instagram-gradient:active {
   background: linear-gradient(45deg, #fcd34d, #f59e0b, #d97706, #f59e0b, #fcd34d);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   transform: scale(0.95);
 }
 
