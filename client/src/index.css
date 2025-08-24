@@ -18,6 +18,17 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientShift 3s ease infinite;
+  transition: all 0.3s ease;
+}
+
+.instagram-gradient:hover {
+  background: linear-gradient(45deg, #fef08a, #fde047, #facc15, #fde047, #fef08a);
+  transform: scale(1.05);
+}
+
+.instagram-gradient:active {
+  background: linear-gradient(45deg, #fcd34d, #f59e0b, #d97706, #f59e0b, #fcd34d);
+  transform: scale(0.95);
 }
 
 :root {
