@@ -64,6 +64,20 @@ export default function About() {
         
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
+          <div className="mb-6 md:mb-12">
+            <button
+              type="button"
+              className="flex items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 w-full cursor-pointer border-0 text-white font-bold text-xl"
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                border: 'none',
+                outline: 'none',
+                minHeight: '60px'
+              }}
+            >
+              Button
+            </button>
+          </div>
           
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">
