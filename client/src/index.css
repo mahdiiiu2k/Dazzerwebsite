@@ -62,7 +62,7 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background: linear-gradient(135deg, var(--charcoal-black) 0%, var(--midnight-blue) 100%);
+    background: var(--charcoal-black);
     min-height: 100vh;
     position: relative;
   }
