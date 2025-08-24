@@ -56,6 +56,34 @@ export default function About() {
 
   return (
     <>
+      {/* Test button to verify clicking works */}
+      <div style={{
+        textAlign: 'center',
+        padding: '20px',
+        backgroundColor: '#333',
+        marginTop: '100px'
+      }}>
+        <button 
+          onClick={() => {
+            alert('TEST BUTTON WORKS!');
+            console.log('Test button clicked!');
+            window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
+          }}
+          style={{
+            background: 'red',
+            color: 'white',
+            border: 'none',
+            padding: '15px 30px',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontSize: '16px',
+            fontWeight: 'bold'
+          }}
+        >
+          🔴 TEST BUTTON - CLICK ME
+        </button>
+      </div>
+
       <section 
         id="about" 
         ref={sectionRef} 
