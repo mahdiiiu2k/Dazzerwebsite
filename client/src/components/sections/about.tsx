@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { MessageSquare, Phone, Instagram } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import outfitImage from "@assets/téléchargement (1)_1756058964050.jpg";
+import buttonImage from "@assets/téléchargement (1)_1756071195719.jpg";
 
 export default function About() {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -107,8 +108,8 @@ export default function About() {
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
-              <Instagram size={18} />
-              ds.desiiiign
+              <img src={buttonImage} alt="outfit" style={{ width: '18px', height: '18px', objectFit: 'cover', borderRadius: '2px' }} />
+              #1
             </button>
           </div>
 
