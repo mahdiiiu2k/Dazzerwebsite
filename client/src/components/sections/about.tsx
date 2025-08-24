@@ -66,10 +66,19 @@ export default function About() {
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
           <div className="mb-6 md:mb-12">
             <a 
-              href="https://fr.pinterest.com/pin/15551561209611818/"
+              href="https://google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer no-underline"
+              className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer no-underline block"
+              style={{ 
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'flex',
+                pointerEvents: 'auto',
+                zIndex: 10,
+                position: 'relative'
+              }}
+              data-testid="pinterest-link"
             >
               <div className="flex-shrink-0 mr-8">
                 <img 
