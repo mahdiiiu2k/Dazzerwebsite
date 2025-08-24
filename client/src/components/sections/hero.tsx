@@ -40,9 +40,6 @@ export default function Hero() {
                 Clean. Iconic. Timeless
               </span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
-              We build beautiful, fast, and mobile-friendly websites for <span className="text-yellow-400">cafés, salons, renovation companies, and more</span> — all ready in just 24 hours.
-            </p>
 
           </div>
         </div>
