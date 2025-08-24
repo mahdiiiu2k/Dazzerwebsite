@@ -64,11 +64,17 @@ export default function About() {
         
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
-          <div className="mb-6 md:mb-12">
-            <a 
-              href="https://fr.pinterest.com/pin/15551561209611818/"
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="mb-6 md:mb-12" style={{ position: 'relative', zIndex: 999 }}>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                alert('Button clicked! Redirecting to Pinterest...');
+                setTimeout(() => {
+                  window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
+                }, 500);
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -77,19 +83,15 @@ export default function About() {
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 width: '100%',
                 textDecoration: 'none',
-                color: 'inherit',
+                color: 'white',
                 cursor: 'pointer',
                 border: 'none',
-                outline: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                outline: 'none',
+                position: 'relative',
+                zIndex: 1000
               }}
             >
-              <div style={{ flexShrink: 0, marginRight: '32px' }}>
+              <div style={{ flexShrink: 0, marginRight: '32px', pointerEvents: 'none' }}>
                 <img 
                   src={outfitImage} 
                   alt="Brooklyn 98 outfit" 
@@ -98,18 +100,20 @@ export default function About() {
                     height: '80px',
                     objectFit: 'cover',
                     borderRadius: '8px',
-                    border: '2px solid rgba(255, 255, 255, 0.3)'
+                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    pointerEvents: 'none'
                   }}
                 />
               </div>
               <div style={{
                 fontSize: '48px',
                 fontWeight: 'bold',
-                color: 'white'
+                color: 'white',
+                pointerEvents: 'none'
               }}>
                 #1
               </div>
-            </a>
+            </button>
           </div>
           
           {/* Call to Action */}
