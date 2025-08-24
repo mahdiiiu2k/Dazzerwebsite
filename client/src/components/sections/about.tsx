@@ -84,7 +84,7 @@ export default function About() {
                 padding: '12px 8px',
                 borderRadius: '8px',
                 cursor: 'pointer',
-                fontSize: '40px',
+                fontSize: '32px',
                 fontWeight: '600',
                 display: 'flex',
                 alignItems: 'center',
