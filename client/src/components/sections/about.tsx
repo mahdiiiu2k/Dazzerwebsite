@@ -74,8 +74,7 @@ export default function About() {
           }}>
             <button 
               onClick={() => {
-                console.log('Test button clicked!');
-                window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
+                window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
               }}
               style={{
                 background: '#1f2937',
