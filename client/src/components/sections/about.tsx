@@ -80,17 +80,19 @@ export default function About() {
                 background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
                 color: 'white',
                 border: 'none',
-                padding: '28px 64px',
+                padding: '28px 16px',
                 borderRadius: '8px',
                 cursor: 'pointer',
                 fontSize: '16px',
                 fontWeight: '600',
-                display: 'inline-flex',
+                display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'center',
                 gap: '6px',
                 transition: 'all 0.3s ease',
                 transform: 'scale(1)',
-                boxShadow: '0 4px 12px rgba(240, 148, 51, 0.3)'
+                boxShadow: '0 4px 12px rgba(240, 148, 51, 0.3)',
+                width: '100%'
               }}
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
