@@ -4,6 +4,7 @@ import { GlassCard } from "@/components/ui/glass-card";
 import outfitImage from "@assets/téléchargement (1)_1756058964050.jpg";
 import buttonImage from "@assets/téléchargement (1)_1756071195719.jpg";
 import buttonImage2 from "@assets/téléchargement (2)_1756072409526.jpg";
+import buttonImage3 from "@assets/téléchargement (3)_1756072647997.jpg";
 
 export default function About() {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -155,6 +156,51 @@ export default function About() {
             >
               <img src={buttonImage2} alt="outfit 2" style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #6b7280' }} />
               #2
+            </button>
+          </div>
+
+          {/* Third Button - #3 */}
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '32px'
+          }}>
+            <button 
+              onClick={() => {
+                window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
+              }}
+              style={{
+                background: '#1f2937',
+                color: 'white',
+                border: '1px solid #6b7280',
+                padding: '12px 8px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                fontSize: '32px',
+                fontWeight: '600',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                gap: '12px',
+                transition: 'all 0.3s ease',
+                transform: 'scale(1)',
+                boxShadow: '0 4px 12px rgba(107, 114, 128, 0.3)',
+                width: '100%'
+              }}
+              onMouseEnter={(e) => {
+                const target = e.target as HTMLButtonElement;
+                target.style.transform = 'scale(1.02)';
+                target.style.background = '#252f3f';
+                target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
+              }}
+              onMouseLeave={(e) => {
+                const target = e.target as HTMLButtonElement;
+                target.style.transform = 'scale(1)';
+                target.style.background = '#1f2937';
+                target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
+              }}
+            >
+              <img src={buttonImage3} alt="outfit 3" style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #6b7280' }} />
+              #3
             </button>
           </div>
 
