@@ -84,7 +84,7 @@ export default function About() {
               <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight text-left">
                 Need a Collab?
               </h4>
-              <div className="flex justify-center">
+              <div className="flex justify-start">
                 <button 
                   type="button"
                   onClick={() => window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank')}
