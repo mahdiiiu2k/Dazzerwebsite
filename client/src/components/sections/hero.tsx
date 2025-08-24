@@ -10,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen relative px-4 sm:px-6 pt-32 sm:pt-40">
+    <section className="min-h-screen max-[374px]:min-h-[80vh] relative px-4 sm:px-6 pt-32 sm:pt-40">
       {/* Main Content */}
       <div className="container mx-auto h-full flex items-center justify-center">
         <div className="flex flex-col items-center max-w-4xl w-full">
