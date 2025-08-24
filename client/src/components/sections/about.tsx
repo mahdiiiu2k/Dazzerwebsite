@@ -65,15 +65,15 @@ export default function About() {
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-12 max-w-6xl mx-auto">
           <div className="mb-12">
-            <div className="flex items-center p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
-              <div className="flex-shrink-0 mr-6">
+            <div className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 max-w-md">
+              <div className="flex-shrink-0 mr-4">
                 <img 
                   src={outfitImage} 
                   alt="Brooklyn 98 outfit" 
-                  className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-lg shadow-lg border-2 border-white/30"
+                  className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg shadow-lg border-2 border-white/30"
                 />
               </div>
-              <div className="text-6xl md:text-8xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
+              <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
                 #1
               </div>
             </div>
