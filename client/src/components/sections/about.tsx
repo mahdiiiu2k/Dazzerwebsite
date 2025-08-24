@@ -97,7 +97,7 @@ export default function About() {
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.02)';
-                target.style.background = '#2d3748';
+                target.style.background = '#252f3f';
                 target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
               }}
               onMouseLeave={(e) => {
