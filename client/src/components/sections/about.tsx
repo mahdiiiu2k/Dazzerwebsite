@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MessageSquare, Phone, Instagram } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
+import outfitImage from "@assets/téléchargement (1)_1756058964050.jpg";
 
 export default function About() {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -63,31 +64,19 @@ export default function About() {
         
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-12 max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {[
-              { name: "Roofing Contractors", icon: "✦" },
-              { name: "Landscaping Services", icon: "✦" },
-              { name: "Plumbing Companies", icon: "✦" },
-              { name: "Exterior Cleaning Services", icon: "✦" },
-              { name: "Kitchen Remodeling", icon: "✦" },
-              { name: "Bathroom Renovation", icon: "✦" },
-              { name: "Snow Removal Services", icon: "✦" },
-              { name: "Window Cleaning Companies", icon: "✦" },
-              { name: "Gutter Cleaning & Repair", icon: "✦" },
-              { name: "Pressure Washing Services", icon: "✦" },
-              { name: "Roof Repair & Renovation", icon: "✦" },
-              { name: "Local Retail Shops", icon: "✦" },
-              { name: "E-commerce Stores", icon: "✦" }
-            ].map((service, index) => (
-              <div key={index} className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
-                <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-yellow-500 text-lg font-bold">{service.icon}</span>
-                </div>
-                <div className="text-lg text-white font-medium group-hover:text-yellow-400 transition-colors duration-300">
-                  {service.name}
-                </div>
+          <div className="mb-12">
+            <div className="flex items-center p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
+              <div className="flex-shrink-0 mr-6">
+                <img 
+                  src={outfitImage} 
+                  alt="Brooklyn 98 outfit" 
+                  className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-lg shadow-lg"
+                />
               </div>
-            ))}
+              <div className="text-6xl md:text-8xl font-bold text-yellow-500 group-hover:text-yellow-400 transition-colors duration-300">
+                #1
+              </div>
+            </div>
           </div>
           
           {/* Call to Action */}
