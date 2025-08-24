@@ -5,10 +5,9 @@ export default function CTA() {
   return (
     <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6" style={{ position: 'relative', zIndex: 10000 }}>
       <div className="container mx-auto relative" style={{ zIndex: 10001 }}>
-        <div className="luxury-border glass-card p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto" style={{ position: 'relative', zIndex: 10002 }}>
-          <div className="flex justify-center">
-            {/* Contact Info */}
-            <div className="w-full max-w-md">
+        <div className="flex justify-center">
+          {/* Contact Info */}
+          <div className="w-full max-w-md">
               {/* Direct Contact */}
               <div className="border border-yellow-500/30 rounded-xl p-4 sm:p-6 backdrop-blur-sm" style={{ backgroundColor: '#21252a' }}>
                 <h4 className="text-xl sm:text-2xl font-serif font-bold text-white mb-4 sm:mb-6">
@@ -108,7 +107,6 @@ export default function CTA() {
               </div>
 
 
-            </div>
           </div>
         </div>
       </div>
