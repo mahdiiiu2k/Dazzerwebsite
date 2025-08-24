@@ -62,12 +62,46 @@ export default function About() {
     >
       <div className="container mx-auto">
         
+        {/* Test Button - Simple Debug */}
+        <div style={{ 
+          position: 'fixed', 
+          top: '20px', 
+          right: '20px', 
+          zIndex: 99999,
+          background: 'red',
+          padding: '10px'
+        }}>
+          <button 
+            onClick={() => {
+              alert('Test button works!');
+              console.log('Test button clicked!');
+            }}
+            style={{
+              background: 'blue',
+              color: 'white',
+              padding: '10px 20px',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+          >
+            TEST CLICK
+          </button>
+        </div>
+
         {/* Duplicated Instagram Button - Outside glass card */}
-        <div className="text-center mb-8">
+        <div style={{ 
+          textAlign: 'center', 
+          marginBottom: '32px',
+          background: 'rgba(255,0,0,0.2)',
+          padding: '20px',
+          position: 'relative',
+          zIndex: 999
+        }}>
           <button 
             type="button"
             onClick={() => {
-              console.log('Button clicked!');
+              alert('Instagram button clicked!');
+              console.log('Instagram Button clicked!');
               window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
             }}
             style={{
@@ -79,27 +113,12 @@ export default function About() {
               borderRadius: '8px',
               border: 'none',
               cursor: 'pointer',
-              transition: 'all 0.3s ease',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
               gap: '6px',
               fontSize: '16px',
-              minHeight: '44px',
-              transform: 'scale(1)',
-              boxShadow: '0 4px 12px rgba(240, 148, 51, 0.3)'
-            }}
-            onMouseEnter={(e) => {
-              const target = e.target as HTMLButtonElement;
-              target.style.transform = 'scale(1.05)';
-              target.style.background = 'linear-gradient(45deg, #e6683c 0%,#dc2743 25%,#cc2366 50%,#bc1888 75%,#8a3ab9 100%)';
-              target.style.boxShadow = '0 6px 20px rgba(240, 148, 51, 0.5)';
-            }}
-            onMouseLeave={(e) => {
-              const target = e.target as HTMLButtonElement;
-              target.style.transform = 'scale(1)';
-              target.style.background = 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)';
-              target.style.boxShadow = '0 4px 12px rgba(240, 148, 51, 0.3)';
+              minHeight: '44px'
             }}
           >
             <Instagram size={18} />
