@@ -69,13 +69,16 @@ export default function About() {
               href="https://fr.pinterest.com/pin/15551561209611818/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer no-underline block"
+              className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer"
               style={{ 
                 textDecoration: 'none',
                 color: 'inherit',
                 display: 'flex',
-                pointerEvents: 'auto',
-                zIndex: 10,
+                width: '100%',
+                height: 'auto',
+                minHeight: '100px',
+                alignItems: 'center',
+                zIndex: 999,
                 position: 'relative'
               }}
               data-testid="pinterest-link"
