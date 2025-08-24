@@ -35,7 +35,7 @@ export default function Hero() {
                 <img 
                   src={mahdiPhoto}
                   alt="Mahdi - Founder of DS Design"
-                  className="rounded-2xl w-64 h-64 sm:w-80 sm:h-80 object-cover filter brightness-110 contrast-110"
+                  className="rounded-2xl w-48 h-48 sm:w-64 sm:h-64 object-cover filter brightness-110 contrast-110"
                 />
               </div>
               {/* Luxury gradient background with animation */}
