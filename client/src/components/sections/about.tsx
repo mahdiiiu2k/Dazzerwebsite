@@ -69,19 +69,45 @@ export default function About() {
               href="https://fr.pinterest.com/pin/15551561209611818/"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                padding: '16px',
+                borderRadius: '12px',
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                width: '100%',
+                textDecoration: 'none',
+                color: 'inherit',
+                cursor: 'pointer',
+                border: 'none',
+                outline: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+              }}
             >
-              <div className="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group hover:scale-105 w-full cursor-pointer">
-                <div className="flex-shrink-0 mr-8">
-                  <img 
-                    src={outfitImage} 
-                    alt="Brooklyn 98 outfit" 
-                    className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg shadow-lg border-2 border-white/30"
-                  />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
-                  #1
-                </div>
+              <div style={{ flexShrink: 0, marginRight: '32px' }}>
+                <img 
+                  src={outfitImage} 
+                  alt="Brooklyn 98 outfit" 
+                  style={{
+                    width: '80px',
+                    height: '80px',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                    border: '2px solid rgba(255, 255, 255, 0.3)'
+                  }}
+                />
+              </div>
+              <div style={{
+                fontSize: '48px',
+                fontWeight: 'bold',
+                color: 'white'
+              }}>
+                #1
               </div>
             </a>
           </div>
