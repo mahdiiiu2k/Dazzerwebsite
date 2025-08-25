@@ -4,7 +4,7 @@ import About from "@/components/sections/about";
 import Footer from "@/components/sections/footer";
 
 interface HomeProps {
-  dynamicButtons?: Array<{number: string, imageUrl: string}>;
+  dynamicButtons?: Array<{number: string, imageUrl: string, link: string}>;
 }
 
 export default function Home({ dynamicButtons = [] }: HomeProps) {

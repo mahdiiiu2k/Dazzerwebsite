@@ -7,7 +7,7 @@ import buttonImage2 from "@assets/téléchargement (2)_1756072409526.jpg";
 import buttonImage3 from "@assets/téléchargement (3)_1756072647997.jpg";
 
 interface AboutProps {
-  dynamicButtons?: Array<{number: string, imageUrl: string}>;
+  dynamicButtons?: Array<{number: string, imageUrl: string, link: string}>;
 }
 
 export default function About({ dynamicButtons = [] }: AboutProps) {
@@ -294,7 +294,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
             }}>
               <button 
                 onClick={() => {
-                  window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
+                  window.open(button.link, '_blank');
                 }}
                 style={{
                   background: '#1A1821',

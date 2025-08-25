@@ -12,7 +12,7 @@ import { useState } from "react";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 
-function Router({ dynamicButtons }: { dynamicButtons: Array<{number: string, imageUrl: string}> }) {
+function Router({ dynamicButtons }: { dynamicButtons: Array<{number: string, imageUrl: string, link: string}> }) {
   return (
     <Switch>
       <Route path="/" component={() => <Home dynamicButtons={dynamicButtons} />} />
@@ -28,7 +28,8 @@ function App() {
   const [passwordError, setPasswordError] = useState('');
   const [newButtonNumber, setNewButtonNumber] = useState('');
   const [newButtonImage, setNewButtonImage] = useState<File | null>(null);
-  const [dynamicButtons, setDynamicButtons] = useState<Array<{number: string, imageUrl: string}>>([]);
+  const [newButtonLink, setNewButtonLink] = useState('');
+  const [dynamicButtons, setDynamicButtons] = useState<Array<{number: string, imageUrl: string, link: string}>>([]);
 
   const CORRECT_PASSWORD = 'Qw9!tP3@zL7';
 
@@ -51,21 +52,23 @@ function App() {
     setShowWelcomeModal(false);
     setNewButtonNumber('');
     setNewButtonImage(null);
+    setNewButtonLink('');
   };
 
   const handleAddButton = () => {
-    if (newButtonNumber && newButtonImage) {
+    if (newButtonNumber && newButtonImage && newButtonLink) {
       // Create URL for the image
       const imageUrl = URL.createObjectURL(newButtonImage);
       
       // Add the new button to the dynamic buttons array
-      setDynamicButtons(prev => [...prev, { number: newButtonNumber, imageUrl }]);
+      setDynamicButtons(prev => [...prev, { number: newButtonNumber, imageUrl, link: newButtonLink }]);
       
-      console.log('Adding button:', { number: newButtonNumber, image: newButtonImage });
+      console.log('Adding button:', { number: newButtonNumber, image: newButtonImage, link: newButtonLink });
       
       // Clear inputs after adding
       setNewButtonNumber('');
       setNewButtonImage(null);
+      setNewButtonLink('');
     }
   };
 
@@ -164,10 +167,21 @@ function App() {
                   </p>
                 )}
               </div>
+              <div className="space-y-2">
+                <Label htmlFor="button-link">Add Link</Label>
+                <Input
+                  id="button-link"
+                  type="text"
+                  placeholder="Enter URL (e.g., https://example.com)"
+                  value={newButtonLink}
+                  onChange={(e) => setNewButtonLink(e.target.value)}
+                  data-testid="input-button-link"
+                />
+              </div>
               <div className="flex justify-end">
                 <Button 
                   onClick={handleAddButton} 
-                  disabled={!newButtonNumber || !newButtonImage}
+                  disabled={!newButtonNumber || !newButtonImage || !newButtonLink}
                   className="bg-green-800 hover:bg-green-900 text-white"
                   data-testid="button-add-new"
                 >
