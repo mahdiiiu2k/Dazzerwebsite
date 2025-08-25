@@ -98,7 +98,7 @@ export default function About() {
                 top: '50%',
                 transform: 'translateY(-50%)',
                 width: '1px',
-                height: '24px',
+                height: '28px',
                 backgroundColor: '#9ca3af',
                 zIndex: 1
               }} />
