@@ -136,7 +136,7 @@ function App() {
             </DialogHeader>
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="button-number">Number</Label>
+                <Label htmlFor="button-number">Add Number</Label>
                 <Input
                   id="button-number"
                   type="text"
@@ -147,7 +147,7 @@ function App() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="button-image">Picture</Label>
+                <Label htmlFor="button-image">Add Picture</Label>
                 <Input
                   id="button-image"
                   type="file"
