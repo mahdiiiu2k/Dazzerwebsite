@@ -66,7 +66,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
       <section 
         id="about" 
         ref={sectionRef} 
-        className={`${isIPhoneSE ? '-mt-56' : isSmallScreen ? '-mt-96' : '-mt-20'} pb-20 px-6`}
+        className={`${isIPhoneSE ? '-mt-32 pt-24' : isSmallScreen ? '-mt-72 pt-32' : '-mt-20 pt-8'} pb-20 px-6`}
       >
       <div className="container mx-auto">
 
@@ -151,9 +151,12 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
             (!searchTerm || button.number.includes(searchTerm)) && (
             <div key={index} style={{
               textAlign: 'center',
-              marginBottom: '32px'
+              marginBottom: isSmallScreen ? '24px' : '32px',
+              position: 'relative',
+              zIndex: 10
             }}>
               <button 
+                data-testid={`button-outfit-${button.number}`}
                 onClick={() => {
                   window.open(button.link, '_blank');
                 }}
@@ -161,7 +164,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                   background: '#1A1821',
                   color: 'white',
                   border: '2px solid #4c1d95',
-                  padding: '12px 8px',
+                  padding: isSmallScreen ? '16px 12px' : '12px 8px',
                   borderRadius: '8px',
                   cursor: 'pointer',
                   fontSize: '32px',
@@ -173,7 +176,10 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                   transition: 'all 0.3s ease',
                   transform: 'scale(1)',
                   boxShadow: '0 4px 12px rgba(107, 114, 128, 0.3)',
-                  width: '100%'
+                  width: '100%',
+                  minHeight: isSmallScreen ? '130px' : '120px',
+                  touchAction: 'manipulation',
+                  WebkitTapHighlightColor: 'rgba(0,0,0,0)'
                 }}
                 onMouseEnter={(e) => {
                   const target = e.target as HTMLButtonElement;
