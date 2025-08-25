@@ -145,7 +145,9 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
 
 
           {/* Dynamic Buttons */}
-          {dynamicButtons.map((button, index) => (
+          {dynamicButtons
+            .sort((a, b) => parseInt(a.number) - parseInt(b.number))
+            .map((button, index) => (
             (!searchTerm || button.number.includes(searchTerm)) && (
             <div key={index} style={{
               textAlign: 'center',
