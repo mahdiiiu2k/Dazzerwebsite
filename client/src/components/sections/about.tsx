@@ -92,6 +92,16 @@ export default function About() {
                   zIndex: 1
                 }}
               />
+              <div style={{
+                position: 'absolute',
+                left: '44px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                width: '1px',
+                height: '20px',
+                backgroundColor: '#9ca3af',
+                zIndex: 1
+              }} />
               <input
                 type="text"
                 placeholder="Search buttons... (#1, #2, #3)"
