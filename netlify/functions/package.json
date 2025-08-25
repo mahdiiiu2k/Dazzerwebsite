@@ -7,7 +7,6 @@
     "drizzle-orm": "^0.39.1",
     "drizzle-zod": "^0.7.0",
     "zod": "^3.24.2",
-    "cloudinary": "^2.7.0",
-    "multer": "^2.0.2"
+    "cloudinary": "^2.7.0"
   }
 }
