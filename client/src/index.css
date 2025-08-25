@@ -84,7 +84,7 @@
   z-index: 9999;
   /* VERY high z-index, outside any containers */
   max-width: 48rem;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
   padding: 0 24px;
   text-align: left;
