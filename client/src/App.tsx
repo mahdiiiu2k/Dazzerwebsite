@@ -26,6 +26,8 @@ function App() {
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [newButtonNumber, setNewButtonNumber] = useState('');
+  const [newButtonImage, setNewButtonImage] = useState<File | null>(null);
 
   const CORRECT_PASSWORD = 'Qw9!tP3@zL7';
 
@@ -46,6 +48,27 @@ function App() {
 
   const closeWelcomeModal = () => {
     setShowWelcomeModal(false);
+    setNewButtonNumber('');
+    setNewButtonImage(null);
+  };
+
+  const handleAddButton = () => {
+    if (newButtonNumber && newButtonImage) {
+      // Here you can add logic to actually add the button to your system
+      console.log('Adding button:', { number: newButtonNumber, image: newButtonImage });
+      
+      // Clear inputs after adding
+      setNewButtonNumber('');
+      setNewButtonImage(null);
+      
+      // Optionally close modal after adding
+      // setShowWelcomeModal(false);
+    }
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setNewButtonImage(file);
   };
 
   const closePasswordModal = () => {
@@ -109,15 +132,44 @@ function App() {
         <Dialog open={showWelcomeModal} onOpenChange={closeWelcomeModal}>
           <DialogContent className="max-w-[90vw] sm:max-w-md border-gray-600 fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <DialogHeader>
-              <DialogTitle>Welcome</DialogTitle>
+              <DialogTitle>Add New Button</DialogTitle>
             </DialogHeader>
-            <div className="py-4">
-              <p className="text-center text-lg" data-testid="text-welcome">Welcome</p>
-            </div>
-            <div className="flex justify-center">
-              <Button onClick={closeWelcomeModal} data-testid="button-close-welcome">
-                Close
-              </Button>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="button-number">Number</Label>
+                <Input
+                  id="button-number"
+                  type="text"
+                  placeholder="Enter number (e.g., 4, 5, 6...)"
+                  value={newButtonNumber}
+                  onChange={(e) => setNewButtonNumber(e.target.value)}
+                  data-testid="input-button-number"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="button-image">Picture</Label>
+                <Input
+                  id="button-image"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  data-testid="input-button-image"
+                />
+                {newButtonImage && (
+                  <p className="text-sm text-green-500" data-testid="text-image-selected">
+                    Image selected: {newButtonImage.name}
+                  </p>
+                )}
+              </div>
+              <div className="flex justify-center">
+                <Button 
+                  onClick={handleAddButton} 
+                  disabled={!newButtonNumber || !newButtonImage}
+                  data-testid="button-add-new"
+                >
+                  Add
+                </Button>
+              </div>
             </div>
           </DialogContent>
         </Dialog>
