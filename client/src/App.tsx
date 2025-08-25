@@ -165,7 +165,7 @@ function App() {
                 <Button 
                   onClick={handleAddButton} 
                   disabled={!newButtonNumber || !newButtonImage}
-                  className="bg-gray-700 hover:bg-gray-800 text-white"
+                  className="bg-green-700 hover:bg-green-800 text-white"
                   data-testid="button-add-new"
                 >
                   + Add
