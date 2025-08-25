@@ -1,7 +1,4 @@
-import { db } from "./shared/db.js";
-import { dynamicButtons, insertDynamicButtonSchema } from "./shared/schema.js";
-import { eq } from "drizzle-orm";
-import { z } from "zod";
+import { db } from "./shared/simple-db.js";
 import { v2 as cloudinary } from "cloudinary";
 
 // Configure Cloudinary
@@ -38,7 +35,7 @@ export const handler = async (event, context) => {
     // GET - Retrieve all buttons
     if (event.httpMethod === "GET") {
       console.log('🔧 Getting buttons from database...');
-      const buttons = await db.select().from(dynamicButtons);
+      const buttons = await db.getButtons();
       console.log('🔧 Found buttons:', buttons.length);
       return {
         statusCode: 200,
@@ -97,12 +94,17 @@ export const handler = async (event, context) => {
       };
 
       console.log('🔧 Creating button with data:', buttonData);
-      const button = insertDynamicButtonSchema.parse(buttonData);
-      const [result] = await db
-        .insert(dynamicButtons)
-        .values(button)
-        .returning();
       
+      // Basic validation
+      if (!buttonData.number || !buttonData.imageUrl || !buttonData.link) {
+        return {
+          statusCode: 400,
+          headers,
+          body: JSON.stringify({ error: 'Missing required fields: number, imageUrl, link' }),
+        };
+      }
+      
+      const result = await db.createButton(buttonData);
       console.log('🔧 Button created successfully:', result);
       return {
         statusCode: 200,
@@ -124,11 +126,8 @@ export const handler = async (event, context) => {
         };
       }
 
-      const result = await db
-        .delete(dynamicButtons)
-        .where(eq(dynamicButtons.number, number));
-
-      const success = (result.rowCount ?? 0) > 0;
+      const result = await db.deleteButton(number);
+      const success = !!result;
 
       if (success) {
         return {
@@ -155,15 +154,6 @@ export const handler = async (event, context) => {
     console.error("🚨 Buttons API error:", error.message);
     console.error("🚨 Stack trace:", error.stack);
     
-    if (error instanceof z.ZodError) {
-      console.error("🚨 Validation error:", error.errors);
-      return {
-        statusCode: 400,
-        headers,
-        body: JSON.stringify({ error: "Invalid input", details: error.errors }),
-      };
-    }
-
     return {
       statusCode: 500,
       headers,
