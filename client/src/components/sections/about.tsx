@@ -207,7 +207,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                   type="button"
                   onClick={() => {
                     console.log('Instagram Button clicked!');
-                    window.open('https://www.instagram.com/ds.desiiiign?igsh=MTZnMTFpMjB0aHZpZA==', '_blank');
+                    window.open('https://www.instagram.com/dazzeriii2k', '_blank');
                   }}
                   style={{
                     width: 'auto',
