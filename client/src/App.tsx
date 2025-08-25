@@ -153,6 +153,17 @@ function App() {
                 />
               </div>
               <div className="space-y-2">
+                <Label htmlFor="button-link">Add Link</Label>
+                <Input
+                  id="button-link"
+                  type="text"
+                  placeholder="Enter URL (e.g., https://example.com)"
+                  value={newButtonLink}
+                  onChange={(e) => setNewButtonLink(e.target.value)}
+                  data-testid="input-button-link"
+                />
+              </div>
+              <div className="space-y-2">
                 <Label htmlFor="button-image">Add Picture</Label>
                 <Input
                   id="button-image"
@@ -166,17 +177,6 @@ function App() {
                     Image selected: {newButtonImage.name}
                   </p>
                 )}
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="button-link">Add Link</Label>
-                <Input
-                  id="button-link"
-                  type="text"
-                  placeholder="Enter URL (e.g., https://example.com)"
-                  value={newButtonLink}
-                  onChange={(e) => setNewButtonLink(e.target.value)}
-                  data-testid="input-button-link"
-                />
               </div>
               <div className="flex justify-end">
                 <Button 
