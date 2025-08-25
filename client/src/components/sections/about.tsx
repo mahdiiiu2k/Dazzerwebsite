@@ -117,7 +117,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
               }}>#</span>
               <input
                 type="text"
-                placeholder="1, 2, 3"
+                placeholder="Type to search... (e.g., 5, 56)"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
@@ -146,7 +146,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
 
           {/* Dynamic Buttons */}
           {dynamicButtons.map((button, index) => (
-            (!searchTerm || searchTerm.includes(button.number)) && (
+            (!searchTerm || button.number.includes(searchTerm)) && (
             <div key={index} style={{
               textAlign: 'center',
               marginBottom: '32px'
