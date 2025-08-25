@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import mahdiPhoto from "@assets/PicMa_2402454_1753546746971_1753546907613.jpg";
+import mahdiPhoto from "@assets/file_00000000c7c461fdb51c3bc8828af650_1756131458822.png";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -20,7 +20,7 @@ export default function Hero() {
               <div className="luxury-border glass-card rounded-3xl p-3 hover-glow transform hover:scale-105 transition-all duration-500">
                 <img 
                   src={mahdiPhoto}
-                  alt="Mahdi - Founder of DS Design"
+                  alt="Dazzer - Profile Picture"
                   className="rounded-2xl w-48 h-48 sm:w-64 sm:h-64 object-cover filter brightness-110 contrast-110"
                 />
               </div>
