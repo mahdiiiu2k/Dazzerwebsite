@@ -20,7 +20,7 @@ export default function Hero() {
               <div className="luxury-border glass-card rounded-3xl p-3 hover-glow transform hover:scale-105 transition-all duration-500">
                 <img 
                   src={mahdiPhoto}
-                  alt="Dazzer - Profile Picture"
+                  alt="Dazzerinio - Profile Picture"
                   className="rounded-2xl w-48 h-48 sm:w-64 sm:h-64 object-cover filter brightness-110 contrast-110"
                 />
               </div>
@@ -35,7 +35,7 @@ export default function Hero() {
           {/* Text Content */}
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight">
-              <span className="text-white block">Dazzer 🌟 </span>
+              <span className="text-white block">Dazzerinio 🌟 </span>
               <span className="gradient-text block relative drop-shadow-2xl" style={{textShadow: '0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3)'}}>
                 Clean. Iconic. Timeless
               </span>
