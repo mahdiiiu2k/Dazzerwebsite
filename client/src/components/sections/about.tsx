@@ -66,29 +66,29 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
       <section 
         id="about" 
         ref={sectionRef} 
-        className={`${isIPhoneSE ? '-mt-32 pt-24' : isSmallScreen ? '-mt-72 pt-32' : '-mt-20 pt-8'} pb-20 px-6`}
-        style={{ backgroundColor: 'green', opacity: 0.2 }}
+        className="pt-8 pb-20 px-6"
       >
       <div className="container mx-auto">
 
         {/* Search Bar - OUTSIDE glass-card container */}
         <div className="search-bar-section-standalone">
           <div className="search-bar-container">
+            <Search size={20} className="search-icon" />
+            <div className="search-divider" />
+            <span className="search-hash">#</span>
             <input
               type="text"
               placeholder="Type to search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              onClick={() => console.log('Search input clicked!')}
-              onFocus={() => console.log('Search input focused!')}
-              className="search-input-simple"
+              className="search-input"
               data-testid="search-input"
             />
           </div>
         </div>
 
         {/* Enhanced Services Section */}
-        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto" style={{ backgroundColor: 'blue', opacity: 0.3 }}>
+        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
 
 
 
