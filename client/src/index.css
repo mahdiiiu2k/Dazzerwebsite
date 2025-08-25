@@ -78,6 +78,24 @@
   /* Higher z-index for mobile */
 }
 
+.search-bar-section-standalone {
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 9999;
+  /* VERY high z-index, outside any containers */
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
+  text-align: left;
+  
+  @media (max-width: 768px) {
+    padding: 0 16px;
+    z-index: 9999;
+    /* Ensure it's always on top on mobile */
+  }
+}
+
 .search-bar-container {
   position: relative;
   display: inline-block;
@@ -92,7 +110,7 @@
   top: 50%;
   transform: translateY(-50%);
   color: #9ca3af;
-  z-index: 2;
+  z-index: 10002;
   pointer-events: none;
 }
 
@@ -104,7 +122,7 @@
   width: 1px;
   height: 24px;
   background-color: rgba(156, 163, 175, 0.6);
-  z-index: 2;
+  z-index: 10002;
   pointer-events: none;
 }
 
@@ -115,7 +133,7 @@
   transform: translateY(-50%);
   color: white;
   font-size: 24px;
-  z-index: 2;
+  z-index: 10002;
   pointer-events: none;
   user-select: none;
 }
@@ -131,7 +149,7 @@
   outline: none;
   transition: border-color 0.3s ease;
   position: relative;
-  z-index: 51;
+  z-index: 10000;
   
   /* Mobile-specific fixes */
   touch-action: manipulation;
@@ -153,7 +171,7 @@
 .search-input:focus {
   border-color: #6366f1;
   /* Ensure focus state works on mobile */
-  z-index: 52;
+  z-index: 10001;
 }
 
 /* Clean Outfit Button Styles */
