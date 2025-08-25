@@ -218,6 +218,16 @@
 .outfit-button-wrapper {
   position: relative;
   z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.outfit-button-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.outfit-button-wrapper:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
 }
 
 .outfit-number-container {
@@ -293,7 +303,6 @@
   
   /* Interaction */
   cursor: pointer;
-  transition: all 0.3s ease;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   
@@ -305,16 +314,10 @@
   }
 }
 
-.outfit-button:hover {
-  transform: scale(1.02);
+.outfit-button-wrapper:hover .outfit-button {
   background: #2A2731;
   box-shadow: 0 6px 20px rgba(107, 114, 128, 0.5);
   border-color: #6366f1;
-}
-
-.outfit-button:active {
-  transform: scale(0.98);
-  transition: transform 0.1s ease;
 }
 
 .outfit-image-container {
