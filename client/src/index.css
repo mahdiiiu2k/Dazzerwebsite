@@ -149,7 +149,7 @@
   outline: none;
   transition: border-color 0.3s ease;
   position: relative;
-  z-index: 10000;
+  z-index: 10005;
   
   /* Mobile-specific fixes */
   touch-action: manipulation;
@@ -171,7 +171,7 @@
 .search-input:focus {
   border-color: #6366f1;
   /* Ensure focus state works on mobile */
-  z-index: 10001;
+  z-index: 10006;
 }
 
 /* Clean Outfit Button Styles */
