@@ -9,12 +9,14 @@ import buttonImage3 from "@assets/téléchargement (3)_1756072647997.jpg";
 export default function About() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isIPhoneSE, setIsIPhoneSE] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsSmallScreen(window.innerWidth <= 768);
+      setIsIPhoneSE(window.innerWidth <= 375);
     };
     
     checkScreenSize();
@@ -63,7 +65,7 @@ export default function About() {
       <section 
         id="about" 
         ref={sectionRef} 
-        className={`${isSmallScreen ? '-mt-80' : '-mt-20'} pb-20 px-6`}
+        className={`${isIPhoneSE ? '-mt-64' : isSmallScreen ? '-mt-80' : '-mt-20'} pb-20 px-6`}
       >
       <div className="container mx-auto">
 
