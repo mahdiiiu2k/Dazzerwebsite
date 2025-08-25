@@ -96,7 +96,7 @@ function App() {
                   </p>
                 )}
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-end">
                 <Button onClick={handlePasswordSubmit} data-testid="button-submit-password">
                   Enter
                 </Button>
