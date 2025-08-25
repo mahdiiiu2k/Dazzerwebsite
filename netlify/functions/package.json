@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "@neondatabase/serverless": "^0.10.4",
-    "cloudinary": "^2.7.0"
+    "@supabase/supabase-js": "^2.39.0",
+    "cloudinary": "^2.7.0",
+    "postgres": "^3.4.3"
   }
 }

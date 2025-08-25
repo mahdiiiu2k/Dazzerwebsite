@@ -1,11 +1,22 @@
-import { neon } from '@neondatabase/serverless';
+import postgres from 'postgres';
 
 if (!process.env.DATABASE_URL) {
   throw new Error("DATABASE_URL environment variable is required");
 }
 
-// Use the HTTP endpoint for better serverless compatibility
-const sql = neon(process.env.DATABASE_URL);
+// Configure postgres for serverless Supabase connection
+const sql = postgres(process.env.DATABASE_URL, {
+  host: 'aws-1-eu-north-1.pooler.supabase.com',
+  port: 6543,
+  database: 'postgres',
+  username: 'postgres.oprhpgnmfckswynfkstk',
+  password: 'Mahdi:2006',
+  ssl: 'require',
+  connection: {
+    options: '--search_path=public',
+  },
+  max: 1, // Important for serverless
+});
 
 // Simple database functions without Drizzle ORM
 export const db = {

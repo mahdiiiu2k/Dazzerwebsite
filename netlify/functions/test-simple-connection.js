@@ -1,4 +1,4 @@
-import { neon } from '@neondatabase/serverless';
+import postgres from 'postgres';
 
 export const handler = async (event, context) => {
   const headers = {
@@ -17,8 +17,19 @@ export const handler = async (event, context) => {
     console.log('🔧 DATABASE_URL exists:', !!process.env.DATABASE_URL);
     console.log('🔧 DATABASE_URL prefix:', process.env.DATABASE_URL?.substring(0, 30) + '...');
     
-    // Test connection with minimal query
-    const sql = neon(process.env.DATABASE_URL);
+    // Test connection with proper Supabase configuration
+    const sql = postgres(process.env.DATABASE_URL, {
+      host: 'aws-1-eu-north-1.pooler.supabase.com',
+      port: 6543,
+      database: 'postgres',
+      username: 'postgres.oprhpgnmfckswynfkstk',
+      password: 'Mahdi:2006',
+      ssl: 'require',
+      connection: {
+        options: '--search_path=public',
+      },
+      max: 1, // Important for serverless
+    });
     
     console.log('🔧 Executing simple query...');
     const result = await sql`SELECT 1 as test`;
@@ -42,6 +53,9 @@ export const handler = async (event, context) => {
       buttonCount = parseInt(countResult[0].count);
       console.log('🔧 Button count:', buttonCount);
     }
+
+    // Close the connection for serverless
+    await sql.end();
 
     return {
       statusCode: 200,
