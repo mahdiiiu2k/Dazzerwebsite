@@ -117,7 +117,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
               }}>#</span>
               <input
                 type="text"
-                placeholder="Type to search... (e.g., 5, 56)"
+                placeholder="Type to search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
