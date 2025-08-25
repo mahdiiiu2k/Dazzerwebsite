@@ -102,14 +102,24 @@ export default function About() {
                 backgroundColor: 'rgba(156, 163, 175, 0.6)',
                 zIndex: 1
               }} />
+              <span style={{
+                position: 'absolute',
+                left: '56px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                color: '#9ca3af',
+                fontSize: '16px',
+                zIndex: 1,
+                pointerEvents: 'none'
+              }}>#</span>
               <input
                 type="text"
-                placeholder="Search buttons... (#1, #2, #3)"
+                placeholder="1, 2, 3"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
                   width: '100%',
-                  padding: '12px 16px 12px 48px',
+                  padding: '12px 16px 12px 72px',
                   fontSize: '16px',
                   borderRadius: '8px',
                   border: '2px solid #9ca3af',
@@ -129,7 +139,7 @@ export default function About() {
           </div>
 
           {/* Button #1 */}
-          {(!searchTerm || '#1'.includes(searchTerm.toLowerCase()) || searchTerm.toLowerCase().includes('#1')) && (
+          {(!searchTerm || searchTerm.includes('1')) && (
           <div style={{
             textAlign: 'center',
             marginBottom: '32px'
@@ -176,7 +186,7 @@ export default function About() {
           )}
 
           {/* Button #2 */}
-          {(!searchTerm || '#2'.includes(searchTerm.toLowerCase()) || searchTerm.toLowerCase().includes('#2')) && (
+          {(!searchTerm || searchTerm.includes('2')) && (
           <div style={{
             textAlign: 'center',
             marginBottom: '32px'
@@ -223,7 +233,7 @@ export default function About() {
           )}
 
           {/* Button #3 */}
-          {(!searchTerm || '#3'.includes(searchTerm.toLowerCase()) || searchTerm.toLowerCase().includes('#3')) && (
+          {(!searchTerm || searchTerm.includes('3')) && (
           <div style={{
             textAlign: 'center',
             marginBottom: '32px'
