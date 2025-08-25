@@ -132,11 +132,11 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                       />
                     </div>
                     <div className="outfit-number-container">
-                      <span className="outfit-number">#{button.number}</span>
+                      <span className={`outfit-number ${button.number.length >= 4 ? 'text-smaller' : ''}`}>#{button.number}</span>
                     </div>
                   </button>
                   <button
-                    className={`copy-button-inline ${button.number.length >= 3 ? 'copy-button-below' : ''}`}
+                    className={`copy-button-inline ${button.number.length >= 2 ? 'copy-button-below' : ''}`}
                     onClick={(e) => {
                       e.stopPropagation();
                       copyToClipboard(button.link, button.number);

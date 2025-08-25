@@ -308,6 +308,18 @@
   transform: scale(0.9);
 }
 
+.text-smaller {
+  font-size: 0.85em;
+  
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.75em;
+  }
+}
+
 .outfit-button {
   /* Layout */
   display: flex;
