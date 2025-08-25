@@ -79,9 +79,9 @@ export default function About() {
                 window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
               }}
               style={{
-                background: '#696969',
+                background: '#5D5A6B',
                 color: 'white',
-                border: '1px solid #6b7280',
+                border: '1px solid #5D5A6B',
                 padding: '12px 8px',
                 borderRadius: '8px',
                 cursor: 'pointer',
@@ -99,17 +99,17 @@ export default function About() {
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.02)';
-                target.style.background = '#7a7a7a';
+                target.style.background = '#6E6B7C';
                 target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
               }}
               onMouseLeave={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1)';
-                target.style.background = '#696969';
+                target.style.background = '#5D5A6B';
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
-              <img src={buttonImage} alt="outfit" style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #6b7280' }} />
+              <img src={buttonImage} alt="outfit" style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #5D5A6B' }} />
               #1
             </button>
           </div>
@@ -124,9 +124,9 @@ export default function About() {
                 window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
               }}
               style={{
-                background: '#696969',
+                background: '#5D5A6B',
                 color: 'white',
-                border: '1px solid #6b7280',
+                border: '1px solid #5D5A6B',
                 padding: '12px 8px',
                 borderRadius: '8px',
                 cursor: 'pointer',
@@ -144,17 +144,17 @@ export default function About() {
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.02)';
-                target.style.background = '#7a7a7a';
+                target.style.background = '#6E6B7C';
                 target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
               }}
               onMouseLeave={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1)';
-                target.style.background = '#696969';
+                target.style.background = '#5D5A6B';
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
-              <img src={buttonImage2} alt="outfit 2" style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #6b7280' }} />
+              <img src={buttonImage2} alt="outfit 2" style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #5D5A6B' }} />
               #2
             </button>
           </div>
@@ -169,9 +169,9 @@ export default function About() {
                 window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
               }}
               style={{
-                background: '#696969',
+                background: '#5D5A6B',
                 color: 'white',
-                border: '1px solid #6b7280',
+                border: '1px solid #5D5A6B',
                 padding: '12px 8px',
                 borderRadius: '8px',
                 cursor: 'pointer',
@@ -189,17 +189,17 @@ export default function About() {
               onMouseEnter={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1.02)';
-                target.style.background = '#7a7a7a';
+                target.style.background = '#6E6B7C';
                 target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
               }}
               onMouseLeave={(e) => {
                 const target = e.target as HTMLButtonElement;
                 target.style.transform = 'scale(1)';
-                target.style.background = '#696969';
+                target.style.background = '#5D5A6B';
                 target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
               }}
             >
-              <img src={buttonImage3} alt="outfit 3" style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #6b7280' }} />
+              <img src={buttonImage3} alt="outfit 3" style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #5D5A6B' }} />
               #3
             </button>
           </div>
