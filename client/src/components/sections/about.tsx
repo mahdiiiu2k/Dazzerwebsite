@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageSquare, Phone, Instagram, Search } from "lucide-react";
+import { MessageSquare, Phone, Instagram, Search, Copy } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import outfitImage from "@assets/téléchargement (1)_1756058964050.jpg";
 
@@ -61,6 +61,14 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
     }, 20);
   };
 
+  const copyToClipboard = (link: string) => {
+    navigator.clipboard.writeText(link).then(() => {
+      console.log('Link copied to clipboard:', link);
+    }).catch(err => {
+      console.error('Failed to copy link:', err);
+    });
+  };
+
   return (
     <>
       <section 
@@ -113,6 +121,17 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                       />
                     </div>
                     <span className="outfit-number">#{button.number}</span>
+                  </button>
+                  <button
+                    className="copy-button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      copyToClipboard(button.link);
+                    }}
+                    data-testid={`copy-button-${button.number}`}
+                    title="Copy link"
+                  >
+                    <Copy size={16} />
                   </button>
                 </div>
               )
