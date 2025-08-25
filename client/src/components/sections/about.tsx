@@ -145,61 +145,30 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
 
 
           {/* Dynamic Buttons */}
-          {dynamicButtons
-            .sort((a, b) => parseInt(a.number) - parseInt(b.number))
-            .map((button, index) => (
-            (!searchTerm || button.number.includes(searchTerm)) && (
-            <div key={index} style={{
-              textAlign: 'center',
-              marginBottom: isSmallScreen ? '24px' : '32px',
-              position: 'relative',
-              zIndex: 10
-            }}>
-              <button 
-                data-testid={`button-outfit-${button.number}`}
-                onClick={() => {
-                  window.open(button.link, '_blank');
-                }}
-                style={{
-                  background: '#1A1821',
-                  color: 'white',
-                  border: '2px solid #4c1d95',
-                  padding: isSmallScreen ? '16px 12px' : '12px 8px',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  fontSize: '32px',
-                  fontWeight: '600',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'flex-start',
-                  gap: '12px',
-                  transition: 'all 0.3s ease',
-                  transform: 'scale(1)',
-                  boxShadow: '0 4px 12px rgba(107, 114, 128, 0.3)',
-                  width: '100%',
-                  minHeight: isSmallScreen ? '130px' : '120px',
-                  touchAction: 'manipulation',
-                  WebkitTapHighlightColor: 'rgba(0,0,0,0)'
-                }}
-                onMouseEnter={(e) => {
-                  const target = e.target as HTMLButtonElement;
-                  target.style.transform = 'scale(1.02)';
-                  target.style.background = '#2A2731';
-                  target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
-                }}
-                onMouseLeave={(e) => {
-                  const target = e.target as HTMLButtonElement;
-                  target.style.transform = 'scale(1)';
-                  target.style.background = '#1A1821';
-                  target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
-                }}
-              >
-                <img src={button.imageUrl} alt={`outfit ${button.number}`} style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #1A1821' }} />
-                #{button.number}
-              </button>
-            </div>
-            )
-          ))}
+          <div className="outfit-buttons-grid">
+            {dynamicButtons
+              .sort((a, b) => parseInt(a.number) - parseInt(b.number))
+              .map((button, index) => (
+              (!searchTerm || button.number.includes(searchTerm)) && (
+                <div key={index} className="outfit-button-wrapper">
+                  <button 
+                    data-testid={`button-outfit-${button.number}`}
+                    className="outfit-button"
+                    onClick={() => window.open(button.link, '_blank')}
+                  >
+                    <div className="outfit-image-container">
+                      <img 
+                        src={button.imageUrl} 
+                        alt={`outfit ${button.number}`} 
+                        className="outfit-image"
+                      />
+                    </div>
+                    <span className="outfit-number">#{button.number}</span>
+                  </button>
+                </div>
+              )
+            ))}
+          </div>
 
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">
