@@ -46,6 +46,29 @@ export const handler = async (event, context) => {
     console.log('🔧 Testing Cloudinary configuration...');
     const cloudinaryTest = await cloudinary.api.ping().catch(err => err.message);
     
+    // Test the exact same API call that the frontend makes
+    console.log('🔧 Testing exact API format...');
+    const apiResponse = { buttons: buttons };
+    
+    // Verify image URLs are accessible
+    const testImageUrl = buttons.length > 0 ? buttons[0].imageUrl : null;
+    let imageAccessTest = null;
+    if (testImageUrl) {
+      try {
+        const imageResponse = await fetch(testImageUrl, { method: 'HEAD' });
+        imageAccessTest = {
+          url: testImageUrl,
+          status: imageResponse.status,
+          headers: Object.fromEntries(imageResponse.headers.entries())
+        };
+      } catch (err) {
+        imageAccessTest = {
+          url: testImageUrl,
+          error: err.message
+        };
+      }
+    }
+
     return {
       statusCode: 200,
       headers,
@@ -55,9 +78,21 @@ export const handler = async (event, context) => {
         environment: {
           databaseConnected: true,
           buttonsCount: buttons.length,
-          cloudinaryTest: cloudinaryTest
+          cloudinaryTest: cloudinaryTest,
+          cloudinaryConfig: {
+            cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+            hasKey: !!process.env.CLOUDINARY_API_KEY,
+            hasSecret: !!process.env.CLOUDINARY_API_SECRET
+          }
         },
-        sampleButtons: buttons.slice(0, 3)
+        apiFormatTest: apiResponse,
+        imageAccessTest: imageAccessTest,
+        fullButtonData: buttons,
+        comparison: {
+          firstButtonImageUrl: buttons[0]?.imageUrl || null,
+          urlStartsWithHttps: buttons[0]?.imageUrl?.startsWith('https://') || false,
+          urlContainsCloudinary: buttons[0]?.imageUrl?.includes('cloudinary') || false
+        }
       }),
     };
 
