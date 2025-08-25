@@ -73,9 +73,6 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
         {/* Search Bar - OUTSIDE glass-card container */}
         <div className="search-bar-section-standalone">
           <div className="search-bar-container">
-            <Search size={20} className="search-icon" />
-            <div className="search-divider" />
-            <span className="search-hash">#</span>
             <input
               type="text"
               placeholder="Type to search"
@@ -83,7 +80,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
               onChange={(e) => setSearchTerm(e.target.value)}
               onClick={() => console.log('Search input clicked!')}
               onFocus={() => console.log('Search input focused!')}
-              className="search-input"
+              className="search-input-simple"
               data-testid="search-input"
             />
           </div>
