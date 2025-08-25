@@ -132,7 +132,7 @@ function App() {
         <Dialog open={showWelcomeModal} onOpenChange={closeWelcomeModal}>
           <DialogContent className="max-w-[90vw] sm:max-w-md border-gray-600 fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <DialogHeader>
-              <DialogTitle>Add New Button</DialogTitle>
+              <DialogTitle>Add New Item</DialogTitle>
             </DialogHeader>
             <div className="space-y-4">
               <div className="space-y-2">
@@ -161,10 +161,11 @@ function App() {
                   </p>
                 )}
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-end">
                 <Button 
                   onClick={handleAddButton} 
                   disabled={!newButtonNumber || !newButtonImage}
+                  className="bg-green-600 hover:bg-green-700 text-white"
                   data-testid="button-add-new"
                 >
                   Add
