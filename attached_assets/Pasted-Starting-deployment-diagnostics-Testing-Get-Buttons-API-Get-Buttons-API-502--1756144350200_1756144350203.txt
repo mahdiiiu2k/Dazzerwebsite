@@ -1,0 +1,47 @@
+Starting deployment diagnostics...
+
+🔧 Testing Get Buttons API...
+✅ Get Buttons API: 502 - {
+  "errorType": "Runtime.ImportModuleError",
+  "errorMessage": "Error: Cannot find module '/var/task/node_modules/drizzle-orm/neon-http/index.cjs'",
+  "trace": [
+    "Runtime.ImportModuleError: Error: Cannot find module '/var/task/node_modules/drizzle-orm/neon-http/index.cjs'",
+    "    at _loadUserApp (file:///var/runtime/index.mjs:1109:17)",
+    "    at async UserFunction.js.module.exports.load (file:///var/runtime/index.mjs:1148:21)",
+    "    at async start (file:///var/runtime/index.mjs:1335:23)",
+    "    at async file:///var/runtime/index.mjs:1342:1"
+  ]
+}
+🔧 Testing Debug Buttons API...
+✅ Debug Buttons API: 502 - {
+  "errorType": "Runtime.ImportModuleError",
+  "errorMessage": "Error: Cannot find module '/var/task/node_modules/drizzle-orm/neon-http/index.cjs'",
+  "trace": [
+    "Runtime.ImportModuleError: Error: Cannot find module '/var/task/node_modules/drizzle-orm/neon-http/index.cjs'",
+    "    at _loadUserApp (file:///var/runtime/index.mjs:1109:17)",
+    "    at async UserFunction.js.module.exports.load (file:///var/runtime/index.mjs:1148:21)",
+    "    at async start (file:///var/runtime/index.mjs:1335:23)",
+    "    at async file:///var/runtime/index.mjs:1342:1"
+  ]
+}
+🔧 Testing Database Test...
+✅ Database Test: 500 - {
+  "error": "Database connection failed",
+  "details": "Error connecting to database: fetch failed",
+  "hasDbUrl": true,
+  "timestamp": "2025-08-25T17:52:13.799Z"
+}
+🔧 Testing Test Button Creation...
+✅ Test Button Creation: 502 - {
+  "errorType": "Runtime.ImportModuleError",
+  "errorMessage": "Error: Cannot find module '/var/task/node_modules/drizzle-orm/neon-http/index.cjs'",
+  "trace": [
+    "Runtime.ImportModuleError: Error: Cannot find module '/var/task/node_modules/drizzle-orm/neon-http/index.cjs'",
+    "    at _loadUserApp (file:///var/runtime/index.mjs:1109:17)",
+    "    at async UserFunction.js.module.exports.load (file:///var/runtime/index.mjs:1148:21)",
+    "    at async start (file:///var/runtime/index.mjs:1335:23)",
+    "    at async file:///var/runtime/index.mjs:1342:1"
+  ]
+}
+
+🏁 Diagnostics complete!

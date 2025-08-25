@@ -1,6 +1,4 @@
-import { db } from "./shared/db.js";
-import { dynamicButtons } from "./shared/schema.js";
-import { eq } from "drizzle-orm";
+import { db } from "./shared/simple-db.js";
 import { v2 as cloudinary } from "cloudinary";
 
 // Configure Cloudinary
@@ -43,7 +41,7 @@ export const handler = async (event, context) => {
     // GET - Retrieve all buttons
     if (event.httpMethod === "GET") {
       console.log('🔧 Getting buttons from database...');
-      const buttons = await db.select().from(dynamicButtons);
+      const buttons = await db.getButtons();
       console.log('🔧 Found buttons:', buttons.length);
       return {
         statusCode: 200,
@@ -140,10 +138,7 @@ export const handler = async (event, context) => {
       }
       
       console.log('🔧 Inserting button data into database:', buttonData);
-      const [result] = await db
-        .insert(dynamicButtons)
-        .values(buttonData)
-        .returning();
+      const result = await db.createButton(buttonData);
       console.log('🔧 Button created successfully:', result);
       return {
         statusCode: 200,

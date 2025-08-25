@@ -1,5 +1,4 @@
-import { db } from "./shared/db.js";
-import { dynamicButtons } from "./shared/schema.js";
+import { db } from "./shared/simple-db.js";
 import { v2 as cloudinary } from "cloudinary";
 
 // Configure Cloudinary
@@ -39,7 +38,7 @@ export const handler = async (event, context) => {
 
     // Test database connection
     console.log('🔧 Testing database connection...');
-    const buttons = await db.select().from(dynamicButtons);
+    const buttons = await db.getButtons();
     console.log('🔧 Found buttons in database:', buttons.length);
     console.log('🔧 Button data sample:', buttons.slice(0, 2));
 
