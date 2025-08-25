@@ -70,6 +70,73 @@
   --platinum-silver: hsl(0, 0%, 89%);
 }
 
+/* Clean Search Bar Styles */
+.search-bar-section {
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 5;
+}
+
+.search-bar-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+  isolation: isolate;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.search-divider {
+  position: absolute;
+  left: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 24px;
+  background-color: rgba(156, 163, 175, 0.6);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.search-hash {
+  position: absolute;
+  left: 56px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 24px;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 72px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid #4c1d95;
+  background: #1a1a1a;
+  color: white;
+  outline: none;
+  transition: border-color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.search-input:focus {
+  border-color: #6366f1;
+}
+
 /* Clean Outfit Button Styles */
 .outfit-buttons-grid {
   display: flex;

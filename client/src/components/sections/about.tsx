@@ -74,69 +74,18 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
 
           {/* Search Bar */}
-          <div style={{
-            textAlign: 'left',
-            marginBottom: '32px'
-          }}>
-            <div style={{
-              position: 'relative',
-              display: 'inline-block',
-              width: '100%',
-              maxWidth: '400px'
-            }}>
-              <Search 
-                size={20} 
-                style={{
-                  position: 'absolute',
-                  left: '16px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  color: '#9ca3af',
-                  zIndex: 1
-                }}
-              />
-              <div style={{
-                position: 'absolute',
-                left: '44px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                width: '1px',
-                height: '24px',
-                backgroundColor: 'rgba(156, 163, 175, 0.6)',
-                zIndex: 1
-              }} />
-              <span style={{
-                position: 'absolute',
-                left: '56px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                color: 'white',
-                fontSize: '24px',
-                zIndex: 1,
-                pointerEvents: 'none'
-              }}>#</span>
+          <div className="search-bar-section">
+            <div className="search-bar-container">
+              <Search size={20} className="search-icon" />
+              <div className="search-divider" />
+              <span className="search-hash">#</span>
               <input
                 type="text"
                 placeholder="Type to search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px 12px 72px',
-                  fontSize: '18px',
-                  borderRadius: '8px',
-                  border: '2px solid #4c1d95',
-                  background: '#1a1a1a',
-                  color: 'white',
-                  outline: 'none',
-                  transition: 'border-color 0.3s ease'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = '#6366f1';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = '#4c1d95';
-                }}
+                className="search-input"
+                data-testid="search-input"
               />
             </div>
           </div>
