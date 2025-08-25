@@ -107,7 +107,7 @@ export default function About() {
                 left: '56px',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                color: '#9ca3af',
+                color: 'white',
                 fontSize: '16px',
                 zIndex: 1,
                 pointerEvents: 'none'
