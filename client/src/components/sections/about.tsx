@@ -242,7 +242,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                   }}
                 >
                   <Instagram size={18} />
-                  ds.desiiiign
+                  dazzeriii2k
                 </button>
               </div>
             </div>
