@@ -63,7 +63,7 @@ export default function About() {
       <section 
         id="about" 
         ref={sectionRef} 
-        className={`${isSmallScreen ? 'mt-20' : 'mt-32'} pb-20 px-6`}
+        className={`${isSmallScreen ? 'mt-4' : 'mt-8'} pb-20 px-6`}
       >
       <div className="container mx-auto">
 
