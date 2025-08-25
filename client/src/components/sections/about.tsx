@@ -99,7 +99,7 @@ export default function About() {
                 transform: 'translateY(-50%)',
                 width: '1px',
                 height: '24px',
-                backgroundColor: '#9ca3af',
+                backgroundColor: 'rgba(156, 163, 175, 0.6)',
                 zIndex: 1
               }} />
               <input
