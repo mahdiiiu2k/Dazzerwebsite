@@ -12,6 +12,12 @@ cloudinary.config({
 });
 
 export const handler = async (event, context) => {
+  console.log('🔧 Buttons function called:', event.httpMethod, event.path);
+  console.log('🔧 Environment check:', {
+    hasDatabase: !!process.env.DATABASE_URL,
+    hasCloudinary: !!process.env.CLOUDINARY_CLOUD_NAME
+  });
+  
   const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type",
@@ -31,7 +37,9 @@ export const handler = async (event, context) => {
   try {
     // GET - Retrieve all buttons
     if (event.httpMethod === "GET") {
+      console.log('🔧 Getting buttons from database...');
       const buttons = await db.select().from(dynamicButtons);
+      console.log('🔧 Found buttons:', buttons.length);
       return {
         statusCode: 200,
         headers,
@@ -88,12 +96,14 @@ export const handler = async (event, context) => {
         link: body.link
       };
 
+      console.log('🔧 Creating button with data:', buttonData);
       const button = insertDynamicButtonSchema.parse(buttonData);
       const [result] = await db
         .insert(dynamicButtons)
         .values(button)
         .returning();
-
+      
+      console.log('🔧 Button created successfully:', result);
       return {
         statusCode: 200,
         headers,
@@ -142,9 +152,11 @@ export const handler = async (event, context) => {
     };
 
   } catch (error) {
-    console.error("Buttons API error:", error);
+    console.error("🚨 Buttons API error:", error.message);
+    console.error("🚨 Stack trace:", error.stack);
     
     if (error instanceof z.ZodError) {
+      console.error("🚨 Validation error:", error.errors);
       return {
         statusCode: 400,
         headers,
@@ -155,7 +167,11 @@ export const handler = async (event, context) => {
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: "Internal server error" }),
+      body: JSON.stringify({ 
+        error: "Internal server error", 
+        details: error.message,
+        timestamp: new Date().toISOString()
+      }),
     };
   }
 };

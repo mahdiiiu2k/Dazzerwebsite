@@ -29,6 +29,11 @@
   to = "/.netlify/functions/buttons-delete/:number"
   status = 200
 
+[[redirects]]
+  from = "/api/debug"
+  to = "/.netlify/functions/debug"
+  status = 200
+
 # SPA fallback - this should be last
 [[redirects]]
   from = "/*"
