@@ -72,7 +72,7 @@ export default function About() {
 
           {/* Search Bar */}
           <div style={{
-            textAlign: 'center',
+            textAlign: 'left',
             marginBottom: '32px'
           }}>
             <div style={{
