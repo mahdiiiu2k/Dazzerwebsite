@@ -81,6 +81,8 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
               placeholder="Type to search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              onClick={() => console.log('Search input clicked!')}
+              onFocus={() => console.log('Search input focused!')}
               className="search-input"
               data-testid="search-input"
             />

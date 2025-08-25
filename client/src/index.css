@@ -101,7 +101,6 @@
   display: inline-block;
   width: 100%;
   max-width: 400px;
-  isolation: isolate;
 }
 
 .search-icon {
@@ -149,7 +148,7 @@
   outline: none;
   transition: border-color 0.3s ease;
   position: relative;
-  z-index: 10005;
+  z-index: 10000;
   
   /* Mobile-specific fixes */
   touch-action: manipulation;
@@ -171,7 +170,7 @@
 .search-input:focus {
   border-color: #6366f1;
   /* Ensure focus state works on mobile */
-  z-index: 10006;
+  z-index: 10001;
 }
 
 /* Clean Outfit Button Styles */
