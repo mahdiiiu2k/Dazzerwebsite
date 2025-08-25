@@ -285,6 +285,26 @@
   transform: translateY(-50%) scale(0.9);
 }
 
+.copy-button-below {
+  position: absolute;
+  top: auto;
+  bottom: 8px;
+  right: 50%;
+  transform: translateX(50%);
+  
+  @media (max-width: 768px) {
+    bottom: 6px;
+  }
+  
+  @media (max-width: 480px) {
+    bottom: 4px;
+  }
+}
+
+.copy-button-below:active {
+  transform: translateX(50%) scale(0.9);
+}
+
 .outfit-button {
   /* Layout */
   display: flex;

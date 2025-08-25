@@ -136,7 +136,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                     </div>
                   </button>
                   <button
-                    className="copy-button-inline"
+                    className={`copy-button-inline ${button.number.length >= 3 ? 'copy-button-below' : ''}`}
                     onClick={(e) => {
                       e.stopPropagation();
                       copyToClipboard(button.link, button.number);
