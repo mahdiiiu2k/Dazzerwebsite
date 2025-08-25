@@ -67,6 +67,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
         id="about" 
         ref={sectionRef} 
         className={`${isIPhoneSE ? '-mt-32 pt-24' : isSmallScreen ? '-mt-72 pt-32' : '-mt-20 pt-8'} pb-20 px-6`}
+        style={{ backgroundColor: 'green', opacity: 0.2 }}
       >
       <div className="container mx-auto">
 
@@ -87,7 +88,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
         </div>
 
         {/* Enhanced Services Section */}
-        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
+        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto" style={{ backgroundColor: 'blue', opacity: 0.3 }}>
 
 
 
