@@ -104,11 +104,11 @@ export default function About() {
               }} />
               <span style={{
                 position: 'absolute',
-                left: '56px',
+                left: '72px',
                 top: '50%',
                 transform: 'translateY(-50%)',
                 color: 'white',
-                fontSize: '24px',
+                fontSize: '16px',
                 zIndex: 1,
                 pointerEvents: 'none'
               }}>#</span>
