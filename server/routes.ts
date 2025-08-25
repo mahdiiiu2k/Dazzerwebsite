@@ -17,7 +17,7 @@ cloudinary.config({
 // Configure multer for memory storage
 const upload = multer({ 
   storage: multer.memoryStorage(),
-  limits: { fileSize: 10 * 1024 * 1024 } // 10MB limit
+  limits: { fileSize: 50 * 1024 * 1024 } // 50MB limit
 });
 
 // Contact route
@@ -63,36 +63,35 @@ router.get("/api/buttons", async (req: Request, res: Response) => {
   }
 });
 
-router.post("/api/buttons", upload.single('image'), async (req: Request & { file?: Express.Multer.File }, res: Response) => {
+router.post("/api/buttons", async (req: Request, res: Response) => {
   try {
-    console.log('Request body:', req.body);
-    console.log('Request file:', req.file);
+    console.log('Request body keys:', Object.keys(req.body));
+    console.log('Request data:', { 
+      number: req.body.number, 
+      link: req.body.link, 
+      hasImageData: !!req.body.imageData,
+      imageDataType: req.body.imageData?.substring(0, 20) + '...' || 'none'
+    });
     
     let imageUrl = '';
     
-    if (req.file) {
-      // Upload image to Cloudinary
+    // Handle base64 image data (JSON format)
+    if (req.body.imageData && req.body.imageData.startsWith('data:image/')) {
+      console.log('Processing base64 image data...');
       try {
-        const uploadResult = await new Promise((resolve, reject) => {
-          cloudinary.uploader.upload_stream(
-            { 
-              resource_type: 'image',
-              folder: 'button-images' // Optional: organize images in folders
-            },
-            (error, result) => {
-              if (error) reject(error);
-              else resolve(result);
-            }
-          ).end(req.file!.buffer);
+        const uploadResult = await cloudinary.uploader.upload(req.body.imageData, {
+          folder: 'button-images',
+          resource_type: 'image'
         });
         
-        imageUrl = (uploadResult as any).secure_url;
+        imageUrl = uploadResult.secure_url;
+        console.log('Cloudinary upload successful:', imageUrl);
       } catch (uploadError) {
         console.error('Cloudinary upload error:', uploadError);
-        return res.status(500).json({ error: 'Failed to upload image' });
+        return res.status(500).json({ error: 'Failed to upload image to Cloudinary' });
       }
     } else {
-      return res.status(400).json({ error: 'No image file provided' });
+      return res.status(400).json({ error: 'No valid image data provided' });
     }
     
     const buttonData = {
@@ -101,8 +100,10 @@ router.post("/api/buttons", upload.single('image'), async (req: Request & { file
       link: req.body.link
     };
     
+    console.log('Creating button with data:', buttonData);
     const button = insertDynamicButtonSchema.parse(buttonData);
     const result = await storage.createDynamicButton(button);
+    console.log('Button created successfully:', result);
     res.json({ success: true, button: result });
   } catch (error) {
     if (error instanceof z.ZodError) {
