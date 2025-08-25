@@ -287,22 +287,25 @@
 
 .copy-button-below {
   position: absolute;
-  top: auto;
-  bottom: 8px;
-  right: 50%;
-  transform: translateX(50%);
+  top: 70%;
+  right: 16px;
+  left: auto;
+  bottom: auto;
+  transform: none;
   
   @media (max-width: 768px) {
-    bottom: 6px;
+    top: 75%;
+    right: 12px;
   }
   
   @media (max-width: 480px) {
-    bottom: 4px;
+    top: 75%;
+    right: 8px;
   }
 }
 
 .copy-button-below:active {
-  transform: translateX(50%) scale(0.9);
+  transform: scale(0.9);
 }
 
 .outfit-button {
