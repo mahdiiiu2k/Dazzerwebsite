@@ -108,7 +108,7 @@ export default function About() {
                 top: '50%',
                 transform: 'translateY(-50%)',
                 color: 'white',
-                fontSize: '18px',
+                fontSize: '20px',
                 zIndex: 1,
                 pointerEvents: 'none'
               }}>#</span>
