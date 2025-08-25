@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageSquare, Phone, Instagram, Search, Copy } from "lucide-react";
+import { MessageSquare, Phone, Instagram, Search, Copy, Check } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import outfitImage from "@assets/téléchargement (1)_1756058964050.jpg";
 
@@ -12,6 +12,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isIPhoneSE, setIsIPhoneSE] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [copiedItems, setCopiedItems] = useState<Set<string>>(new Set());
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -61,9 +62,19 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
     }, 20);
   };
 
-  const copyToClipboard = (link: string) => {
+  const copyToClipboard = (link: string, buttonId: string) => {
     navigator.clipboard.writeText(link).then(() => {
       console.log('Link copied to clipboard:', link);
+      setCopiedItems(prev => new Set(prev).add(buttonId));
+      
+      // Reset the checkmark after 2 seconds
+      setTimeout(() => {
+        setCopiedItems(prev => {
+          const newSet = new Set(prev);
+          newSet.delete(buttonId);
+          return newSet;
+        });
+      }, 2000);
     }).catch(err => {
       console.error('Failed to copy link:', err);
     });
@@ -120,18 +131,20 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                         className="outfit-image"
                       />
                     </div>
-                    <span className="outfit-number">#{button.number}</span>
+                    <div className="outfit-number-container">
+                      <span className="outfit-number">#{button.number}</span>
+                    </div>
                   </button>
                   <button
-                    className="copy-button"
+                    className="copy-button-inline"
                     onClick={(e) => {
                       e.stopPropagation();
-                      copyToClipboard(button.link);
+                      copyToClipboard(button.link, button.number);
                     }}
                     data-testid={`copy-button-${button.number}`}
                     title="Copy link"
                   >
-                    <Copy size={16} />
+                    {copiedItems.has(button.number) ? <Check size={14} /> : <Copy size={14} />}
                   </button>
                 </div>
               )
