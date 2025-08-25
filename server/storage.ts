@@ -72,7 +72,7 @@ export class DatabaseStorage implements IStorage {
     const result = await db
       .delete(dynamicButtons)
       .where(eq(dynamicButtons.number, number));
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   }
 }
 

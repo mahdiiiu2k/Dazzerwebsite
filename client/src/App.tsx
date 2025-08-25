@@ -48,11 +48,10 @@ function AppContent() {
 
   // Mutation for creating buttons
   const createButtonMutation = useMutation({
-    mutationFn: async (buttonData: {number: string, imageUrl: string, link: string}) => {
+    mutationFn: async (formData: FormData) => {
       const response = await fetch('/api/buttons', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(buttonData)
+        body: formData // Send FormData directly, no Content-Type header needed
       });
       if (!response.ok) throw new Error('Failed to create button');
       return response.json();
@@ -103,17 +102,16 @@ function AppContent() {
 
   const handleAddButton = () => {
     if (newButtonNumber && newButtonImage && newButtonLink) {
-      // Create URL for the image
-      const imageUrl = URL.createObjectURL(newButtonImage);
-      
-      // Save to database
-      createButtonMutation.mutate({
-        number: newButtonNumber,
-        imageUrl,
-        link: newButtonLink
-      });
+      // Create FormData to send image file
+      const formData = new FormData();
+      formData.append('number', newButtonNumber);
+      formData.append('link', newButtonLink);
+      formData.append('image', newButtonImage);
       
       console.log('Adding button:', { number: newButtonNumber, image: newButtonImage, link: newButtonLink });
+      
+      // Save to database
+      createButtonMutation.mutate(formData);
       
       // Clear inputs after adding
       setNewButtonNumber('');

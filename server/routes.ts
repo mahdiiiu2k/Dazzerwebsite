@@ -2,8 +2,23 @@ import { Request, Response, Router } from "express";
 import { insertContactSchema, insertReferralSchema, insertDynamicButtonSchema } from "../shared/schema";
 import { storage } from "./storage";
 import { z } from "zod";
+import multer from "multer";
+import { v2 as cloudinary } from "cloudinary";
 
 const router = Router();
+
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+// Configure multer for memory storage
+const upload = multer({ 
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 } // 10MB limit
+});
 
 // Contact route
 router.post("/api/contact", async (req: Request, res: Response) => {
@@ -48,9 +63,45 @@ router.get("/api/buttons", async (req: Request, res: Response) => {
   }
 });
 
-router.post("/api/buttons", async (req: Request, res: Response) => {
+router.post("/api/buttons", upload.single('image'), async (req: Request & { file?: Express.Multer.File }, res: Response) => {
   try {
-    const button = insertDynamicButtonSchema.parse(req.body);
+    console.log('Request body:', req.body);
+    console.log('Request file:', req.file);
+    
+    let imageUrl = '';
+    
+    if (req.file) {
+      // Upload image to Cloudinary
+      try {
+        const uploadResult = await new Promise((resolve, reject) => {
+          cloudinary.uploader.upload_stream(
+            { 
+              resource_type: 'image',
+              folder: 'button-images' // Optional: organize images in folders
+            },
+            (error, result) => {
+              if (error) reject(error);
+              else resolve(result);
+            }
+          ).end(req.file!.buffer);
+        });
+        
+        imageUrl = (uploadResult as any).secure_url;
+      } catch (uploadError) {
+        console.error('Cloudinary upload error:', uploadError);
+        return res.status(500).json({ error: 'Failed to upload image' });
+      }
+    } else {
+      return res.status(400).json({ error: 'No image file provided' });
+    }
+    
+    const buttonData = {
+      number: req.body.number,
+      imageUrl: imageUrl,
+      link: req.body.link
+    };
+    
+    const button = insertDynamicButtonSchema.parse(buttonData);
     const result = await storage.createDynamicButton(button);
     res.json({ success: true, button: result });
   } catch (error) {
