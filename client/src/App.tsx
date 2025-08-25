@@ -96,12 +96,9 @@ function App() {
                   </p>
                 )}
               </div>
-              <div className="flex justify-end space-x-2">
-                <Button variant="outline" onClick={closePasswordModal} data-testid="button-cancel">
-                  Cancel
-                </Button>
+              <div className="flex justify-center">
                 <Button onClick={handlePasswordSubmit} data-testid="button-submit-password">
-                  Submit
+                  Enter
                 </Button>
               </div>
             </div>
