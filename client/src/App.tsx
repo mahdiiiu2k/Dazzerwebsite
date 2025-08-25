@@ -71,7 +71,7 @@ function App() {
 
         {/* Password Modal */}
         <Dialog open={showPasswordModal} onOpenChange={closePasswordModal}>
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="sm:max-w-md border-gray-600">
             <DialogHeader>
               <DialogTitle>Enter Password</DialogTitle>
             </DialogHeader>
@@ -110,7 +110,7 @@ function App() {
 
         {/* Welcome Modal */}
         <Dialog open={showWelcomeModal} onOpenChange={closeWelcomeModal}>
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="sm:max-w-md border-gray-600">
             <DialogHeader>
               <DialogTitle>Welcome</DialogTitle>
             </DialogHeader>
