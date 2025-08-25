@@ -81,7 +81,7 @@ export default function About() {
               style={{
                 background: '#1A1821',
                 color: 'white',
-                border: '2px solid #d1d5db',
+                border: '2px solid #9ca3af',
                 padding: '12px 8px',
                 borderRadius: '8px',
                 cursor: 'pointer',
@@ -126,7 +126,7 @@ export default function About() {
               style={{
                 background: '#1A1821',
                 color: 'white',
-                border: '2px solid #d1d5db',
+                border: '2px solid #9ca3af',
                 padding: '12px 8px',
                 borderRadius: '8px',
                 cursor: 'pointer',
@@ -171,7 +171,7 @@ export default function About() {
               style={{
                 background: '#1A1821',
                 color: 'white',
-                border: '2px solid #d1d5db',
+                border: '2px solid #9ca3af',
                 padding: '12px 8px',
                 borderRadius: '8px',
                 cursor: 'pointer',
