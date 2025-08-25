@@ -74,7 +74,8 @@
 .search-bar-section {
   margin-bottom: 32px;
   position: relative;
-  z-index: 5;
+  z-index: 50;
+  /* Higher z-index for mobile */
 }
 
 .search-bar-container {
@@ -130,11 +131,29 @@
   outline: none;
   transition: border-color 0.3s ease;
   position: relative;
-  z-index: 1;
+  z-index: 51;
+  
+  /* Mobile-specific fixes */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Ensure proper mobile touch target */
+  min-height: 48px;
+  
+  @media (max-width: 768px) {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 16px 16px 16px 72px;
+    min-height: 52px;
+  }
 }
 
 .search-input:focus {
   border-color: #6366f1;
+  /* Ensure focus state works on mobile */
+  z-index: 52;
 }
 
 /* Clean Outfit Button Styles */
