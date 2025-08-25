@@ -70,11 +70,9 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
       >
       <div className="container mx-auto">
 
-        {/* Simple Clean Container - No More Complex Styling */}
-        <div className="simple-container">
-          
-          {/* Search Bar */}
-          <div className="simple-search-bar">
+        {/* Search Bar - OUTSIDE glass-card container */}
+        <div className="search-bar-section-standalone">
+          <div className="search-bar-container">
             <Search size={20} className="search-icon" />
             <div className="search-divider" />
             <span className="search-hash">#</span>
@@ -87,6 +85,13 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
               data-testid="search-input"
             />
           </div>
+        </div>
+
+        {/* Enhanced Services Section */}
+        <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
+
+
+
 
           {/* Dynamic Buttons */}
           <div className="outfit-buttons-grid">

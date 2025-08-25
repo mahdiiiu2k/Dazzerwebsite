@@ -70,26 +70,38 @@
   --platinum-silver: hsl(0, 0%, 89%);
 }
 
-/* Simple Clean Container */
-.simple-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background: rgba(26, 26, 26, 0.8);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Clean Search Bar Styles */
+.search-bar-section {
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 50;
+  /* Higher z-index for mobile */
+}
+
+.search-bar-section-standalone {
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 9999;
+  /* VERY high z-index, outside any containers */
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
+  text-align: left;
   
   @media (max-width: 768px) {
-    padding: 16px;
-    margin: 0 16px;
+    padding: 0 16px;
+    z-index: 9999;
+    /* Ensure it's always on top on mobile */
   }
 }
 
-.simple-search-bar {
-  margin-bottom: 32px;
+.search-bar-container {
   position: relative;
+  display: inline-block;
+  width: 100%;
   max-width: 400px;
-  margin-left: 0;
+  isolation: isolate;
 }
 
 .search-icon {
@@ -98,6 +110,7 @@
   top: 50%;
   transform: translateY(-50%);
   color: #9ca3af;
+  z-index: 10002;
   pointer-events: none;
 }
 
@@ -109,6 +122,7 @@
   width: 1px;
   height: 24px;
   background-color: rgba(156, 163, 175, 0.6);
+  z-index: 10002;
   pointer-events: none;
 }
 
@@ -119,28 +133,45 @@
   transform: translateY(-50%);
   color: white;
   font-size: 24px;
+  z-index: 10002;
   pointer-events: none;
   user-select: none;
 }
 
 .search-input {
   width: 100%;
-  padding: 16px 16px 16px 72px;
-  font-size: 16px;
+  padding: 12px 16px 12px 72px;
+  font-size: 18px;
   border-radius: 8px;
   border: 2px solid #4c1d95;
   background: #1a1a1a;
   color: white;
   outline: none;
   transition: border-color 0.3s ease;
-  min-height: 52px;
+  position: relative;
+  z-index: 10000;
+  
+  /* Mobile-specific fixes */
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Ensure proper mobile touch target */
+  min-height: 48px;
+  
+  @media (max-width: 768px) {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 16px 16px 16px 72px;
+    min-height: 52px;
+  }
 }
 
 .search-input:focus {
   border-color: #6366f1;
+  /* Ensure focus state works on mobile */
+  z-index: 10001;
 }
 
 /* Clean Outfit Button Styles */
