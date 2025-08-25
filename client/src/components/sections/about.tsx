@@ -9,6 +9,7 @@ import buttonImage3 from "@assets/téléchargement (3)_1756072647997.jpg";
 export default function About() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -69,7 +70,39 @@ export default function About() {
         {/* Enhanced Services Section */}
         <div className="luxury-border glass-card p-6 md:p-12 max-w-6xl mx-auto">
 
-          {/* Instagram Button - Now positioned inside rectangle, above the line */}
+          {/* Search Bar */}
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '32px'
+          }}>
+            <input
+              type="text"
+              placeholder="Search buttons... (#1, #2, #3)"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              style={{
+                width: '100%',
+                maxWidth: '400px',
+                padding: '12px 16px',
+                fontSize: '16px',
+                borderRadius: '8px',
+                border: '2px solid #9ca3af',
+                background: '#1a1a1a',
+                color: 'white',
+                outline: 'none',
+                transition: 'border-color 0.3s ease'
+              }}
+              onFocus={(e) => {
+                e.target.style.borderColor = '#6366f1';
+              }}
+              onBlur={(e) => {
+                e.target.style.borderColor = '#9ca3af';
+              }}
+            />
+          </div>
+
+          {/* Button #1 */}
+          {(!searchTerm || '#1'.includes(searchTerm.toLowerCase()) || searchTerm.toLowerCase().includes('#1')) && (
           <div style={{
             textAlign: 'center',
             marginBottom: '32px'
@@ -113,8 +146,10 @@ export default function About() {
               #1
             </button>
           </div>
+          )}
 
-          {/* Second Button - #2 */}
+          {/* Button #2 */}
+          {(!searchTerm || '#2'.includes(searchTerm.toLowerCase()) || searchTerm.toLowerCase().includes('#2')) && (
           <div style={{
             textAlign: 'center',
             marginBottom: '32px'
@@ -158,8 +193,10 @@ export default function About() {
               #2
             </button>
           </div>
+          )}
 
-          {/* Third Button - #3 */}
+          {/* Button #3 */}
+          {(!searchTerm || '#3'.includes(searchTerm.toLowerCase()) || searchTerm.toLowerCase().includes('#3')) && (
           <div style={{
             textAlign: 'center',
             marginBottom: '32px'
@@ -203,6 +240,7 @@ export default function About() {
               #3
             </button>
           </div>
+          )}
 
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">
