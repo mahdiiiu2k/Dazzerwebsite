@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import mahdiPhoto from "@assets/file_00000000c7c461fdb51c3bc8828af650_1756131458822.png";
+import mahdiPhoto from "@assets/1756131622403_1756131729274.jpg";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
