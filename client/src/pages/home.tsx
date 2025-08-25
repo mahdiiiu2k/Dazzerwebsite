@@ -3,12 +3,16 @@ import CTA from "@/components/sections/cta";
 import About from "@/components/sections/about";
 import Footer from "@/components/sections/footer";
 
-export default function Home() {
+interface HomeProps {
+  dynamicButtons?: Array<{number: string, imageUrl: string}>;
+}
+
+export default function Home({ dynamicButtons = [] }: HomeProps) {
   return (
     <div className="min-h-screen">
       <Hero />
       <CTA />
-      <About />
+      <About dynamicButtons={dynamicButtons} />
       <Footer />
     </div>
   );

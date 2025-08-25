@@ -12,10 +12,10 @@ import { useState } from "react";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 
-function Router() {
+function Router({ dynamicButtons }: { dynamicButtons: Array<{number: string, imageUrl: string}> }) {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={() => <Home dynamicButtons={dynamicButtons} />} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -28,6 +28,7 @@ function App() {
   const [passwordError, setPasswordError] = useState('');
   const [newButtonNumber, setNewButtonNumber] = useState('');
   const [newButtonImage, setNewButtonImage] = useState<File | null>(null);
+  const [dynamicButtons, setDynamicButtons] = useState<Array<{number: string, imageUrl: string}>>([]);
 
   const CORRECT_PASSWORD = 'Qw9!tP3@zL7';
 
@@ -54,15 +55,17 @@ function App() {
 
   const handleAddButton = () => {
     if (newButtonNumber && newButtonImage) {
-      // Here you can add logic to actually add the button to your system
+      // Create URL for the image
+      const imageUrl = URL.createObjectURL(newButtonImage);
+      
+      // Add the new button to the dynamic buttons array
+      setDynamicButtons(prev => [...prev, { number: newButtonNumber, imageUrl }]);
+      
       console.log('Adding button:', { number: newButtonNumber, image: newButtonImage });
       
       // Clear inputs after adding
       setNewButtonNumber('');
       setNewButtonImage(null);
-      
-      // Optionally close modal after adding
-      // setShowWelcomeModal(false);
     }
   };
 
@@ -81,7 +84,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <Router dynamicButtons={dynamicButtons} />
         
         {/* Repair button */}
         <button

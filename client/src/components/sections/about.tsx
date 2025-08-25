@@ -6,7 +6,11 @@ import buttonImage from "@assets/téléchargement (1)_1756071195719.jpg";
 import buttonImage2 from "@assets/téléchargement (2)_1756072409526.jpg";
 import buttonImage3 from "@assets/téléchargement (3)_1756072647997.jpg";
 
-export default function About() {
+interface AboutProps {
+  dynamicButtons?: Array<{number: string, imageUrl: string}>;
+}
+
+export default function About({ dynamicButtons = [] }: AboutProps) {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isIPhoneSE, setIsIPhoneSE] = useState(false);
@@ -280,6 +284,55 @@ export default function About() {
             </button>
           </div>
           )}
+
+          {/* Dynamic Buttons */}
+          {dynamicButtons.map((button, index) => (
+            (!searchTerm || searchTerm.includes(button.number)) && (
+            <div key={index} style={{
+              textAlign: 'center',
+              marginBottom: '32px'
+            }}>
+              <button 
+                onClick={() => {
+                  window.open('https://fr.pinterest.com/pin/15551561209611818/', '_blank');
+                }}
+                style={{
+                  background: '#1A1821',
+                  color: 'white',
+                  border: '2px solid #9ca3af',
+                  padding: '12px 8px',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  fontSize: '32px',
+                  fontWeight: '600',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'flex-start',
+                  gap: '12px',
+                  transition: 'all 0.3s ease',
+                  transform: 'scale(1)',
+                  boxShadow: '0 4px 12px rgba(107, 114, 128, 0.3)',
+                  width: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLButtonElement;
+                  target.style.transform = 'scale(1.02)';
+                  target.style.background = '#2A2731';
+                  target.style.boxShadow = '0 6px 20px rgba(107, 114, 128, 0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLButtonElement;
+                  target.style.transform = 'scale(1)';
+                  target.style.background = '#1A1821';
+                  target.style.boxShadow = '0 4px 12px rgba(107, 114, 128, 0.3)';
+                }}
+              >
+                <img src={button.imageUrl} alt={`outfit ${button.number}`} style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '12px', border: '2px solid #1A1821' }} />
+                #{button.number}
+              </button>
+            </div>
+            )
+          ))}
 
           {/* Call to Action */}
           <div className="text-center border-t border-white/10 pt-8">
