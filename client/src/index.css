@@ -239,7 +239,7 @@
 .copy-button-inline {
   position: absolute;
   top: 50%;
-  right: 16px;
+  right: 12px;
   transform: translateY(-50%);
   background: rgba(156, 163, 175, 0.2);
   backdrop-filter: blur(5px);
@@ -255,20 +255,23 @@
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   z-index: 15;
+  margin-left: 12px;
   
   @media (max-width: 768px) {
-    right: 12px;
+    right: 8px;
     padding: 4px 6px;
     border-radius: 4px;
     min-width: 28px;
     min-height: 28px;
+    margin-left: 8px;
   }
   
   @media (max-width: 480px) {
-    right: 8px;
+    right: 6px;
     padding: 3px 4px;
     min-width: 24px;
     min-height: 24px;
+    margin-left: 6px;
   }
 }
 
