@@ -1,0 +1,215 @@
+
+Skip to main content
+
+
+M
+Switch teams
+Projects
+Builds
+Extensions
+Domains
+Members
+Audit log
+Security Scorecard
+Usage & billing
+Team settings
+Visual editor dashboard
+Upgrade
+
+M
+Projects
+dazzerwebsite
+Switch projects
+
+News
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Support
+Project navigation
+Project overview
+Project configuration
+Deploys
+Preview Servers
+Logs
+Functions
+Edge Functions
+Log Drains
+Audit log
+Metrics
+Domain management
+Forms
+Blobs
+Functions
+9 Lambda functions actively running in production.
+
+Learn more about Functions in the docs
+
+Configuration and usage
+Add Log Drains
+Use Log Drains to forward your project’s function logs to third-party monitoring services to track invocations and troubleshoot issues over longer periods of time. Learn more
+
+Contact sales team
+Search by branch or Deploy Preview number
+Search by branch or Deploy Preview number
+
+buttons
+
+Created at 6:33 PM (11 minutes ago)
+
+buttons-delete
+
+Created at 5:09 PM (2 hours ago)
+
+contact
+
+Created at 5:09 PM (2 hours ago)
+
+debug
+
+Created at 5:09 PM (2 hours ago)
+
+debug-buttons
+
+Created at 6:33 PM (11 minutes ago)
+
+referral
+
+Created at 5:09 PM (2 hours ago)
+
+setup-db
+
+Created at 6:33 PM (11 minutes ago)
+
+test-connection
+
+Created at 6:33 PM (11 minutes ago)
+
+test-db
+
+Created at 6:33 PM (11 minutes ago)
+
+Test your functions locally with Netlify Dev
+
+Bring the power of Netlify directly to your local machine. Build, test, and debug your functions locally before you deploy. Run the commands in your terminal from the root of your linked repository.
+
+Learn more in the docs
+Step 1: Install Netlify CLI
+
+npm install netlify-cli -g
+
+Step 2: Start local development server in repo directory
+
+netlify dev
+
+Background Functions Beta
+Deploy serverless functions to run asynchronously in the background with execution times of up to 15 minutes.
+
+Learn more in the docs
+
+Docs
+Pricing
+Support
+Blog
+Changelog
+Terms
+© 2025 Netlify
+
