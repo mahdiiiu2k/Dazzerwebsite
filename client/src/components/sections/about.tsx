@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageSquare, Phone, Instagram } from "lucide-react";
+import { MessageSquare, Phone, Instagram, Search } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import outfitImage from "@assets/téléchargement (1)_1756058964050.jpg";
 import buttonImage from "@assets/téléchargement (1)_1756071195719.jpg";
@@ -75,30 +75,47 @@ export default function About() {
             textAlign: 'center',
             marginBottom: '32px'
           }}>
-            <input
-              type="text"
-              placeholder="Search buttons... (#1, #2, #3)"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              style={{
-                width: '100%',
-                maxWidth: '400px',
-                padding: '12px 16px',
-                fontSize: '16px',
-                borderRadius: '8px',
-                border: '2px solid #9ca3af',
-                background: '#1a1a1a',
-                color: 'white',
-                outline: 'none',
-                transition: 'border-color 0.3s ease'
-              }}
-              onFocus={(e) => {
-                e.target.style.borderColor = '#6366f1';
-              }}
-              onBlur={(e) => {
-                e.target.style.borderColor = '#9ca3af';
-              }}
-            />
+            <div style={{
+              position: 'relative',
+              display: 'inline-block',
+              width: '100%',
+              maxWidth: '400px'
+            }}>
+              <Search 
+                size={20} 
+                style={{
+                  position: 'absolute',
+                  left: '16px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  color: '#9ca3af',
+                  zIndex: 1
+                }}
+              />
+              <input
+                type="text"
+                placeholder="Search buttons... (#1, #2, #3)"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '12px 16px 12px 48px',
+                  fontSize: '16px',
+                  borderRadius: '8px',
+                  border: '2px solid #9ca3af',
+                  background: '#1a1a1a',
+                  color: 'white',
+                  outline: 'none',
+                  transition: 'border-color 0.3s ease'
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = '#6366f1';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = '#9ca3af';
+                }}
+              />
+            </div>
           </div>
 
           {/* Button #1 */}
