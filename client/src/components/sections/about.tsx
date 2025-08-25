@@ -125,7 +125,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                   padding: '12px 16px 12px 72px',
                   fontSize: '18px',
                   borderRadius: '8px',
-                  border: '2px solid #7c3aed',
+                  border: '2px solid #5b21b6',
                   background: '#1a1a1a',
                   color: 'white',
                   outline: 'none',
@@ -135,7 +135,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                   e.target.style.borderColor = '#6366f1';
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = '#7c3aed';
+                  e.target.style.borderColor = '#5b21b6';
                 }}
               />
             </div>
@@ -160,7 +160,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                 style={{
                   background: '#1A1821',
                   color: 'white',
-                  border: '2px solid #7c3aed',
+                  border: '2px solid #5b21b6',
                   padding: '12px 8px',
                   borderRadius: '8px',
                   cursor: 'pointer',
