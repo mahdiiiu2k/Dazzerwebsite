@@ -1,0 +1,50 @@
+~/workspace$ git remote -v
+origin  https://github.com/mahdiiiu2k/Dazzerwebsite (fetch)
+origin  https://github.com/mahdiiiu2k/Dazzerwebsite (push)
+~/workspace$ git branch -a    # See all branches
+git push origin main    # or git push origin master
+* main
+  replit-agent
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+Enumerating objects: 3254, done.
+Counting objects: 100% (3254/3254), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3237/3237), done.
+Writing objects: 100% (3254/3254), 6.37 MiB | 7.03 MiB/s, done.
+Total 3254 (delta 2427), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2427/2427), done.
+To https://github.com/mahdiiiu2k/Dazzerwebsite
+ * [new branch]      main -> main
+~/workspace$ git add .
+git commit -m "Your commit message"
+git push origin main
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Everything up-to-date
+~/workspace$ rm .git/index.lock
+rm: cannot remove '.git/index.lock': No such file or directory
+~/workspace$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+~/workspace$ git remote -v
+origin  https://github.com/mahdiiiu2k/Dazzerwebsite (fetch)
+origin  https://github.com/mahdiiiu2k/Dazzerwebsite (push)
+~/workspace$ git log --oneline -5
+47fc9cf (HEAD -> main, origin/main, origin/HEAD) Configure website for Netlify deployment and set up serverless functions
+0ac7fe7 Restored to '2223843a1b0e5bf7ffeed466b14ff1d9f96c09d6'
+5b884fd Saved your changes before rolling back
+520369f Update button border color for better visual appeal
+2223843 Enhance design with a deeper, more sophisticated color palette
+~/workspace$ git push -v origin main
+Pushing to https://github.com/mahdiiiu2k/Dazzerwebsite
+To https://github.com/mahdiiiu2k/Dazzerwebsite
+ = [up to date]      main -> main
+updating local tracking ref 'refs/remotes/origin/main'
+Everything up-to-date
+~/workspace$ ^C
+~/workspace$ 
