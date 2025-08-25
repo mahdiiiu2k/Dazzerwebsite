@@ -1,6 +1,4 @@
-import { db } from "./shared/db.js";
-import { dynamicButtons } from "./shared/schema.js";
-import { eq } from "drizzle-orm";
+import { db } from "./shared/simple-db.js";
 
 export const handler = async (event, context) => {
   const headers = {
@@ -28,11 +26,16 @@ export const handler = async (event, context) => {
   }
 
   try {
+    console.log('🔧 Delete function called with path:', event.path);
+    
     // Extract number from URL path like /api/buttons/:number
     const pathParts = event.path.split('/');
     const number = pathParts[pathParts.length - 1];
     
+    console.log('🔧 Extracted number:', number);
+    
     if (!number || number === 'buttons-delete') {
+      console.log('🚨 No number provided');
       return {
         statusCode: 400,
         headers,
@@ -40,19 +43,20 @@ export const handler = async (event, context) => {
       };
     }
 
-    const result = await db
-      .delete(dynamicButtons)
-      .where(eq(dynamicButtons.number, number));
-
-    const success = (result.rowCount ?? 0) > 0;
-
-    if (success) {
+    console.log('🔧 Attempting to delete button with number:', number);
+    const result = await db.deleteButton(number);
+    
+    console.log('🔧 Delete result:', result);
+    
+    if (result) {
+      console.log('🔧 Button deleted successfully');
       return {
         statusCode: 200,
         headers,
         body: JSON.stringify({ success: true, message: "Button deleted" }),
       };
     } else {
+      console.log('🔧 Button not found');
       return {
         statusCode: 404,
         headers,
