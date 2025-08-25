@@ -12,11 +12,13 @@ import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
+import TestPage from "@/components/test-page";
 
 function Router({ dynamicButtons }: { dynamicButtons: Array<{number: string, imageUrl: string, link: string}> }) {
   return (
     <Switch>
       <Route path="/" component={() => <Home dynamicButtons={dynamicButtons} />} />
+      <Route path="/test" component={TestPage} />
       <Route component={NotFound} />
     </Switch>
   );

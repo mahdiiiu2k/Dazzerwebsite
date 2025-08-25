@@ -1,4 +1,6 @@
-import { db } from "./shared/simple-db.js";
+import { db } from "./shared/db.js";
+import { dynamicButtons } from "./shared/schema.js";
+import { eq } from "drizzle-orm";
 import { v2 as cloudinary } from "cloudinary";
 
 // Configure Cloudinary
@@ -10,9 +12,15 @@ cloudinary.config({
 
 export const handler = async (event, context) => {
   console.log('🔧 Buttons function called:', event.httpMethod, event.path);
+  console.log('🔧 Headers:', JSON.stringify(event.headers, null, 2));
+  console.log('🔧 Event body:', event.body?.substring(0, 200) + '...');
   console.log('🔧 Environment check:', {
     hasDatabase: !!process.env.DATABASE_URL,
-    hasCloudinary: !!process.env.CLOUDINARY_CLOUD_NAME
+    databasePrefix: process.env.DATABASE_URL?.substring(0, 30) + '...',
+    hasCloudinary: !!process.env.CLOUDINARY_CLOUD_NAME,
+    cloudinaryName: process.env.CLOUDINARY_CLOUD_NAME,
+    hasCloudinaryKey: !!process.env.CLOUDINARY_API_KEY,
+    hasCloudinarySecret: !!process.env.CLOUDINARY_API_SECRET
   });
   
   const headers = {
@@ -35,7 +43,7 @@ export const handler = async (event, context) => {
     // GET - Retrieve all buttons
     if (event.httpMethod === "GET") {
       console.log('🔧 Getting buttons from database...');
-      const buttons = await db.getButtons();
+      const buttons = await db.select().from(dynamicButtons);
       console.log('🔧 Found buttons:', buttons.length);
       return {
         statusCode: 200,
@@ -46,7 +54,25 @@ export const handler = async (event, context) => {
 
     // POST - Create new button
     if (event.httpMethod === "POST") {
-      const body = JSON.parse(event.body);
+      console.log('🔧 Processing POST request...');
+      let body;
+      try {
+        body = JSON.parse(event.body);
+        console.log('🔧 Parsed body keys:', Object.keys(body));
+        console.log('🔧 Body data:', { 
+          number: body.number, 
+          link: body.link, 
+          hasImageData: !!body.imageData,
+          imageDataType: body.imageData?.substring(0, 20) + '...' || 'none'
+        });
+      } catch (parseError) {
+        console.error('🚨 JSON parse error:', parseError);
+        return {
+          statusCode: 400,
+          headers,
+          body: JSON.stringify({ error: 'Invalid JSON in request body' })
+        };
+      }
       
       // Handle multipart form data (for image uploads)
       if (event.headers["content-type"]?.includes("multipart/form-data")) {
@@ -64,17 +90,26 @@ export const handler = async (event, context) => {
       
       // If base64 image data is provided, upload to Cloudinary
       if (body.imageData && body.imageData.startsWith('data:image/')) {
+        console.log('🔧 Uploading to Cloudinary...');
         try {
           const uploadResult = await cloudinary.uploader.upload(body.imageData, {
-            folder: 'button-images'
+            folder: 'button-images',
+            resource_type: 'image',
+            timeout: 60000
           });
           imageUrl = uploadResult.secure_url;
+          console.log('🔧 Cloudinary upload successful:', imageUrl);
         } catch (uploadError) {
-          console.error('Cloudinary upload error:', uploadError);
+          console.error('🚨 Cloudinary upload error:', uploadError);
+          console.error('🚨 Upload error details:', JSON.stringify(uploadError, null, 2));
           return {
             statusCode: 500,
             headers,
-            body: JSON.stringify({ error: 'Failed to upload image' }),
+            body: JSON.stringify({ 
+              error: 'Failed to upload image to Cloudinary',
+              details: uploadError.message,
+              timestamp: new Date().toISOString()
+            }),
           };
         }
       }
@@ -104,7 +139,11 @@ export const handler = async (event, context) => {
         };
       }
       
-      const result = await db.createButton(buttonData);
+      console.log('🔧 Inserting button data into database:', buttonData);
+      const [result] = await db
+        .insert(dynamicButtons)
+        .values(buttonData)
+        .returning();
       console.log('🔧 Button created successfully:', result);
       return {
         statusCode: 200,
@@ -113,35 +152,13 @@ export const handler = async (event, context) => {
       };
     }
 
-    // DELETE - Remove button by number
+    // DELETE - Remove button by number (handled by buttons-delete function)
     if (event.httpMethod === "DELETE") {
-      const pathParts = event.path.split('/');
-      const number = pathParts[pathParts.length - 1];
-      
-      if (!number) {
-        return {
-          statusCode: 400,
-          headers,
-          body: JSON.stringify({ error: "Button number required" }),
-        };
-      }
-
-      const result = await db.deleteButton(number);
-      const success = !!result;
-
-      if (success) {
-        return {
-          statusCode: 200,
-          headers,
-          body: JSON.stringify({ success: true, message: "Button deleted" }),
-        };
-      } else {
-        return {
-          statusCode: 404,
-          headers,
-          body: JSON.stringify({ error: "Button not found" }),
-        };
-      }
+      return {
+        statusCode: 405,
+        headers,
+        body: JSON.stringify({ error: "DELETE requests should go to buttons-delete function" }),
+      };
     }
 
     return {

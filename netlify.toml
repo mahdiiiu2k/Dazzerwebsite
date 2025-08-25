@@ -49,6 +49,11 @@
   to = "/.netlify/functions/test-connection"
   status = 200
 
+[[redirects]]
+  from = "/api/debug-buttons"
+  to = "/.netlify/functions/debug-buttons"
+  status = 200
+
 # SPA fallback - this should be last
 [[redirects]]
   from = "/*"
