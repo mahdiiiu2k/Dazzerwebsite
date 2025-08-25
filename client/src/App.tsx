@@ -34,7 +34,7 @@ function App() {
           className="fixed bottom-6 left-6 w-12 h-12 bg-[#1A1821] hover:bg-[#2A252D] border border-gray-600 rounded-lg flex items-center justify-center transition-colors duration-200 shadow-lg z-50"
           data-testid="button-repair"
         >
-          <Wrench className="w-5 h-5 text-white/70" />
+          <Wrench className="w-5 h-5 text-white/40" />
         </button>
       </TooltipProvider>
     </QueryClientProvider>
