@@ -48,10 +48,13 @@ function AppContent() {
 
   // Mutation for creating buttons
   const createButtonMutation = useMutation({
-    mutationFn: async (formData: FormData) => {
+    mutationFn: async (buttonData: { number: string; imageData: string; link: string }) => {
       const response = await fetch('/api/buttons', {
         method: 'POST',
-        body: formData // Send FormData directly, no Content-Type header needed
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(buttonData)
       });
       if (!response.ok) throw new Error('Failed to create button');
       return response.json();
@@ -100,23 +103,34 @@ function AppContent() {
     setDeleteNumber('');
   };
 
-  const handleAddButton = () => {
+  const handleAddButton = async () => {
     if (newButtonNumber && newButtonImage && newButtonLink) {
-      // Create FormData to send image file
-      const formData = new FormData();
-      formData.append('number', newButtonNumber);
-      formData.append('link', newButtonLink);
-      formData.append('image', newButtonImage);
-      
-      console.log('Adding button:', { number: newButtonNumber, image: newButtonImage, link: newButtonLink });
-      
-      // Save to database
-      createButtonMutation.mutate(formData);
-      
-      // Clear inputs after adding
-      setNewButtonNumber('');
-      setNewButtonImage(null);
-      setNewButtonLink('');
+      try {
+        // Convert image to base64
+        const reader = new FileReader();
+        reader.onload = () => {
+          const base64String = reader.result as string;
+          
+          const buttonData = {
+            number: newButtonNumber,
+            imageData: base64String,
+            link: newButtonLink
+          };
+          
+          console.log('Adding button:', { number: newButtonNumber, image: newButtonImage.name, link: newButtonLink });
+          
+          // Save to database
+          createButtonMutation.mutate(buttonData);
+          
+          // Clear inputs after adding
+          setNewButtonNumber('');
+          setNewButtonImage(null);
+          setNewButtonLink('');
+        };
+        reader.readAsDataURL(newButtonImage);
+      } catch (error) {
+        console.error('Error processing image:', error);
+      }
     }
   };
 
