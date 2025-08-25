@@ -58,7 +58,7 @@
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(32, 50%, 40%);
+  --ring: hsl(0, 0%, 50%);
   --radius: 0.5rem;
 
   /* Custom luxury colors */
