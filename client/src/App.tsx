@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Wrench } from "lucide-react";
+import { Wrench, Trash2 } from "lucide-react";
 import { useState } from "react";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
@@ -29,6 +29,7 @@ function App() {
   const [newButtonNumber, setNewButtonNumber] = useState('');
   const [newButtonImage, setNewButtonImage] = useState<File | null>(null);
   const [newButtonLink, setNewButtonLink] = useState('');
+  const [deleteNumber, setDeleteNumber] = useState('');
   const [dynamicButtons, setDynamicButtons] = useState<Array<{number: string, imageUrl: string, link: string}>>([]);
 
   const CORRECT_PASSWORD = 'Qw9!tP3@zL7';
@@ -53,6 +54,7 @@ function App() {
     setNewButtonNumber('');
     setNewButtonImage(null);
     setNewButtonLink('');
+    setDeleteNumber('');
   };
 
   const handleAddButton = () => {
@@ -75,6 +77,14 @@ function App() {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
     setNewButtonImage(file);
+  };
+
+  const handleDeleteButton = () => {
+    if (deleteNumber) {
+      setDynamicButtons(prev => prev.filter(button => button.number !== deleteNumber));
+      console.log('Deleting button with number:', deleteNumber);
+      setDeleteNumber('');
+    }
   };
 
   const closePasswordModal = () => {
@@ -187,6 +197,33 @@ function App() {
                 >
                   + Add
                 </Button>
+              </div>
+              
+              {/* Horizontal separator */}
+              <div className="border-t border-white/20 my-6"></div>
+              
+              {/* Delete Item Section */}
+              <div className="space-y-2">
+                <Label htmlFor="delete-number">Delete Item</Label>
+                <div className="flex gap-2">
+                  <Input
+                    id="delete-number"
+                    type="text"
+                    placeholder="Enter number to delete (e.g., 4, 5, 6...)"
+                    value={deleteNumber}
+                    onChange={(e) => setDeleteNumber(e.target.value)}
+                    data-testid="input-delete-number"
+                    className="flex-1"
+                  />
+                  <Button 
+                    onClick={handleDeleteButton} 
+                    disabled={!deleteNumber}
+                    className="bg-red-700 hover:bg-red-800 text-white px-3"
+                    data-testid="button-delete"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </div>
               </div>
             </div>
           </DialogContent>
