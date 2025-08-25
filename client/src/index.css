@@ -247,7 +247,7 @@
   border-radius: 6px;
   color: #9ca3af;
   cursor: pointer;
-  padding: 6px 8px;
+  padding: 8px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,18 +259,18 @@
   
   @media (max-width: 768px) {
     right: 8px;
-    padding: 4px 6px;
+    padding: 6px 8px;
     border-radius: 4px;
-    min-width: 28px;
-    min-height: 28px;
+    min-width: 32px;
+    min-height: 32px;
     margin-left: 8px;
   }
   
   @media (max-width: 480px) {
     right: 6px;
-    padding: 3px 4px;
-    min-width: 24px;
-    min-height: 24px;
+    padding: 5px 6px;
+    min-width: 28px;
+    min-height: 28px;
     margin-left: 6px;
   }
 }

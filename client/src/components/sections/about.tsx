@@ -144,7 +144,7 @@ export default function About({ dynamicButtons = [] }: AboutProps) {
                     data-testid={`copy-button-${button.number}`}
                     title="Copy link"
                   >
-                    {copiedItems.has(button.number) ? <Check size={14} /> : <Copy size={14} />}
+                    {copiedItems.has(button.number) ? <Check size={16} /> : <Copy size={16} />}
                   </button>
                 </div>
               )
