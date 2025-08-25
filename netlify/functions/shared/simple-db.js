@@ -21,7 +21,7 @@ const sql = postgres(process.env.DATABASE_URL, {
 // Simple database functions without Drizzle ORM
 export const db = {
   async getButtons() {
-    const result = await sql`SELECT * FROM dynamic_buttons ORDER BY id`;
+    const result = await sql`SELECT id, number, image_url as imageUrl, link, created_at as createdAt FROM dynamic_buttons ORDER BY id`;
     return result;
   },
   
@@ -30,7 +30,7 @@ export const db = {
     const result = await sql`
       INSERT INTO dynamic_buttons (number, image_url, link) 
       VALUES (${number}, ${imageUrl}, ${link}) 
-      RETURNING *
+      RETURNING id, number, image_url as imageUrl, link, created_at as createdAt
     `;
     return result[0];
   },
